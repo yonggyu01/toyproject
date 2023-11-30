@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes aniTest{
+            from{opacity:1.0;transform:rotate(0deg)}
+            50%{opacity:0.1}
+            to{opacity:1.0;transform:rotate(360deg)}
+        }
+
+        img{
+            animation: aniTest 4s ease-in-out infinite alternate;
+            /* 
+            animation-name : 설정된 keyframes 지정
+            animation-duration : 실행 시간 지정
+            animation-iteration-count : 반복횟수 지정
+            animation-timing-function : 속도 형태 지정
+            animation-delay 대기시간 지정
+            animation-direction : 진행형태 지정 (normal,alternate ,reverse 등등)
+            */
+        
+        
+        }
+
+        </style>
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="aniTest"><img src="AA1i4dWB.jpg" alt="" width="300px" height="200px"></div>
+</body>
+</html>

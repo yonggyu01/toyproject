@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var subject = ['<h1>html</h1>','<h1>css</h1>','<h1>javascript</h1>']
+        document.addEventListener('DOMContentLoaded',function(){
+            var selectbox = document.querySelector('#subject')
+            var selectvalue;
+            var unselect = document.querySelector('select>option:first-child')
+            var divbox = document.querySelector('div')
+          
+            let person = {
+    name:'kim',
+    lastName : 'jang',
+    age: 23,
+    fullName : function(){
+        console.log(`${this.name}${lastName} 나이는 ${this.age}`)
+    }
+ }
+ let itemList='';
+//  for(item in person){
+//     console.log(`${item} : ${person[item]}`)
+//     itemList += item + ' '
+//  }
+let persoon = [
+    {fname:'hong', lname:'cam', age:15},
+    {fname:'ching', lname:'tam', age:25},
+    {fname:'zhong', lname:'nam', age:35}
+]
+
+for(i in persoon){
+    for(item in persoon[i]){
+        var creatp = document.createElement('p')
+        // console.log(persoon[i])
+        console.log(item,persoon[i][item])
+        creatp.innerHTML = `${item} ${persoon[i][item]}`
+        divbox.appendChild(creatp)
+        // console.log(item)
+    }
+}
+
+
+
+// 선생님은 for of 와 for in섞어서 함
+// for(i of persoon){
+//     for(item in i){ // i는 persoon의 배열 0 ,1, 2 번째를 가리키기 때문임
+//         var creatp = document.createElement('p')
+//         // console.log(persoon[i])
+//         console.log(item,i[item])
+//         creatp.innerHTML = `${item} ${i[item]}`
+//         divbox.appendChild(creatp)
+//         // console.log(item)
+//     }
+// }
+// 이게 좀더 맞는 활용법 같음
+
+
+
+
+// for (x of persoon){
+//     console.log(x)
+// }
+// for of 는 밸류를 가져오고  for in은 키값을 가져온다 (인덱스)
+// 둘다 가져오려면 foreach를 사용하면되고
+//  console.log(itemList)
+
+            selectbox.addEventListener('change',function(){
+                selectvalue = selectbox.value;
+                
+                
+                unselect.setAttribute('disabled','')
+               
+                switch(selectvalue){
+                    case 'a0' : divbox.innerHTML = subject[0]
+
+                    break;
+                    case 'a1' : divbox.innerHTML = subject[1]
+                    break;
+                    case 'a2' :
+                                divbox.innerHTML = subject[2]
+                    break;
+                    default : alert('선택하세요 ')
+                }
+                
+            })
+            
+        })
+    </script>
+    <style>
+        body{
+            width: 800px;
+            border: 1px solid black;
+            height: 300px;
+            margin: auto;
+            padding: 50px;
+        }
+        select{ 
+            font-size: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <select name="" id="subject">
+
+        <option value="a">선택하세요</option>
+        <option value="a0">1번 선택</option>
+        <option value="a1">2번 선택</option>
+        <option value="a2">3번 선택</option>
+
+    </select>
+    <div></div>
+</body>
+</html>

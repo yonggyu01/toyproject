@@ -1,0 +1,219 @@
+/*
+1024 ~ 1200px 반응 1200 이상은 고정
+    헤더 -> 로고 +  메뉴4개
+        메인에는 컨텐츠 3개 1024~ 1200 구간에서는 같이 크기가 변하는 내용 3개
+        푸터는 로고 + 텍스트 한줄 이렇게 디자인함
+
+*/
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:inherit;
+
+}
+.wrap{
+    min-width: 240px;
+    max-width: 1200px;
+    margin: auto;
+}
+.header{
+    height: 100px;
+    position: relative;
+    background-color: aqua;
+
+}
+.logo{
+    width: 120px;
+    height: 80px;
+    background: gray;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left:10px;
+    top:10px;
+}
+.gnb{
+    width: 430px;
+    height: 50px;
+    position: absolute;
+    left:200px;
+    top:40px;
+    /* background: red; */
+}
+.gnb h2{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: -9999px;
+}
+.gnb>ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: red;
+}
+.gnb li a{
+    display: flex;
+    width: 100px;
+    height: 50px;
+    color: white;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+}
+.menu_open{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: black;
+    line-height: 40px;
+    text-align: center;
+    left: 10px;
+    top:10px;
+    display:none;
+    color:white;
+}
+.main{
+    padding: 10px;
+    box-sizing: border-box;
+}
+.flexbox{
+    display: flex;
+    /* justify-content: space-between; */
+
+}
+.content1{
+    width: 32%;
+    height: 400px;
+    border: 1px solid black;
+    margin-right: 2%;
+}
+.content2{
+    width: 32%;
+    height: 400px;
+    border: 1px solid black;
+    margin-right: 2%;
+}
+.content3{
+    width: 32%;
+    height: 400px;
+    border: 1px solid black;
+    margin-right: 2%;
+}
+.footer{
+    padding: 10px;
+    box-sizing: border-box;
+    background: gray;
+    display: flex;
+    gap:30px
+}
+/*
+ 테블릿 구간에는 768 ~ 1023까지  
+        헤더는 변경없음
+        푸터도 그대로임
+        메인만 2단  밑에 1단으로 변경하게 디자인 변경
+        높이는 좀 줄어듬
+*/
+
+@media screen and (max-width:1023px){
+    
+    .flexbox{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 200px 400px;
+        grid-template-areas: 'a b' 'c c';
+        margin: 10px;
+        gap:10px;
+        /* 그리드를 안쓸경우 각 박스 는 플렉스 상태이기 때문에
+        각 박스마다 49% 49% 100% 이렇게 잡아주면 됨 그리고 wrap도 추가해주면됨
+        */
+    }
+    .content1{
+        grid-area: a;
+        width: 100%;
+        height: 200px;
+    }
+    .content2{
+        grid-area: b;
+        width: 100%;
+        height: 200px;
+    }
+    .content3{
+        grid-area: c;
+        width: 100%;
+        height: 400px;
+    }
+
+}
+
+/*
+
+        모바일구간 240 ~ 767
+        헤더 높이 줄어듬 , 로고 가운데 , 메뉴는 없어짐 왼쪽에 메뉴 버튼 만듬
+        메인은 수직으로 3단
+        푸터는 로고와 글자가 중간정렬
+        각 분기점별로 크기조절시 사이즈 변경됨
+        
+*/
+@media screen and (max-width:767px){
+    .header{
+        height: 50px;
+    }
+    .gnb{
+        /* width: 0; */
+        /* height: 0; */
+        position: static;
+    }
+    .logo{
+        font-size: 20px;
+        width: 80px;
+        height: 50px;
+        position: relative;
+        left:50%;
+        top:0px;
+     }
+
+    .gnb ul{
+        display: block;
+    }
+    .gnb li a{
+        display: block;
+        width:430px;
+    }
+    .gnb li a:hover{
+        background: blue;
+    }
+    .flexbox{
+        display: flex;
+        flex-flow: column wrap;
+    }
+    .content1{
+        width: auto;
+        height: 400px;
+    }
+    .content2{
+        width: auto;
+        height: 400px;
+    }
+    .content3{
+        width: auto;
+        height: 400px;
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .menu_open{
+        display: block;
+    }
+}

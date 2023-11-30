@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{font-size: 20px;}
+
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            let bw = $(window).width() ;
+            $('span').text(bw).css({color : 'red', "font-size" : 500})   
+        $(window).resize(function(){
+            bw = $(window).width();
+        $('span').text(bw).css({color : 'red', "font-size" : 500})            
+        })
+              
+        })
+    </script>
+    <title>이벤트</title>
+</head>
+<body>
+   <h2>browser Width: <span> </span></h2> 
+    
+   <h2>browser Width: <span> </span></h2> 
+    
+</body>
+</html>

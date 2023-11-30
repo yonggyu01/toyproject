@@ -1,0 +1,44 @@
+전환효과 transition
+css 속성이 변화할 때 애니메이션
+2차원 변환 transform 함수
+
+*[속성의 값이 바뀔때] 애니메이션 추가하는것**
+
+1. 사용법
+transition 변환속성 애니메이션시간
+
+2/ 속성값
+ - 변환속성 :변화할 속성
+            all 로 지정되면 모든 속성 영향
+
+ - 애니메이션 시간 : 애니메이션 재생 시간 (duration) 지정
+
+ 3. 변환함수 (transform)
+ translate(translateX, translateY) 지정된 값만큼 이동
+ scale(scaleX, scaleY) : 지정된 값만큼 확대 및 축소  scale(1, 1) -> scale( 1.2, 1.2)
+ skew(angleX, angelY) : 지정된 값만큼 기울림
+ rotate(angleZ) : 지정된 값만큼 회전  
+ transform : skew 2s , rotate 3s; 이런식으로 사용하고 all 50s 이런식으로 위에 적은 효과를 한번에 다 반영 가능
+ 하나만 쓰면 하나만 천천히 변환함.
+
+        #transitionBox img{
+            transform:rotate(0deg);
+            border:white solid 5px;
+            opacity: 1;
+            transition: all 2s;
+        }
+        #transitionBox img:hover{
+            transform: rotate(80deg);
+            border: blue dashed 5px;
+            opacity: 0.2;
+        }
+
+
+
+
+**********
+글자 속성은 부모의 속성값이 자식에게  상속되는데
+a태그만 색상이 따로논다
+이경우 a태그에 따로 효과를 주거나  inherit 상속받으라고 지정하거나 할 수 있다.
+
+

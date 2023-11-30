@@ -1,0 +1,39 @@
+body{
+    background-color: bisque;
+    padding-top: 12em;
+}
+#주요메뉴{
+    height:8em;  padding: 2rem; color:white;
+    background : magenta;
+    font-weight : bold;
+    display: flex;
+    align-items: center;
+    position:fixed;
+    top : 0;
+    left : 0;
+    right:0;
+    justify-content: space-between;
+
+}
+#주요메뉴 ul li{
+    display:inline-block
+ 
+}
+
+#점없는리스트{
+    list-style-type: none;
+   
+}
+
+#유틸{
+    list-style-type: none;
+}
+#유틸 li{
+    display:inline;
+}
+#사진슬라이드{
+    list-style-type: none;
+}
+#사진슬라이드 li{
+    display:inline;
+}

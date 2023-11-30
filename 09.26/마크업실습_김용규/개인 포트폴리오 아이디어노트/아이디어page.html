@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ideapage</title>
+    <script>
+   
+        window.onload=function(){
+            let imgs = document.querySelectorAll('img')
+            let observer = new IntersectionObserver((e)=>{
+            e.forEach(function(item){
+                if(item.isIntersecting){
+                    console.log(item.intersectionRatio)
+                    if(item.intersectionRatio>0.8){
+                        item.target.style.left = '200px'
+                    item.target.style.opacity = 1;
+                    }
+                   
+                }
+                
+            })
+//스크롤이벤트로 다시 정리
+
+        
+        })
+        for(i = 0 ; i<imgs.length; i++){
+            observer.observe(imgs[i])
+            }
+
+        }
+    </script>
+    <style>
+        body{
+            height: 1200vh;
+        }
+        *{margin: 0;}
+        .fuu{
+          height: 100vh;
+        }
+        div{
+            width: 100vw;
+            margin:0 auto 600px;
+        }
+        div img{
+            width: 100%;
+            object-fit: fill;
+            position: relative;
+            left:0;
+            opacity: 0;
+            transition: all 1s;
+        }
+
+    </style>
+</head>
+<body>
+    <article class="fuu"></article>
+    <section class="fullwrap">
+        <div><img src="캡처1.png" alt=""></div>
+        <div><img src="캡처2.png" alt=""></div>
+        <div><img src="캡처3.png" alt=""></div>
+        <div><img src="캡처4.png" alt=""></div>
+        <div><img src="캡처5.png" alt=""></div>
+        <div><img src="캡처6.png" alt=""></div>
+        <div><img src="캡처7.png" alt=""></div>
+        <div><img src="캡처8.png" alt=""></div>
+        <div><img src="캡처9.png" alt=""></div>
+        <div><img src="캡처10.png" alt=""></div>
+        <div><img src="캡처11.png" alt=""></div>
+
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>배경 이미지 크기 조절</title>
+<style type="text/css">
+div{
+	border:2px solid #73a11a;
+	width:150px;
+	height:200px;
+	margin:5px;
+	background:url(images/bg.jpg) right bottom no-repeat;
+	float:left;
+}
+#box_rel{background-size:40% 70%}
+#box_abs{background-size:50px 50px}
+#box_cover{background-size:cover}
+#box_contain{background-size:contain}
+</style>
+</head>
+<body>
+<h2>배경 이미지 크기 조절</h2>
+	<div id="box_org">원본 크기</div>
+	<div id="box_rel">비율 사용</div>
+	<div id="box_abs">고정값 사용</div>
+	<div id="box_cover">컨텐츠 크기에 맞게</div>
+	<div id="box_contain">컨텐츠 크기에 맞춰 비율 고정</div>
+</body>
+</html>
+
+
+
+
+
+

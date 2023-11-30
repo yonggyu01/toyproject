@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.page a').click(function(){
+               let btn = $(this).index()
+               let num = btn*100
+                $('ul').css({transform :`translate(-${num}vw)`}) 
+               let img_width = $('.wrap img').width()
+               
+            //    $('ul').css({transform :`translate(-${num}vw)`}) 
+            //   img길이만큼만 움직이게 수식짜도되고 이미지 길이(img_width)에  * idx로 처리하면 쉽게 처리가능
+            })
+            // 제이쿼리로 스타일을 컨트롤 하는것도 괜찮음
+            // $('ul').width() -> 이런식으로   스타일 값이 중복되게 사용되는경우 css에서 내용을 지우고 스크립트로 직접 조정해도 괜찮고..
+            //  css에 변수기능 :root{ --변수명 : 값; }  해당적용할 스타일태그에 { color : var(--변수명)} 이렇게 사용해도 괜찮음
+        })
+
+    </script>
+    <style>
+        *{margin: 0;
+        padding: 0;}
+        li,ul{list-style: none;}
+        .wrap{
+            overflow: hidden;
+            width: 100vw;
+        }
+        ul{
+            width: 300vw;
+            display: flex;
+            transition: all 1s;
+            transform: translate(0px);
+        }
+        img{
+            padding: 10px;
+            object-fit:fill;
+            width: 100vw;
+            height: 50vh;;
+            box-sizing: border-box;
+        }
+        .page{
+            width: 50vw;
+            margin: auto;
+        }
+        p{
+            font-size:50px;
+            display: flex;
+            gap:50px;
+            justify-content: center;
+        }
+        .arrow{
+            position: absolute;
+            top :20%;
+        }
+        .arrow a{
+            
+            color:red
+        }
+        .arrow a:first-child{
+            position: relative;
+            left:0
+        }
+        .arrow a:nth-child(2){
+            position: relative;
+            right:-88vw ;
+        }
+    </style>
+
+
+</head>
+<body>
+    <main id="main"></main>
+        <section class = "mainimg">
+            <div class="wrap">
+                <h2>주요소식</h2>
+                <ul>
+                    <li><img src="ss1.png" alt=""></li>
+                    <li><img src="ss2.png" alt=""></li>
+                    <li><img src="ss3.png" alt=""></li>
+                </ul>
+                <p class='page'>
+                    <a href="#none">1</a>
+                    <a href="#none">2</a>
+                    <a href="#none">3</a>
+                </p>
+                <p class="arrow">
+                    <a href="#none">&lt;</a>
+                    <a href="#none">&gt;</a>
+                </p>
+            </div>
+        </section>
+</body>
+</html>

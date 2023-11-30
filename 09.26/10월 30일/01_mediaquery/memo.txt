@@ -1,0 +1,35 @@
+﻿* media
+ 다양한 미디어 관련 요소에 스타일 변경
+
+* Media Type의 종류
+   - all (모든 출력 장치) 
+   - aural (음성 출력) 
+   - braille (점자 출력) 
+   - handheld (포켓, 모바일) 
+   - print (인쇄) 
+   - projection (투사 장치) 
+   - screen (스크린, 모니터) 
+   - tty (전신 타자기, Tele Type Writer) 
+   - tv (텔레비전, Television) 
+
+
+
+* 적용 방법(ex:브라우저 크기 반응)
+1. 각각의 스타일 적용
+<style media="screen and (min-width:1000px)">
+body{ }
+</style>
+
+<style media="(min-width:640px) and (max-width:999px)">
+body{ }
+</style>
+
+2. 임포트
+<style type="text/css">
+   @media screen and (min-width:1000px){
+      body{ }
+   }
+   @media (min-width:640px) and (max-width:999px){
+      body{ }
+   }
+</style>

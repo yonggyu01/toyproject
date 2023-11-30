@@ -1,0 +1,221 @@
+제어문 -
+
+반복문  **
+
+1. 일정한 규칙을 가지고 있는 문장을 직접 작성하지 않고
+여러번 실행시키는 문장
+2. 조건(배열, 숫자 범위) + 반복문
+3. for. for ..in (속성 반복) <- 객체 , for.. of (값 반복) <-- 배열 
+
+4. while (조건을 먼저 따져보고 그 조건이 참일때 함)
+5. do while  (일단 문장을 먼저 실행하고 그다음 조건을 따짐 > 무조건 최소 한번은 실행되게됨)
+
+
+object.property = value
+메소드 =object. method (prameter); 명령어 역할..
+
+
+
+** 반복 속성 메소드 **
+
+6. map() - 배열 : 이 메소드는 배열에 들어있는 값을 가져와서 가공함 새로운 배열로 만들어줌.
+    기존배열은 바뀌지 않고 새로운 배열이 생김
+
+    var a = [ 'qgqg'......];
+    var b = a.map(); 이런식으로 사용
+    배열에 들어있는  전체 데이터를 사용함
+    a배열에 2배값을 만들고 싶다 이러면 map사용하고
+    
+
+7. filter() - 배열 : 원본데이터는 그대로 있고 새로운 배열이 생기는건 같음
+var a = [ 'qgqg'......];
+    var b = a.filter(); 이런식으로 사용
+    a배열에 있는 값중 원하는 값만 가져온다는점이 조금 다름
+    a배열에서 일정 값만 빼오고싶다  등등
+    
+    두가지 명령어 전부 배열을 대상으로 하는 반복문이다.
+
+ `` 백틱 사용하면 문자열 안에 변수 포함가능
+ ` 문자열 ${변수} 문자열` <- 이 안에서는 엔터도 먹음
+
+    **************
+
+    while
+    1. 조건 + 반복문
+    2. while(조건){
+        조건이 참인 동안 반복할 문장
+    }
+
+    var i = 0  // 초기값 , 얼마부터
+    while(i<5){  // 최종값 얼마까지
+        console.log(i)
+        i++  // 증감량, 얼만큼씩
+    }    
+    이런식으로 작성
+
+    숫자의 조건으로 수식짤때는
+    값이 3개 필요
+    초기값 최종값 증감값
+
+// for
+1.형식  
+for(조건)
+  -- for(시작값; 최종값; 증감식)
+  -- for(변수 of 배열객체){// 객체의 값 반복}
+  -- for(변수 in 객체){ // 객체의 속성 반복}
+    조건이 참인 동안만 반복할 문장 }
+    2. 시작값 선언시 변수 선언과 동시에 사용가능
+    ex ) 일반적인 사요 ㅇ예
+     var a = 1
+       b =2
+       for(a=1 ; a<=10; a++){
+        document.write("무궁화 꽃이 피었습니다.")
+       }
+
+** 다중반복문
+ for(시작값; 최종값; 증감식){
+    for(시작값; 최종값; 증감식){
+        반복할 문장
+    }
+ }
+ 배열 반복문
+
+ for(배열 또는 객체)
+ for ( 배열 of  객체 in ){
+    document.write('<p>이 문장을 반복합니다</p>')
+ }
+  
+  var subject = ['html','css','javascript']
+
+for( 배열변수의 값을 하나씩 나누어 담을 변수  of  배열이 들어있는 변수 )    
+        for(var item of 배열명){
+            document.write(item + '<br>');
+        }
+    
+let subject2 = '문자열데이터'
+let itemlist2 = '';
+for(item of subject2){
+    itemlist2 += item ;
+    //이렇게 출력하면 문자열 데이터를 한글자씩 때서 배열처럼 읽어온다;
+    // 포문과 charAt을 사용해서 처리하는것과 똑같은 효과같음 
+}
+// 포 of는 무조건 순서대로 증가함  (이걸 제어하고 싶다면 그냥 for문을 사용하는게 나음)
+
+for in은 for of랑 사용법은 동일함
+
+let person = {
+    key : value,
+    fname : 'hong',
+}
+ 
+ 객체는 json 형태가 비슷한데
+ json데이터의 특징은 무조건 key : value 중의 value값이 무조건 'string'형태여야함
+ 자바스크립트는 객체의 값들은 다양하게 str, num , arr , obj등 다양하게 올수있기 때문에
+ json 을 사용하려면 패싱?  값의 종류가 달라서 형태변환이 필요하다
+
+ let person = {
+    name:'kim',
+    lastName : 'jang',
+    age: 23,
+    fullName = function(){
+        console.log(`${this.name}${lastName} 나이는 ${this.age}`)
+    }
+ }
+
+위 객체를 가져올때는 for in문을 써야함
+ for(객체가 들어있는 변수의 값을 하나씩 나누어 저장할 변수 in 객체가 들어있는 변수명){
+
+ }
+ for(item in person){
+    console.log(this[item])  이런식으로 작성해야 객체에서 사용가능
+    반복문으로 가져오려면  person[변수명] 이런시긍로 와야함
+    .이 붙으면 뒤에는 변수가 올 수 없음
+    console.log(item) <-- 이 객체의 키값만 출력함
+
+ }
+
+배열에만 사용하는 메서드
+
+    반복속성 메소드
+    map();
+    filter();
+    foreach(function(item,idx){
+
+    })
+
+    map() 배열 ; 
+    
+    전체데이터를 가져와서 한개씩 가공해서 
+    새로운 배열을 만든다
+
+    filter () ; 배열
+    내가 갖고오고 싶은 조건에 해당하는 데이터만 가져온다
+    새로운 배열을 만든다
+
+    가공하는 과정에서 필요한건 함수임
+
+    map();
+
+    1. 배열내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환
+    2. Array.map(callback(currentValue[, index[,array]])[, thisArg])
+    Array.map(배열을 분리하여 저장할 변수, function(){실행할 문장})
+
+    - callback
+    새로운 배열 요소를 생성하는 함수, 다음 세가지 인수 사용
+
+    -currentValue : 처리할 현재 요소
+
+    -index[Optional] : 처리할 현재 요소의 인덱스
+
+    -array[Optional] : map() 을 호출할 배열.
+
+    -thisArg Optional
+    callback을 실행할 때 this로 사용되는 값.
+
+    3. 반환 값
+    배열의 각 요소에 대해 실행한 callback의 결과를 모은 새로운 배열
+
+    let narr = arr.map( item , function(){
+        +1 이런식으로 하고싶은 내용 적음
+    })
+    이렇게 새로운배열을 만들어서 다른 변수에 저장해주면됨
+    item은 생략하고 function(item){} <-이렇게 파라메터로 넣어줘도됨
+    let 새로운변수 = arr.map(function(item){ 할일 })
+
+    맵 함수는 무조건 반환할 값이 있다면 return을 해줘야함
+    안했더니 값이 저장이 안되네;
+
+
+filter ()
+ 1. 배열을 순서대로 불러 각 요소에 대해 callback 함수를 실행하고
+ 결과가 true인 요소들만으로 이루어진 새로운 배열을 반환
+    2. Array.filter(callback(element[, index[,array]])[, thisArg])
+    - callback function : 각 요소의 조건을 판단할 함수로
+    true를 반환하면 요소를 유지하고 false를 반환하면 해당 요소 제외
+    -인수
+     - element  - 배열의 현재 요소
+
+    -index[Optional] : 배열의 현재 요소의 인덱스
+
+    -array[Optional] : 호출한 배열.
+
+    -thisArg Optional
+    callback을 실행할 때 this로 사용되는 값.
+
+    3. 반환 값
+    배열의 각 요소에 대해 실행한 callback의 결과를 모은 새로운 배열
+
+    let narr = arr.map( item , function(){
+        +1 이런식으로 하고싶은 내용 적음
+    })
+
+
+논리연산자
+&& 그리고
+|| 또는
+! 부정(단항연산자에서 옴)
+!! 불리언 값으로 변환 (단항연산자 응용버전)
+
+
+**
+g

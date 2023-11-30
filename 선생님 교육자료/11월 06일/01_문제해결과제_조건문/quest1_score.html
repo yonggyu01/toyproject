@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>점수 입력</title>
+<style type="text/css">
+    body{font-size:30px}
+</style>
+<script type="text/javascript">
+    var score = prompt("점수를 입력하세요.", "숫자만 가능합니다.");
+
+    if(score >= 90 && score <= 100){
+        document.write("입력된 점수 : " + score + "<br>");
+        document.write("등급 : A");
+    } else if(score >= 80 && score <= 89){
+        document.write("입력된 점수 : " + score + "<br>");
+        document.write("등급 : B");
+    } else if(score >= 70 && score <= 79){
+        document.write("입력된 점수 : " + score + "<br>");
+        document.write("등급 : C");
+    } else if(score >= 60 && score <= 69){
+        document.write("입력된 점수 : " + score + "<br>");
+        document.write("등급 : D");
+    } else if(score >= 0 && score <= 59){
+        document.write("입력된 점수 : " + score + "<br>");
+        document.write("등급 : F");
+    } else{
+        document.write("입력된 점수 : " + score + "<br>");
+        document.write("등급 : Error");
+    }
+</script>
+</head>
+<body>
+
+</body>
+</html>

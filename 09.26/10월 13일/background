@@ -1,0 +1,67 @@
+background
+기존 배경은 한번에 하나만 적용가능하지만
+ ***css3에서는 여러개의 배경을 동시에 적용 가능
+* 먼저 작성된 이미지가 위에서 출력
+
+2. 배경의 범위 및 시작 위치 설정 가능
+
+3. 배경의 크기 조정 가능
+
+
+background-image:url("")
+background-repeat : 반복이 기본값  no-repeat;
+background-position : left center top  /// top center bottom 또는 px, % 등으로 값도 지정가능
+ 만약 position값에  숫자를 입력시 순서는 left top 순으로 지정됨  100px 300ox  <-왼쪽 100px 떨어지고 top 300px 내려온 위치에 배치한다는 소리임
+    * position값에 방향을 하나만 준다면 top center bottom 방향이라면 무조건 center에 위치함
+background-attachment: fixed  -> 백그라운드의 포지션을 지정했을때 그 포지션은 처음보이는 화면에서만인데
+이 속성을 같이써주면  전체화면으로 속성을 고정하거나 지정할 수 있음
+
+**background : color image repeat position attachment  한방에 여러값 순서상관없이 입력가능
+ url() 로 무언가 입력시  , 로 여러개 구분해서 값 입력할수있음
+**
+        .multiBG{
+            height: 600px;border:2px solid blue;
+            text-align: center;
+            background: url("다운로드.jpg") no-repeat right top,
+                        url("AA1i4dWB.jpg") no-repeat left top, 
+                         url("AA1i4dWB\ \(1\).jpg") no-repeat right bottom, 
+                           url("AA1i4U92.jpg") no-repeat ,
+                         url("ibuki_ibiki-768x512.jpg") no-repeat 
+            ;
+        }
+
+
+        #box_rel{
+            background-size:40% 70%;  /*이미지를 몇퍼센트 줄이겠다가 아니라 상자의 몇퍼센트만 채울건지 개념임*/
+        }
+        #box_abs{
+            background-size:50px 50px;
+        }
+        #box_cover{
+             background-size:cover;  /*배경이미지의 가로세로 비율은 변하지 않음 박스보다 사진이 큰 경우  사진이 그대로 덮어버림 */
+        }
+        #box_contain{
+            background-size:contain;/*배경이미지의 가로세로 비율은 변하지 않지만 크기가 줄어들게되며 해당 상자 안에 맞게 비율조정됨*/
+        }
+
+
+......
+  svg 기술...*
+
+
+html : img
+css  : background-img (특징은 자동반복)
+
+
+폴더명 선택시
+ ../   <- 상위폴더로 
+ ./ <- 제일 상위폴더로 한방에 이동 vscode에서는 ./하면 제일 최상위로 가는데 실제 적용시 다를수있음
+ (내컴퓨터에서 보자면 ./ 는   한방에 c:/ 로 최상단 이동하는거라서 ftp서버에서도  그렇게 반응하기 때문에
+ 유의해서 사용해라)
+
+
+html, body{
+    height:100%
+}  <---- 만약 내가 박스를 화면 전체크기로 만들고 싶다면 
+맨 상위단에 이렇게 설정이 되어있어야함
+

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0;
+        margin: 0;}
+        ul,li{
+            list-style: none;   
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        h1{
+            width: 1200px;
+            margin: 0 auto 20px;
+            padding-top: 120px;
+        }
+        .data{
+            width: 1200px;
+            margin: auto;
+        }
+        .tapmenu{
+            position: relative;;
+            border: 1px solid black;
+            margin-bottom: 50px;
+        }
+      
+        .title{
+            border-bottom: 1px solid black;
+            height: 100px;
+            background-color: rgba(128, 128, 128, 0.315) ;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-indent: 5px;
+            
+        }
+        .tapmenu>ul{
+            width: 1200px;
+            display: flex;
+            flex-direction: row;
+            height: 300px;
+            position: relative;
+            justify-content: space-evenly;
+        }
+
+
+        .tapmenu h3{
+            width: 150px;
+            height: 40px;
+            border: 1px solid black;
+            margin-bottom: 50px;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tapmenu>ul>li>a{
+            position: absolute;
+            top: 80px;
+            left:5px;            
+        }
+        .tapmenu p{
+            font-size: 20px;
+            
+        }
+        .nav{
+            position: fixed;
+            top :0;
+            font-size: 20px;
+        }
+        .main2{
+            width: 1200px;
+            margin: auto;
+        }
+        .title2 h2{
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .tbox{
+            background: rgba(128, 128, 128, 0.377);
+            height: 110px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            border: 1px solid black;
+            padding-left: 10px;
+        }
+        .tapbox{
+            height: 450px;
+            border: 1px solid black;
+            margin-bottom: 50px;
+        }
+        .tapbox>ul{
+            display: flex;
+            position: relative;
+            justify-content: space-evenly;
+        }
+        .tapbox h3{
+            border: 1px solid black;
+            box-sizing: border-box;
+            width: 150px;
+            display: flex;
+            justify-content: center;
+            height: 40px;
+            align-items: center;
+        }
+        .tapbox>ul p{
+            position: absolute;
+            left: 10px;
+            top:80px;
+        }
+        .today1101{
+            width: 1200px;
+            margin: 0 auto 50px;
+        }
+        .date1102{
+            width: 1200px;
+            margin: 0 auto 50px;
+        }
+        .pass{
+            position: absolute;
+            transition: all 0.5s;
+            background: white;
+            gap : 20px
+        }
+
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var tapb = document.querySelectorAll('.tapmenu>ul>li>h3')
+            var tapshow = document.querySelectorAll('.tapmenu>ul>li>a')
+            for(i=0; i<tapshow.length; i++){
+                      tapshow[i].style.display = 'none'
+                        }
+                        tapshow[0].style.display = 'block'
+            tapb.forEach(function(item,idx){
+                item.addEventListener('click',function(){
+                    for(i=0; i<tapshow.length; i++){
+                        if(i == idx){
+                            tapshow[i].style.display= 'block'
+                            item.style.background= 'orange'
+                        }else{
+                            tapshow[i].style.display = 'none'
+                            tapb[i].style.background = 'white'
+                        }
+                    }
+                })
+
+            }) 
+            var tapboxh3 = document.querySelectorAll('.tapbox h3')
+            var tapboxp = document.querySelectorAll('.tapbox p')
+            for(i=0; i<tapboxh3.length; i++){
+                      tapboxp[i].style.display = 'none'
+                        }
+                        tapboxp[0].style.display = 'block'
+            tapboxh3.forEach(function(item,idx){
+                item.addEventListener('click',function(e){
+                    e.preventDefault();
+                    for(i=0; i<tapboxp.length; i++){
+                        if(i == idx){
+                            tapboxp[i].style.display = 'block'
+                            item.style.background = 'orange'
+                        }else{
+                            tapboxp[i].style.display = 'none'
+                            tapboxh3[i].style.background = 'white'
+                        }
+
+                    }
+                })
+            })           
+            var passmoving = document.querySelector('.pass')
+            var passbox = document.querySelectorAll('.pass a')
+            let passposition = 0;
+            let movemode = 0;
+            let color1 = ['red','blue','yellow','orange','magenta']
+            
+            passmoving.style.top = 20+'px'
+            passmoving.style.left = passposition+'px'
+            let moving = setInterval(function(){
+                if(movemode == 0){
+                    passposition += 30
+                    passmoving.style.left = passposition+'px'
+                    passmoving.style.display = 'flex'
+                    passmoving.style.border = '1px solid red'
+                    passmoving.style.padding = '10px'
+                    for(i=0;i<passbox.length;i++){
+                        passbox[i].style.border = '1px solid black'
+                        passbox[i].style.display = 'inline-block'
+                        passbox[i].style.padding = '0px'
+                    }
+                    if(passposition >=680){
+                        movemode = 1
+                    }
+                }else{
+                    passposition-= 100
+                    passmoving.style.left = passposition+'px'
+                    passmoving.style.display = 'block'
+                    passmoving.style.padding = '0px'
+                    passmoving.style.border = '0 none'
+                  
+                    for(i=0; i<passbox.length; i++){
+                        passbox[i].style.border = '1px solid '+color1[i]
+                    passbox[i].style.padding = '5px'
+                    }
+                    if(passposition <= 300){
+                        movemode = 0
+                    }
+                }
+            },500)
+            var yscroll;
+            window.addEventListener('scroll',function(){
+                yscroll = window.pageYOffset
+                if(yscroll>300){
+                    passmoving.style.position = 'fixed'
+                }else{
+                    passmoving.style.position = 'absolute'
+                }
+            })
+        })
+        
+    </script>
+</head>
+<body>
+    <div class="pass">
+        <a href="">맨위로 가기</a>
+    <a href="#today1101">11월 01일 진도 바로가기</a>
+        <br>
+    <a href="#date1102">11월 02일 진도 바로가기</a>
+</div>
+
+<h1> 자료형과 연산자 정리 제출 </h1>
+<p class ="nav">김용규</p>
+<section class="data">
+
+<div class="tapmenu">
+   <div class="title">
+     <h2>데이타 유형</h2>
+    <p>
+        JavaScript에는 8개의 데이터 유형이 있습니다. (아래 메뉴 클릭)
+    </p>
+    </div>
+    <ul>
+        <li>
+            <h3>1. 문자열</h3>
+            <a href="#none">
+                
+                <p>숫자와 문자열을 추가할 때 JavaScript는 숫자를 문자열.
+                    JavaScript는 표현식을 왼쪽에서 오른쪽으로 평가합니다.
+                    문자열은 따옴표로 작성됩니다. 작은따옴표 또는 큰따옴표를 사용할 수 있습니다.
+                    따옴표와 일치하지 않는 한 문자열 안에 따옴표를 사용할 수 있습니다 문자열을 둘러싼 :
+                    </p>
+            </a>
+        </li>
+        <li>
+            <h3>2. 숫자</h3>
+            <a href="#none">
+            
+                <p>자바스크립트 숫자
+                    모든 JavaScript 숫자는 10진수(부동 소수점)로 저장됩니다.
+                    숫자는 소수로 또는 소수로 쓸 수 없습니다.
+                    대부분의 프로그래밍 언어에는 다음과 같은 많은 숫자 유형이 있습니다.
+                    정수(정수):
+                    byte(8비트), short(16비트), int(32비트), long(64비트)
+                    실수(부동 소수점):
+                    float(32비트), double(64비트).</p>
+            </a>
+        </li>
+        <li>
+            <h3>3. 비긴트</h3>
+
+            <a href="#none">
+                <p>자바스크립트 BigInt
+                    모든 JavaScript 숫자는 64비트 부동 소수점 형식으로 저장됩니다.
+                    
+                    JavaScript BigInt는 표현하기에는 너무 큰 정수 값을 저장하는 데 사용할 수 있는 새로운 데이터 유형(ES2020)입니다 
+                    </p>
+            </a>
+        </li>
+        <li>
+            <h3>4. 부울</h3>
+
+            <a href="#none">
+                <p>두 개의 값만 가질 수 있습니다.true false</p>
+            </a>
+        </li>
+        <li>
+            <h3>5. 정의되지 않음</h3>
+            <a href="#none">
+             
+                <p>JavaScript에서 값이 없는 변수에는 값이 있습니다. 유형도 입니다</p>
+            </a>
+        </li>
+        <li>
+            <h3>6. 널</h3>
+
+            <a href="#none">
+                <p>빈 값은 와 아무 관련이 없습니다.undefined
+                    빈 문자열에는 올바른 값과 형식이 모두 있습니다.</p>
+            </a>
+        </li>
+        <li>
+            <h3>7. 배열</h3>
+
+            <a href="#none">
+                <p>JavaScript 배열은 대괄호로 작성됩니다.
+                    배열 항목은 쉼표로 구분됩니다.<br>
+                    배열 인덱스는 0부터 시작하며, 이는 첫 번째 항목이 [0]이고 두 번째 항목이 [1] 등입니다.
+                    </p>
+            </a>
+        </li>
+        <li>
+            <h3>8. 객체</h3>
+
+            <a href="#none">
+                <p>
+                    JavaScript 객체는 중괄호로 작성됩니다.{} <br>
+                    객체 속성은 쉼표로 구분된 이름:값 쌍으로 작성됩니다.<br>
+                    - Object : 키와 값으로 구성된 여러 개의 값<br>
+                    - const a = { name:'john' , class: 1, subject:["KOREAN", "ENGLISH"]}<br>
+                    - Array(배열) : 여러개으 ㅣ값으로 구성된 자료형 <br>
+                    - const a = ["aa","bb","cc"]<br>
+                    -날짜 /  시간<br>
+                     - var data =  new Data()<br>
+       
+                     
+                
+                </p>
+            </a>
+        </li>
+    </ul>
+</div>
+</section>
+<section class="main2">
+<div class="title2">
+    <h2>
+        JavaScript 연산자
+    </h2>
+</div>
+<div class="tapmenu2">
+    <div class="tbox">
+    <h2>
+        JavaScript 연산자의 유형
+    </h2>
+    <p>
+        JavaScript 연산자에는 여러 유형이 있습니다.
+    </p>
+</div>
+    <div class="tapbox">
+        
+        <ul>
+            <li>
+                <a href="">
+                    <h3>
+                        산술 연산자
+                    </h3>
+                </a>
+                <p>
+                    JavaScript 산술 연산자
+                    산술 연산자는 숫자에 대한 산술 연산을 수행하는 데 사용됩니다.
+                    <br>
+더하기 연산자 +는 숫자를 더합니다.
+<br>
+대입 연산자 =는 변수에 값을 할당합니다<br>
+
+곱하기 연산자()는 숫자를 곱합니다.*
+<br>
+
+* 산술 연산자 <br>
+ 1. +  더하기와 연결자로 쓰임<br>
+ 2 -  (빼기와 부호반전)<br>
+ 3 *  (all) 과 곱하기<br>
+ 4 /  나누기  <br>
+ 5 % 두개의 수를 나눈 나머지<br>
+   10/3 = 3.333<br>
+   10 % 3 = 1 <br><br>
+   <a href="산술연산자.html">예제 바로가기</a>
+
+                </p>
+            </li>
+            <li>
+                <a href="">
+                    <h3>대입 연산자</h3>
+                </a>
+                <p>
+                    
+JavaScript 대입 연산자
+대입 연산자는 JavaScript 변수에 값을 할당합니다.
+<br>
+덧셈 할당 연산자()는 변수에 값을 추가합니다.+=
+<br>
+Operator	Example	Same As </br>
+=	x = y	x = y </br>
+
++=	x += y	x = x + y</br>
+-=	x -= y	x = x - y</br>
+*=	x *= y	x = x * y</br>
+/=	x /= y	x = x / y</br>
+%=	x %= y	x = x % y</br>
+**=	x **= y	x = x ** y
+
+
+                </p>
+            </li>
+            <li>
+                <a href="">
+                    <h3>비교 연산자</h3>
+                </a>
+                <p>
+                    JavaScript 비교 연산자<br>
+
+
+Operator	Description<br>
+==	equal to<br>
+===	equal value and equal type<br>
+!=	not equal<br>
+!==	not equal value or not equal type<br>
+>	greater than<br>
+<	less than<br>
+>=	greater than or equal to<br>
+<=	less than or equal to<br>
+?	ternary operator
+== 값의 형식은 달라도 같고 ===는 형식도 같아야함
+<br> 문자도 비교가 가능하다.<br><br>
+<a href="비교연산자.html">예제 바로가기</a>
+                </p>
+            </li>
+            <li>
+                <a href="">
+                    <h3>문자열 연산자</h3>
+                </a>
+                <p>
+                    JavaScript 문자열 비교 <br>
+위의 모든 비교 연산자는 문자열에서도 사용할 수 있습니다. <br>
+
+문자열은 사전 순임 / 알파벳순으로 비교됩니다. <br>
+문자열에 사용되는 경우 + 연산자를 연결 연산자라고 합니다.
+
+                </p>
+            </li>
+            <li>
+                <a href="">
+                    <h3>논리 연산자</h3>
+                </a>
+                <p>
+                    JavaScript 논리 연산자 <br>
+
+
+Operator	Description<br>
+&&	logical and<br>
+||	logical or<br>
+!	logical not
+                </p>
+            </li>
+            <li>
+                <a href="">
+                    <h3>비트 연산자</h3>
+                </a>
+                <p>
+                    * 비트식 연산자 & <br>
+
+true & true  =  1 (true)<br>
+결과값이 숫자 0과 1로 출력된다.<br>
+
+<br>
+논리 연산자와 같은 연산자 이지만 연산기호가 1개 이고<br>
+값이 1 (true)  0 (false) 로 출력됨
+
+                </p>
+            </li>
+            <li>
+                <a href="">
+                    <h3>삼항 연산자</h3>
+                </a>
+                <p></p>
+            </li>
+            <li>
+                <a href="">
+                    <h3>형식 연산자</h3>
+                </a>
+                <p></p>
+            </li>
+        </ul>
+    </div>
+    
+</div>
+</section>
+<section class="today1101" id="today1101">
+    <h2>오늘 11월 01일 진도</h2>
+    <p>
+        자바스크립트
+1웹브라우저에서 읽고 실행되는 언어
+2 보안성이 없음
+3 html내에 작성
+4 대소문자의 구분이 엄격 aaa AAA
+</p>
+<p>
+
+*적용방법
+1. 내부스크립트
+- html 문서 내에 스크립트 정의 후 직접 작성
+ - 필요한 위치에
+ <script type = 'text/javascript'>
+ 스크립트 효과
+ </script>
+</p>
+
+<p>
+ 2.외부 스크립트 - 스크립트 효과를 다른 문서에 작성하고 '이름.js' 로 저장
+ - 효과를 적용할 문서에
+
+ `<script type = 'text/javascript' src = '이름.js'>
+   // 다른문장 작성금지 ( 외부 스크립트 선언문 내부에 뭘 작성해도
+  //  아무것도 안나옴 , 실행이 안된다 ) 주석은 괜찮긴 함
+ </script>`
+</p>
+자바스크립트 주석 <br>
+1. 한줄주석 // <br>
+2. 여러줄 주석 /* 내용작성 */
+    </p>
+
+<p>
+    **자료형 data type <br>
+연산에 사용되는 값의 종류
+</p>
+<p>
+*상수 : 값이 정해져 있는 형식  <br>
+1. 정수  <br>
+ - 음수 (-), 소수 (.)를 제외한 양의 실수 <br>
+  - 8진수, 16진수 포함
+</p>
+  <p>
+  2. 실수  <br>
+   -실제 사용 가능한 모든 수
+</p>
+<p>
+   3. 문자형 상수 (String)   <br>
+   -일반적인 텍스트  <br>
+    - ""사용 <br>
+</p>
+<p>문자열과 숫자 추가 <br>
+두 개의 숫자를 더하면 합계가 반환되지만 숫자와 문자열을 추가하면 문자열이 반환됩니다.  <br>
+숫자와 문자열을 더하면 결과는 문자열이 됩니다!
+</p>
+
+
+</section>
+
+<section class="date1102" id ="date1102"> 
+    <hr>
+<p>11월 02일 진도</p>
+<h2>
+    변수 (varialbe)
+</h2>
+<p>
+1.변할 수 있는 값</p>
+<p>2. 값을 저장하는 장소나 이름</p>
+<p>3. 변수 선언문</p>
+<p> -var : 변수 재선언 & 변수 재할당 가능, 생략가능</p>
+<p>  ex) var abc</p>
+<p> -let : 재할당 가능, 재선언 불가능(같은이름의 변수 만드는것), 블록 스코프
+</p>
+<p>
+    -const : 변수 재선언 변수 재할당 불가능, 블록 스코프 , 초기값 반드시 선언
+</p>
+<p>
+    4. 선언과 동시에 값 입력가능
+</p>
+<p>
+    ex) var abc = 1
+    var abc = 1
+  <br>
+    var a, b, c
+  <br>
+    a = 1 
+   b =2
+    c =3 
+  <br>
+    var a, b, c = 1
+  <br>
+    var a= b = c =1
+</p>
+
+<h3>예약어가 있고 변수 이름 생성시 규칙이 좀 있음</h3>  
+<p>  * 이름 규칙 * <br>
+    1. 알파벳 숫자 사용가능<br>
+    2. 한글 , 특수문자 공백 사용불가<br>
+    (단 특수문자중 _는 사용가능)<br>
+    3, 첫번째 글자는 "_" 또는 알파벳만 가능<br>
+    4. 대소문자 반드시 구분<br>
+    5. 예약어 사용불가
+  </p>
+
+<h3>**네이밍 표기법 ** (팀작업 시작전에 정하고 감)
+</h3>
+<p>
+1. 스네이크 표기법 : student_name <br>
+2. 케밥 표기법 : student-name <br>
+3. 카멜표기법 : studentName <br>
+4. 파스칼 표기법 : StudentName
+</p>
+</section>
+
+
+
+
+
+
+</body>
+</html>

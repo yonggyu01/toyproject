@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>static method</title>
+    <script>
+        class Students{
+            constructor( name ){
+                this.name = name;
+            }
+            // myName(){
+            static myName(){
+                return "My name is " + this.name;
+            }
+        }
+
+        let student1 = new Students( "홍길동" );
+
+        // console.log("Student Name : ", student1.name);
+        // console.log(student1.myName()); // TypeError
+        console.log(Students.myName()); // My name is 클래스명
+    </script>
+</head>
+<body>
+    
+    </script>
+</body>
+</html>

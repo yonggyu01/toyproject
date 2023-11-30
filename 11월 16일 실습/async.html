@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="dsp"></div>
+    <script>
+function dspFunc(rst){
+    dsp.innerHTML = rst;
+}
+/*
+    // promise
+    let nns = new Promise (function(aa,bb){
+        aa('성공했옹');
+        bb();
+    }).then(function(value){
+        dspFunc(value)
+    },function(){})
+*/
+ //async로 위에 내용 바꿔보자
+ // async는 promise를 반환한다고 보면됨 promise 쓴것과 같은 효과임
+ async function kkk(){
+        return '성공했옹';
+        //  return Promise.resolve('성공했옹'); 이것처럼 만들어주는게 async임
+ }
+ kkk().then(
+    function(value){dspFunc(value)}
+ );
+// await 는 then 처럼 사용은 가능하나  무조건 성공만 할때 사용하면 편하고  then 은 성공과 실패위험이 있는경우 사용하면됨
+    </script>
+</body>
+</html>

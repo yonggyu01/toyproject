@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+$(document).ready(function(){
+    $('a:last').click(function(){
+        $('#pop').slideUp()
+    })
+    $('a:eq(0)').click(function(){
+        $('#pop').slideDown()
+    })
+    $('a:eq(1)').click(function(){
+        $('#pop').slideToggle()
+    })
+})
+    </script>
+    <style>
+        a{
+            display: inline-block;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        #pop{
+            width: 200px;
+            height: 500px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    
+<a href="#none"> 펼치기</a>
+<a href="#none"> 바꾸기</a>
+<div id="pop">
+    <a href="#none">접기</a>
+</div>
+<h1>그랴~!!</h1>
+</body>
+</html>

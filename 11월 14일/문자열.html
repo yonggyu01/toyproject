@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열관련 연습</title>
+    <style>
+        p{
+            font-size: 4em;
+        }
+    </style>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded',function(){
+        let h1 = document.querySelector('h1')
+        let result = document.querySelector('.resultbox')
+        let txt = '무궁화꽃이 피었습니다'
+        let b,bb,bbb,bbbb='';
+        for(i=0; i<txt.length; i++){
+            if(txt.charAt(i)=='꽃'){
+               
+                b = txt.charAt(i)
+                console.log(i)
+                bb = txt.slice(i,i+1)
+                bbb = txt.substring(i, i+1)
+                bbbb = txt.substr(i,bb.length)
+                let ptag = document.createElement('p')
+                let h1tag = document.createElement('h1')
+                
+                // ptag.innerHTML = b;
+                ptag.innerHTML = bb;
+                h1tag.innerHTML = bbb;
+                // ptag.innerHTML = bbbb;
+                result.appendChild(ptag)
+                result.appendChild(h1tag)
+            }
+        }
+
+        //1.slice (start, end)  -> 뒤에서부터 글자 빼려면 -값을 넣으면됨
+// 2. substring(start, end)
+// 3. substr(start, length)
+      
+
+
+        // 메소드 사용하게되면
+        let tttx = "javascript"
+        let rr = tttx.indexOf('j')
+        // 결과값으로  0
+        console.log(rr)  // 0
+        let rr = tttx.indexOf('J')
+        console.log(rr)  // -1
+        let rr = tttx.indexOf('i',2)
+        console.log(rr)  // 
+        // indexOf는 
+
+    })
+
+
+
+</script>
+
+<body>
+    <section>
+        <div class="stringbox">
+            <h1>문자열 부분추출</h1>
+        </div>
+    </section>
+    <div class="resultbox"></div>
+</body>
+</html>

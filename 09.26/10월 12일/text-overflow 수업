@@ -1,0 +1,31 @@
+
+
+ text -overflow
+ 오버플로어 되는 텍스트의 표시를 지정
+
+ *사용방법
+
+ text-overflow속성값
+
+ *속성값
+ 1. clip : 지정된 영역의 크기로 잘라낸다
+
+ 2.ellipsis : 지정된 영역의 크기에 맞게 말줄임표 표시됨
+ 
+             
+
+             **
+             position함께 사용하는것
+             left right top bottom zindex
+
+             margin auto  -> width 가 필수값
+
+            position absolute  fixed 는 margin auto 적용불가
+
+
+            
+
+ text-overflow는 단독으로 사용불가
+         함께 사용해야하는 옵션이 두개 존재함
+          -> white-space(줄바꿈 속성임) : nowrap; (줄바꿈 없음) *한글은 글자단위로 줄바꿈됨  영어는 단어단위로 줄바꿈됨 
+          -> overflow : hidden; 넘치는 부분을 숨기게 해야함

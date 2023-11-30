@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class method</title>
+    <script>
+        // 함수 방식
+        /* function Student( name, birth_year ){
+            this.name = name;
+            this.birth_year = birth_year;
+            this.age = function(){
+                let date = new Date();
+                return date.getFullYear() - this.birth_year;
+            }
+        } */
+
+        // class 방식
+        class Student {
+            constructor( name, birth_year ){
+                this.name = name;
+                this.birth_year = birth_year;
+            }
+            age(){
+                let date = new Date();
+                return date.getFullYear() - this.birth_year;
+            }
+        }
+
+        let Student1 = new Student( "홍길동", 2002 );
+
+        console.log(
+            "name : ", Student1.name, "\n",
+            "birth year : ", Student1.birth_year, "\n",
+            "age : ", Student1.age(),
+        );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

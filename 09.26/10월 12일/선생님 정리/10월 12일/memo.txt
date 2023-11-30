@@ -1,0 +1,38 @@
+** border-radius
+Box Model 외각선의 곡률 지정
+
+* 사용방법
+border-radius:[length]
+
+* 속성 값
+1. length : 곡률의 크기 
+2. border-top-left-radius 으로 개별 지정 가능
+
+
+
+** text-overflow
+오버플로어 되는 텍스트의 표시를 지정
+
+* 사용 방법
+text-overflow:속성값
+
+* 속성값
+1. clip : 지정된 영역의 크기로 잘라낸다.
+2. ellipsis : 지정된 영역의 크기에 맞게 말줄임표 표시
+
+
+
+** 웹폰트 **
+1. 폰트가 없는 사용자에게도 동일한 폰트가 적용되도록 
+웹에 업로드 하여 사용하는 폰트
+2. ttf / otf / woff 등
+
+
+* 사용법
+@font-face {
+     font-family:폰트 이름;
+     src:url('폰트명.eot') format('eot'); /* IE8 이하 */
+     src:url('폰트명.eot') format('eot?') format('eot'); /* IE9 */
+     src:url('폰트명.woff') format('woff'); /* 최신 브라우저용 woff */
+     src:local('※'), url('폰트명.ttf') format('truetype');
+}

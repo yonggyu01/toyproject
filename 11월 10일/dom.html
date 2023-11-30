@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0;
+        margin: 0;}
+        img{vertical-align: top;
+            border: 0 none;
+        }
+        .imgbox p{
+            height: 200px;
+        }
+        #big_img{
+            position: absolute;
+            top:20px;
+            width: 800px;
+            height: 450px;
+            object-fit: contain;
+        }
+        h2{
+            font-size: 50px;
+            text-align: center;
+        }
+        
+        .imgbox{
+            border: 1px solid black;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.442);
+            width: 800px;
+            margin: 0 auto;
+            
+        }
+        .slidebox img{
+            width: 200PX;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        .slidebox{
+            display: flex;
+            flex-flow: row nowrap;
+            width: 8000px;;
+            position: absolute;
+        }
+        .thumb_img{
+            overflow: hidden;
+            position: relative;
+            height: 200px;
+        }
+
+        .box{
+            position: absolute;
+            left:72%;
+            border: 1px solid black;
+            width: 300px;
+            height: 680px;
+            overflow: hidden;
+        }
+        .box1{
+            position: absolute;
+            left:12%;
+            border: 1px solid black;
+            width: 300px;
+            height: 680px;  
+            overflow: hidden;
+    
+        }
+        #ba img,#bb img{
+            width: 100px;
+            height:100px;
+            object-fit: contain;
+
+        }
+        #reset{
+            font-size: 50px;
+            width: 300px;
+            height: 80px;
+            background: red;
+            color : white;
+            position: absolute;
+            top:85%;
+            left:43%;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.448);
+        }
+        #btn{
+            position: absolute;
+            top:30%;
+            right :0;
+            width: 80px;
+            height: 80px;
+            font-size: 80px;
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        window.onload= function(){
+            let box = document.querySelectorAll('#bb,#ba')
+            let bigimg = document.querySelector('#big_img')
+            let imgselect = document.querySelectorAll('.slidebox img')
+            let reset = document.querySelector('#reset')
+            reset.onclick = function(){
+                for(i=0;i<2;i++){
+                    box[i].innerHTML=''
+                    position = 0;
+                    slide.style.left = position + 'px' 
+                }
+                // bigimg.style.left = 560 +'px'
+                // bigimg.style.top =20 + 'px'
+            }
+            let position = 0;
+            let btn = document.querySelector('#btn')
+            let slide = document.querySelector('.slidebox')
+            btn.onclick =function(){
+                position -= 100 
+                slide.style.left = position + 'px' 
+     
+            }
+            function changeimg(item){
+                //html dom형식
+                // console.log(bigimg.src) -> 파일위치를 절대경로로 가져옴 c://user....엄청김
+                //dom core형식 
+                // console.log(bigimg.getAttribute('src'))  -> 이건 내가 src에 작성한 방식으로 가져옴 ../동물, 곤충사진/20160826.0103
+                // dom core형식에서는 내가 임의로 써둔 html 태그속성도  가져올수 있음
+                for(i=0; i<2; i++){
+                    let creatimg = document.createElement('img')
+                creatimg.setAttribute('src',item.getAttribute('src'))
+                box[i].appendChild(creatimg)
+                }
+           
+            }
+     
+            imgselect.forEach(function(item,idx){
+                item.addEventListener('click',function(){
+
+                    bigimg.setAttribute('src',item.getAttribute('src'))
+                    changeimg(item)
+                })
+
+            })
+            //마우스 다운 + 드래그 이벤트
+            bigimg.onmousedown =function(e){
+                let ex =  e.clientX - bigimg.getBoundingClientRect().left;
+                let ey =  e.clientY - bigimg.getBoundingClientRect().top;
+                bigimg.style.zIndex = 1000;
+                moooove(e.pageX, e.pageY)
+                function moooove(X , Y){
+                    bigimg.style.left = X - ex + 'px';
+                    bigimg.style.top = Y - ey + 'px';
+                }
+                function movingm(e){
+                    moooove(e.pageX, e.pageY)
+                }
+                document.addEventListener('mousemove',movingm)
+                bigimg.onmouseup = function(){
+                    document.removeEventListener('mousemove',movingm)
+                    bigimg.style.zIndex = 0;
+                    bigimg.onmouseup = null;
+                }
+            }
+            bigimg.ondragstart = function(){
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="ba" class="box1"></div>
+    <div id="bb" class="box"></div>
+    <a href="#none" id="reset">reset</a>
+    <section class="imgbox">
+    <p> <h2>소갈비 먹으러 오세요</h2>
+        <img src="../동물, 곤충사진/20160826.010330801020001i1.jpg" alt="" id="big_img">
+    </p>
+    <div class="thumb_img">    
+    <div class="slidebox">
+        <!-- tag에서도 변수설정이 가능하다   -->
+        <!-- <p data-id="title"> 이런식으로 하면 data는 var이고 id는 변수명이 된다. title은 값  -->
+            <!-- 단 이런경우 html dom 형식으로 불러올수 없고, dom core형식으로 getattribue 같은걸로   -->
+            <!-- 읽어와야 가능하다. -->
+            <!-- 태그에도 this를 사용할 수 있다. -->
+            <!-- 태그에 직접 onclick =함수명() 이렇게 작성시  파라매터로 this를 적게되면 this는 해당 이벤트를 실행시킨 자기 자신을 가르킨다. -->
+            <!-- this.src를 적는다면 함수 실행시 인자로 자기 주소를 넘겨주는것이 됨 -->
+        <img src="../동물, 곤충사진/image_readtop_2018_265364_15247057823291378.jpeg" alt="">
+        <img src="../동물, 곤충사진/나비.jpg" alt="">
+        <img src="../동물, 곤충사진/images (1).jpg" alt="">
+        <img src="../동물, 곤충사진/Bear_PNG23454.webp" alt="">
+        <img src="../동물, 곤충사진/20160826.010330801020001i1.jpg" alt="">
+        <img src="../동물, 곤충사진/34405_48954_249.jpg" alt="">
+        <img src="../동물, 곤충사진/BIMGIN0000353355_20191113032447196704.png" alt="">
+        <img src="../동물, 곤충사진/istockphoto-604896664-170667a.jpg" alt="">        
+        <img src="../동물, 곤충사진/png-transparent-two-penguins-bird-birds-penguin.png" alt="">
+        <img src="../동물, 곤충사진/잠자리.png" alt="">
+        <img src="../동물, 곤충사진/images (1).jpg" alt="">
+        <img src="../동물, 곤충사진/Bear_PNG23454.webp" alt="">
+    </div>
+        <a href="#none" id="btn">&gt;</a>
+    </div>
+</section>
+</body>
+</html>

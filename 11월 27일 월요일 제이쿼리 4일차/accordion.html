@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아코디언 효과</title>
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('h2').click(function(){
+            $('p').not($(this).next()).slideUp()
+            $(this).next().slideToggle()
+    })})
+    // not에 선택을 하면 해당 액션은 해당 선택된 태그는 작동안함
+
+</script>
+<style>
+    h2,p{
+        padding: 0;margin: 0;
+
+    }
+    h2{ font-size: 14px; cursor:pointer}
+    p{height: 100px;background-color: yellow;}
+
+</style>
+</head>
+<body>
+<div class="qna1">
+    <h2>질문1</h2>
+    <p>답변1</p>
+</div>
+<div class="qna2">
+    <h2>질문2</h2>
+    <p>답변1</p>
+</div>
+<div class="qna3">
+    <h2>질문3</h2>
+    <p>답변1</p>
+</div>
+
+    
+</body>
+</html>

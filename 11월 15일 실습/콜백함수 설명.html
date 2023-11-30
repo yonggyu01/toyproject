@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 5em;
+        }
+    </style>
+    <script>
+        window.onload =function(){
+/*
+            function First(){
+                let dsp = document.getElementById('display')
+                dsp.innerHTML = "hello!!"
+                
+            }
+            function Second(){
+                let hh1 = document.createElement('h1')
+                let dsp = document.getElementById('display')
+                hh1.innerHTML = "welcome"
+                dsp.appendChild(hh1)
+            }
+            First();
+            Second();
+                    // 시퀀스 제어
+        function dspfunc(a){
+            let dsp = document.getElementById('display')
+            dsp.innerHTML = a;
+            
+        }
+        function calc(num1, num2){
+            let rst = num1 + num2;
+         dspfunc(rst)  // 콜백함수 // 계산이 끝났는 안끝났는지 모르겠으나 dspfunc를 무조건 실행하게됨
+
+        }
+        let rtn_val = calc(50,5)
+        // 위 함수 2개가 함께 처리됨 , 하지만 계산 완료후  실행하는걸 제어할 수 없음
+*/
+
+        // 이걸 제어하기 위해서는
+        function dspfunc(a){
+            let dsp = document.getElementById('display')
+            dsp.innerHTML = a;
+            
+        }
+        function calc(num1, num2, callbackFunc){
+            let rst = num1 + num2;
+            callbackFunc(rst)  // 콜백함수 // 
+        }
+        let rtn_val = calc(50,5, dspfunc) //이런식으로 인자를 하나 더 주게되면
+        //  처리 자체를 파라매터 1 , 2, 3  순으로 받아서 처리하게됨
+        // 그래서 동작 진행을 보게되면 1 , 2를 받아서 처리가되면 3을 받아오게됨  
+        // 그래서 계산이 완료된 후 처리되었다는걸 알 수 있음
+    }
+
+
+        
+    </script>
+    
+</head>
+<body>
+    <div id="display"></div>
+</body>
+</html>

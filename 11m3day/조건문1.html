@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var i = prompt('비밀번호를 입력하세요','숫자만입력해줘');
+        var p = 0;
+        var t = setInterval(function(){
+
+        },1000)
+        if(i==1){
+            alert('정답입니다~ ')
+            document.write('<h1> 1입니다. <h1>')
+                document.body.style.fontSize = '8em'
+        }else if(i==2){ 
+            document.write('<h1> 2입니다 <h1>')
+                document.body.style.fontSize = '8em'
+            }else{
+                document.write('<h1>틀렸습니다</h1>')
+                document.body.style.fontSize = '8em'
+                
+     
+            }
+switch(i){
+    case  '1' : 
+     document.write('월요일인데요?')
+     break;
+     case '2' :
+         document.write('화요일인데요?')
+         break;
+     case '3' :
+         document.write('수요일인데요?')
+         break;
+     case '4' :
+         document.write('목요일인데요?')
+         break;
+     case '5' :
+         document.write('금요일인데요?')
+         break;
+}
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

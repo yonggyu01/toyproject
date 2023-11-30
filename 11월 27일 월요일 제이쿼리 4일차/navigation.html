@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비</title>
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.gnb li,.nav_bg').hover(function(){
+            $('.gnb ul ul,.nav_bg').stop().slideDown('fast')
+        },function(){
+            $('.gnb ul ul,.nav_bg').stop().slideUp('fast')
+        })
+    })
+
+</script>
+<style>
+    *{margin: 0;padding: 0;}
+    ul,li{list-style: none;}
+    a{text-decoration: none;}
+    header{padding-top: 80px;border-bottom:1px solid black ; height: 40px;}
+    .gnb h2{position: absolute; left:-99999px; top:-9999px}
+    .gnb ul{width: 1000px;height: 40px;margin: auto;background-color: #ccc;}
+    .gnb>ul>li{font-size: 20px;font-family: "나눔고딕";float:left;width: 20%;height: 40px;text-align: center;}
+    .gnb>ul>li>a{display: block;height: 40px;}
+    .gnb ul ul{padding-top: 20px; display: none;}
+    .nav_bg{width: 100%; height: 250px;background-color:#524f4f;display: none;}
+</style>
+
+</head>
+<body>
+    <header>
+        <nav class="gnb">
+            <h2>주요메뉴</h2>
+            <ul>
+                <li>
+                    <a href="#none"> 주메뉴</a>
+                        <ul>
+                            <li><a href="#none">하위메뉴</a></li>
+                            <li><a href="#none">하위메뉴</a></li>
+                            <li><a href="#none">하위메뉴</a></li>
+                            <li><a href="#none">하위메뉴</a></li>
+                            <li><a href="#none">하위메뉴</a></li>
+                            <li><a href="#none">하위메뉴</a></li>
+                        </ul>
+                </li>
+                <li>
+                    <a href="#none"> 주메뉴</a>
+                        <ul>
+                            <li><a href="#none">하위메뉴</a></li>
+                            <li><a href="#none">하위메뉴</a></li>
+                            <li><a href="#none">하위메뉴</a></li>
+                            <li><a href="#none">하위메뉴</a></li>
+                            <li><a href="#none">하위메뉴</a></li>
+                        </ul>
+                </li>
+                <li>
+                    <a href="#none"> 주메뉴</a>
+                        <ul>
+                            <li><a href="#none">하위메뉴</a></li>
+                            <li><a href="#none">하위메뉴</a></li>
+                            <li><a href="#none">하위메뉴</a></li>
+                            <li><a href="#none">하위메뉴</a></li>
+                            <li><a href="#none">하위메뉴</a></li>
+                        </ul>
+                </li>
+              
+            </ul>
+            <div class="nav_bg"></div>
+        </nav>
+    </header>
+    <main></main>
+
+
+</body>
+</html>

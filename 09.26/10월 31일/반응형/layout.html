@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDIGO</title>
+    <style>
+        /* 초기화 */
+        body, h1, h2, h3, div, p, ul, li{
+            margin: 0;
+            padding: 0
+        }
+        ul, li{
+            list-style: none
+        }
+        body{
+            font-family: "맑은 고딕", sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        a{
+            text-decoration: none;
+            color: inherit
+        }
+        img{
+            border: 0 none;
+            vertical-align: top
+        }
+        hr{
+            display: block;
+            border: 0 none;
+            height: 1px;
+            background:#999;
+        }
+
+        /* layout */
+        .wrap{
+            min-width: 320px
+        }
+
+        .header{
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .logo{
+            font-weight: 300;
+            color: #3f51b5;
+            margin-left: 50px
+        }
+
+        .gnb{
+            width: 450px;
+            margin-right: 50px
+        }
+        .gnb ul{
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            color: #3f51b5
+        }
+
+        .menu_open{
+            position: absolute;
+            right: 50px;
+            top: 32px;
+            display: none
+        }
+
+        .main_image{
+            margin-bottom: 100px
+        }
+        .main_image img{
+            width: 100%;
+            /* height:100% */
+        }
+
+        .we_are{
+            max-width: 1200px;
+            display: flex;
+            align-items: flex-start;
+            margin: 0 auto 100px
+        }
+        .we_are h2{
+            width: 50%;
+            font-size: 40px;
+            font-weight: 300;
+            color: #3f51b5
+        }
+        .we_are p{
+            width: 50%;
+            padding-left: 20px;
+            border-left: 1px solid #999;
+            box-sizing: border-box
+        }
+
+        .main_content{
+            max-width: 1200px;
+            margin: 0 auto 100px
+        }
+        .main_content ul{
+            display: flex;
+            gap: 20px
+        }
+        .main_content li{
+            width: 25%;
+            text-align: center
+        }
+        .main_content li img{
+            display: block;
+            width: 60px;
+            margin:0 auto 30px
+        }
+        .main_content h3{
+            font-size: 16px;
+            font-weight: 300;
+            color: #3f51b5;
+            margin-bottom: 30px
+        }
+
+        .divider{
+            max-width: 1200px;
+            margin: 0 auto 100px
+        }
+
+        .work{
+            margin-bottom: 100px
+        }
+        .work h2{
+            max-width: 1200px;
+            font-size: 40px;
+            font-weight: 300;
+            color: #3f51b5;
+            margin:0 auto 100px
+        }
+        .work ul{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .work li{
+            width: 25%
+        }
+        .work li img{
+            width: 100%
+        }
+
+        .s_divider{
+            width: 50px;
+            margin: 0 auto 100px
+        }
+
+        .blog{
+            max-width: 1200px;
+            margin:0 auto 100px;
+            display: flex;
+        }
+        .blog h2{
+            width: 25%;
+            font-size: 40px;
+            font-weight: 300;
+            color: #3f51b5;
+            margin:0 auto 100px
+        }
+        .blog ul{
+            width: 75%;
+            display: flex;
+            justify-content: space-between
+        }
+        .blog ul li{
+            width:32%
+        }
+        .blog ul li img{
+            width: 100%;
+            display: block
+        }
+        .blog ul li span{
+            font-size: 12px;
+            color: #999;
+            display: block;
+            margin: 5px 0 10px
+        }
+
+        .footer{
+            padding-bottom: 30px;
+            color: #3f51b5;
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <h1 class="logo">
+                INDIGO
+            </h1>
+
+            <nav class="gnb">
+                <ul>
+                    <li><a href="#none">HOME</a></li>
+                    <li><a href="#none">WE ARE</a></li>
+                    <li><a href="#none">WORK</a></li>
+                    <li><a href="#none">BLOG</a></li>
+                    <li><a href="#none">CONTACT US</a></li>
+                </ul>
+            </nav>
+
+            <a href="#none" class="menu_open">
+                <img src="images/nav_btn.png" alt="메뉴 열기">
+            </a>
+        </header>
+
+        <main class="main">
+            <div class="main_image">
+                <img src="images/p-images/slide01.jpg" alt="">
+            </div>
+
+            <section class="we_are">
+                <h2>WE ARE</h2>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+            </section>
+
+            <section class="main_content">
+                <ul>
+                    <li>
+                        <a href="#none">
+                            <img src="images/s-images/promo01.png" alt="">
+                            <h3>HOME</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <img src="images/s-images/promo02.png" alt="">
+                            <h3>WE ARE</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <img src="images/s-images/promo03.png" alt="">
+                            <h3>WORK</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <img src="images/s-images/promo04.png" alt="">
+                            <h3>BLOG</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <hr class="divider">
+
+            <section class="work">
+                <h2>WORK</h2>
+                <ul>
+                    <li><img src="images/p-images/work01.jpg" alt=""></li>
+                    <li><img src="images/p-images/work02.jpg" alt=""></li>
+                    <li><img src="images/p-images/work03.jpg" alt=""></li>
+                    <li><img src="images/p-images/work04.jpg" alt=""></li>
+                    <li><img src="images/p-images/work05.jpg" alt=""></li>
+                    <li><img src="images/p-images/work06.jpg" alt=""></li>
+                    <li><img src="images/p-images/work07.jpg" alt=""></li>
+                    <li><img src="images/p-images/work08.jpg" alt=""></li>
+                </ul>
+            </section>
+
+            <hr class="s_divider">
+
+            <section class="blog">
+                <h2>BLOG</h2>
+                <ul>
+                    <li>
+                        <a href="#none">
+                            <img src="images/p-images/blog01.jpg" alt="">
+                            <span class="b_date">OCT 30, 2016</span>
+                            There are many variations of passages of Lorem Ipsum
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <img src="images/p-images/blog02.jpg" alt="">
+                            <span class="b_date">OCT 30, 2016</span>
+                            There are many variations of passages of Lorem Ipsum
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <img src="images/p-images/blog03.jpg" alt="">
+                            <span class="b_date">OCT 30, 2016</span>
+                            There are many variations of passages of Lorem Ipsum
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>COPYRIGHT © INDIGO</p>
+        </footer>
+    </div>
+</body>
+</html>

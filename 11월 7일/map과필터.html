@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const array1 = [1,2,3,5,6]
+        let array2 = array1.map((item)=>{
+        return  item = item*2;})
+        console.log(array2) 
+        let map2 = array2.map((item)=>{
+            return item*=3;
+        })
+        console.log(map2)
+        let map3 =[];
+        for(i=0; i<map2.length; i++){
+            map3[i] = array2[i]*3
+        }
+        console.log(map3)
+        let map4 =[];
+        map2.forEach(function(item, idx){
+            map4[idx] = item * 2        
+        });        
+        console.log(map4)  
+        const ara = [
+            {name : 'jone', age : 25},
+            {name : 'doe', age : 21}
+        ]
+        const map = ara.map(function(item){
+            var obj = {};           
+            console.log(item.key)
+            document.write(item.key)
+            // obj[item.key] = item.age;
+            // console.log(obj[item.key])
+        })
+        // 난 이거 잘못된 방법같음
+        // item.key라고 하면 key값이  2개인데   둘다 넣겠다는거 아님?
+        const map1 = ara.map(function(item){
+            var obj1 = {};   
+            obj1.age = item.age        
+            console.log(obj1)
+            document.write(obj1)
+        })
+ 
+        //필터 사용해서 배열에 짝수값만 담아줘
+        var aqq = [1,2,5,6,7,8,10]
+        const filter1 = aqq.filter(function(item){
+            return item %2 === 0;
+        })
+        // 10보다 큰값  return  item >10 ; 이런식으로 넣어주면 결과값이 참이면 가져옴
+        console.log(filter1)
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

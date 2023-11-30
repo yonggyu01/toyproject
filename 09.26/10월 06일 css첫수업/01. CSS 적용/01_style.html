@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>스타일 작성</title>
+		<style type="text/css">
+			/*
+				selector(선택자 : 누구한테) {
+					property(속성 : 무슨 효과) : value(값 : 얼만큼) ;
+					property(속성 : 무슨 효과) : value(값 : 얼만큼)
+				}
+			*/
+
+			/*
+				# 태그 (재)정의 스타일 : 요소 선택자
+				1. HTML 태그(요소)에 직접 효과 작성
+				2. 해당 태그 모두에 자동으로 효과 적용
+
+				a { color : red }
+			*/
+			body {
+				/* background-color : [색상이름] 또는 [색상코드] 또는 [rgb(a)] */
+				background: #ddd
+			}
+			a {
+				text-decoration: none
+			}
+			p {
+				color: tomato
+			}
+
+			/*
+				# 사용자 정의 스타일 : 클래스 방식
+				1. 작성 :  . 클래스이름 { 효과 작성 }
+				2. 적용 :  <elem  class="클래스이름">
+				3. 여러 번 적용 가능
+			*/
+			.bg {
+				background : teal
+			}
+
+			/*
+				# 사용자 정의 스타일 : 아이디 방식
+				1. 작성 :  # 아이디이름 { 효과 작성 }
+				2. 적용 :  <elem  id="아이디이름">
+				3. 하나의 이름을 여러 번 적용 가능하지만
+				   하나의 이름을 같은 페이지에서 한 번만 사용하는 것이 원칙
+			*/
+			#brd {
+				border: 5px solid red
+			}
+
+			/*
+				# 다중 선택자
+				1. 여러 개의 요소에 같은 효과 작성
+			*/
+			/* h2 { font-family: "궁서" }
+			p { font-family: "궁서" } */
+			h2, p {
+				font-family: "궁서"
+			}
+
+			/*
+				# 자식 요소 선택자 : 자식 요소만 선택
+			*/
+			div > a {
+				font-size: 30px
+			}
+
+			/*
+				# 후손 요소 선택자 : 자식 요소, 후손 요소 선택
+			*/
+			div a {
+				background: tomato;
+				color: #fff
+			}
+
+		</style>
+	</head>
+	<body>
+		<h2 class="bg">제목 테스트</h2>
+		<p id="brd">내용 텍스트</p>
+		<p class="bg">내용 텍스트</p>
+		<p id="brd">내용 텍스트</p>
+		<p class="bg">내용 텍스트</p>
+		
+		<a href="#">링크 텍스트</a>
+		
+		<div>
+			<p> 
+				<a href="#">div > p > a 요소</a>
+			</p>
+		</div>
+
+		<div> 
+			<a href="#">div > a 요소</a>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>for ~ of</title>
+<style>
+body{font-size:24px}
+</style>
+<script>
+    var subject = ["HTML", "CSS", "JAVASCRIPT"];
+    
+    // console.log(subject);
+    // document.write(subject);
+
+    /* document.write(subject[0]+"<br>");
+    document.write(subject[1]+"<br>");
+    document.write(subject[2]); */
+
+    /* var num = prompt("숫자를 입력하세요.", "0, 1, 2")
+    document.write(subject[num]); */
+
+    /* for( num = 0; num < subject.length; num++ ){
+        document.write(subject[num] +"<br>");
+    } */
+
+    // for( 배열변수의 값을 하나씩 나누어 담을 변수  of  배열이 들어있는 변수 )
+    /* for( item of subject ){
+        document.write(item +"<br>");
+    } */
+
+    let itemList = "";
+    for( item of subject ){
+        // itemList = itemList + item + "<br>";
+        itemList += item +"<br>";
+    }
+    document.write(itemList);
+
+    document.write("<hr>");
+
+    let subject2 = "JAVASCRIPT";
+    let itemList2 = "";
+    for( item of subject2 ){
+        itemList2 += item +"<br>";
+    }
+    document.write(itemList2);
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

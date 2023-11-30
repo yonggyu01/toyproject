@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="테이블연습.css">
+    <title>테이블예제</title>
+</head>
+<body>
+    <table summary="중고폰가격비교표">
+        <caption>중고폰</caption>
+    <thead>
+        <tr>
+            <th>구분</th>
+            <th id="s">삼성</th>
+            <th id="a">애플</th>
+        </tr>
+    </thead>
+    <!-- <tfoot>
+        <tr>
+            <th>합계</th>
+            <td>370,000</td>
+            <td>390,000</td>
+        </tr>
+    </tfoot>    -->
+        <tbody>
+        <tr>
+            <th id ="p">스마트폰</th>
+            <td headers="s p">150,000</td>
+            <td headers="a p">160,000</td>
+        </tr>
+        <tr>
+            <th id ="t">태블릿</th>
+            <td headers="s t">170,000</td>
+            <td headers="a t">190,000</td>
+        </tr>
+    </tbody>
+    <form name="요소" action="insert.php" method ="get">
+        <p> text
+        </p>
+        <input type="text" name="문서" id="그냥" placeholder="입력하세요" minlength="2" maxlength="10">
+        <input type="button" value="확인">
+    <br>password
+        <input type="password" name="" id="" value="확인"><br>
+        checkbox  여러개 선택가능
+        <input type="checkbox" name="2" id="" value="">1
+        <input type="checkbox" name="2" id="" value="">2
+        <input type="checkbox" name="2" id="" value="">3<br>
+        radio  name의 값이 같은것 중에 하나만 
+        <input type="radio" name="1" id="" value="확인">유
+        <input type="radio" name="1" id="" value="확인">무<br>
+
+        image
+        <input type="image" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/168506780095896895.jpg?gif=1&w=480&h=480&c=c&webp=1" width="50px" height="50px" value="확인"><br>
+        hidden
+        <input type="hidden" name="" id="" value="확인"><br>
+        file
+        <input type="file" name="" id="" value="확인"><br>
+        button
+        <input type="button" name="" id="" value="확인"><br>
+        submit
+        <input type="submit" name="" id="" value="확인"><br>
+        reset
+        <input type="reset" name="" id="" value="확인"><br>
+        
+    </form>
+    </body>
+</html>

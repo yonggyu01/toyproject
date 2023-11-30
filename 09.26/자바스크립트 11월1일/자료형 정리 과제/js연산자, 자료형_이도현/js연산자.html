@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>js연산자</title>
+</head>
+<body>
+   <h1>--javascript의 기본식, 연산자--</h1>
+   
+   <h2>-기본식-</h2>
+   <h3>기본 키워드 및 JavaScript의 일반 식</h3>
+   <ol>
+      <li>this</li>
+      <p>this 키워드는 실행 문맥의 특별한 속성을 가리킵니다.</p>
+      <li>funtion</li>
+      <p>function 키워드는 함수를 정의합니다.</p>
+      <li>class</li>
+      <p>class 키워드는 클래스를 정의합니다.</p>
+      <li>yield</li>
+      <p>생성기 함수를 일시정지 및 재개합니다.</p>
+      <li>async fuction</li>
+      <p>async function은 비동기 함수 표현식을 정의합니다.</p>
+      <li>await</li>
+      <p>비동기 함수를 일시 중지했다가 다시 시작하고 promise의 resolution/rejection을 기다립니다.</p>
+      <li>[]</li>
+      <p>배열 초기자 및 리터럴 구문.</p>
+   </ol>
+   <br>
+
+   <h2>-좌변식-</h2>
+   <h3>좌변값은 할당 대상입니다</h3>
+   <ol>
+      <li>new</li>
+      <p>new 연산자는 생성자의 인스턴스를 만듭니다.</p>
+      <li>new.target</li>
+      <p>생성자 문맥에서, new.target은 new에 의해 호출된 생성자를 말합니다.</p>
+      <li>super</li>
+      <p>super 키워드는 부모 생성자를 호출합니다.</p>
+   </ol>
+   <br>
+
+   <h2>-증가 및 감소-</h2>
+   <h3>접두/접미 증감 연산자입니다.</h3>
+   <ol>
+      <li>A++</li>
+      <p>접미 증가 연산자.</p>
+      <li>A--</li>
+      <p>접미 감소 연산자.</p>
+      <li>++A</li>
+      <p>접두 증가 연산자.</p>
+      <li>--A</li>
+      <p>접두 감소 연산자.</p>
+   </ol>
+   <br>
+
+   <h2>-단항 연산자-</h2>
+   <h3>단항 연산은 피연산자가 하나뿐인 연산입니다.</h3>
+   <ol>
+      <li>delete</li>
+      <p>delete 연산자는 객체에서 속성을 지웁니다.</p>
+      <li>void</li>
+      <p>void 연산자는 식의 반환값을 버립니다.</p>
+      <li>typeof</li>
+      <p>typeof 연산자는 주어진 객체의 형을 판별합니다.</p>
+      <li>+</li>
+      <p>단항 더하기 연산자는 피연산자를 숫자로 변환합니다.</p>
+      <li>-</li>
+      <p>단항 부정 연산자는 피연산자를 숫자로 변환한 뒤 부호를 바꿉니다.</p>
+      <li>!</li>
+      <p>논리 NOT 연산자.</p>
+   </ol>
+   <br>
+
+   <h2>-산술 연산자-</h2>
+   <h3>산술 연산자는 피연산자로 숫자 값(리터럴이나 변수)을 취하고 숫자 값 하나를 반환합니다.</h3>
+   <ol>
+      <li>+</li>
+      <p>더하기 연산자.</p>
+      <li>-</li>
+      <p>빼기 연산자.</p>
+      <li>/</li>
+      <p>나누기 연산자.</p>
+      <li>*</li>
+      <p>곱하기 연산자.</p>
+      <li>%</li>
+      <p>나머지 연산자.</p>
+      <li>**</li>
+      <p>거듭제곱 연산자.</p>
+   </ol>
+   <br>
+
+   <h2>-이진 비트 연산자-</h2>
+   <h3>비트 연산자는 피연산자를 32비트 집합(0과 1)으로 다루고 표준 JavaScript 숫자 값을 반환합니다.</h3>
+   <ol>
+      <li>&</li>
+      <p>비트 AND.</p>
+      <li>|</li>
+      <p>비트 OR.</p>
+   </ol>
+   <br>
+
+   <h2>-이진 논리 연산자-</h2>
+   <h3>논리 연산자는 보통 사용될 때 불리언(논리) 값으로 사용되고, 불리언 값을 반환합니다.</h3>
+   <ol>
+      <li>&&</li>
+      <p>논리 AND.</p>
+      <li>||</li>
+      <p>논리 OR.</p>
+      <li>??</li>
+      <p>Nullish 통합 연산자.</p>
+   </ol>
+   <br>
+
+   <h2>-삼항 연산자-</h2>
+   <h3>조건부 연산자는 조건의 논리값에 따라 두 값 중 하나를 반환합니다.</h3>
+   <ol>
+      <li(condition ? ifTrue : ifFalse)li>
+   </ol>
+   <br>
+
+   <h2>-할당 연산자-</h2>
+   <h3>할당 연산자는 값을 그 우변 피연산자의 값에 따라 좌변 피연산자에 할당합니다.</h3>
+   <ol>
+      <li>=</li>
+      <p>할당 연산자.</p>
+      <li>*=</li>
+      <p>곱셈 할당.</p>
+      <li>**=</li>
+      <p>거듭제곱 할당.</p>
+      <li>/=</li>
+      <p>나눗셈 할당.</p>
+      <li>%=</li>
+      <p>나머지 할당.</p>
+      <li>+=</li>
+      <p>덧셈 할당.</p>
+      <li>-=</li>
+      <p>뺄셈 할당</p>
+      <li>&=</li>
+      <p>비트 AND 할당.</p>
+      <li>^=</li>
+      <p>비트 XOR 할당.</p>
+      <li>|=</li>
+      <p>비트 OR 할당.</p>
+      <li>&&=</li>
+      <p>논리적 AND 할당.</p>
+      <li>||=</li>
+      <p>논리적 OR 할당.</p>
+   </ol>
+   <br>
+</body>
+</html>

@@ -1,0 +1,45 @@
+** 반복문 **
+1. 일정한 규칙을 가지고 있는 문장을 직접 작성하지 않고
+   여러 번 실행시키는 문장
+2. 조건(배열, 숫자 범위) + 반복문
+3. for, for..in(속성 반복), for..of(값 반복)
+4. while
+5. do while
+
+** 반복 속성 메소드 **
+6. map() - 배열
+7. filter() - 배열
+
+
+
+* map()
+1. 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환    
+2. Array.map(callback(currentValue[, index[, array]])[, thisArg])
+Array.map( 배열을 분리하여 저장할 변수, function(){ 실행할 문장} )
+
+- callback
+새로운 배열 요소를 생성하는 함수. 다음 세 가지 인수 사용
+
+--- currentValue : 처리할 현재 요소.
+--- index[Optional] : 처리할 현재 요소의 인덱스.
+--- array[Optional] : map()을 호출한 배열.
+
+- thisArg Optional
+callback을 실행할 때 this로 사용되는 값.
+
+3. 반환 값
+배열의 각 요소에 대해 실행한 callback의 결과를 모은 새로운 배열
+
+
+
+* filter()
+1. 배열을 순서대로 불러 각 요소에 대해 callback 함수을 실행하고
+결과가 true인 요소들만으로 이루어진 새로운 배열을 반환
+2. Array.filter(callback(element[, index[, array]])[, thisArg])
+- callback function : 각 요소의 조건을 판단할 함수로
+true를 반환하면 요소를 유지하고 false를 반환하면 해당 요소 제외
+- 인수
+  - element - 배열의 현재 요소
+  - index(Optional) - 배열의 현재 요소의 인덱스
+  - array(Optional) - 호출한 배열
+- thisArg(Optional) : callback함수를 실행할때 this로 사용되는 값

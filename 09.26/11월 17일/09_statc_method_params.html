@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>static method</title>
+    <script>
+        class Students{
+            constructor( name ){
+                this.name = name;
+            }
+            static myName(get_name){
+                return "My name is " + get_name;
+            }
+        }
+
+        let student1 = new Students( "홍길동" );
+        // console.log(Students.myName()); // My name is 클래스명
+        // console.log(Students.myName("김철수"));
+        console.log(Students.myName(student1.name));
+    </script>
+</head>
+<body>
+    
+    </script>
+</body>
+</html>

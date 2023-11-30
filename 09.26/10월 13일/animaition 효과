@@ -1,0 +1,40 @@
+**animation
+ 시작하자마자 바로 동작함 (이벤트 없이 작업을 시킬때)
+ (동작이 필요한 ) hover같은 속성하고는 다름
+
+css 의 속성값 변화를 애니메이션
+
+1. @keyframes : 효과 작성, 키프레임 지정  -> 애니메이션을 만들고
+ -from : 시작프레임 설정
+- to 끝 프레임 설정
+- 중간 키프레임 :  %단위로 지정
+
+2. animation : 효과적용  -> 이거로  만든 애니메이션을 시키는 개념
+
+ animation-name : 설정된 keyframes 지정
+ animation-duration : 실행 시간 지정
+ animation-iteration-count : 반복횟수 지정
+ animation-timing-function : 속도 형태 지정
+ animation-delay 대기시간 지정
+ animation-direction : 진행형태 지정
+
+
+      @keyframes aniTest{
+            from{opacity:1.0;transform:rotate(0deg)}
+            50%{opacity:0.1}
+            to{opacity:1.0;transform:rotate(360deg)}
+        }
+
+        img{
+            animation: aniTest 4s ease-in-out infinite alternate;
+            /* 
+            animation-name : 설정된 keyframes 지정
+            animation-duration : 실행 시간 지정
+            animation-iteration-count : 반복횟수 지정
+            animation-timing-function : 속도 형태 지정
+            animation-delay 대기시간 지정
+            animation-direction : 진행형태 지정 (normal,alternate ,reverse 등등)
+            */
+        
+        
+        }

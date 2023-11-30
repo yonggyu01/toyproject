@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+    <script>
+        // 객체 생성 : 함수 방식
+        /* function Student( name, age ){
+            // Student.name
+            this.name = name;
+            this.age = age
+        } */
+
+        // 객체 생성 : class 방식
+        class Student {
+            constructor( name, age ){
+                this.name = name;
+                this.age = age
+            }
+        }
+
+        let Student1 = new Student( "홍길동", 22 );
+
+        console.log(
+            "name : ", Student1.name,
+            "age : ", Student1.age
+        );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

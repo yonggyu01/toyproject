@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload= function(){
+            function printText(){
+            // document.forms[0].elements[0].value = "글자출력하기"
+            // 클래스는 브라우저에서 처리 id값은 메모리에서 처리해야함.. 그래서 id는 별로임?
+            document.getElementsByClassName[0]  <-배열형태임
+            document.getElementsByTagName[0] <- 배열형태임
+            document.getElementsByTagNameNS('url','태그이름').value = ..
+            document.getElement   s < 이게 붙어있으면 여러요소를 한번에 가져와서 무조건 배열형태로 만들어줌  ByTagName[0] <- 이렇게 해야 개별요소로 선택됨
+            document.querySelector (선택자명)  = > html문서상 맨위에 있는 선택요소 가져옴 클래스가 여러개면 맨위 클래스 하나
+            document.querySelectorAll (선택자명,... 여러개 선택가능)  = > 유사배열형태로 가져오나  순서는 html 문서에 써있는 순서 
+        }
+        }
+   
+    </script>
+</head>
+<body>
+    <form action="" method="get" name="form1">
+        <p>버튼을클릭하면텍스트필드에글자가나타납니다</p>
+        <p class="txt_box">
+            <input type="text" id="txt_id" class="txt_cls">
+            <button type="button" onclick="printText()">글자출력</button>
+        </p>
+
+    </form>
+</body>
+</html>

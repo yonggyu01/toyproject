@@ -1,0 +1,24 @@
+** 입력 양식 (Web Form) **
+사용자가 페이지에 값을 전달하는 모든 형식
+
+
+
+** form **
+1. 모든 양식은 <form> ~ </form> 안에서 작성
+2. 모든 양식은 이름(name AND id) 입력
+3. 대부분의 양식은 <input> 태그의 "type" 속성으로 정의
+    <input type="종류 선언">
+
+<input  type="    ">
+
+* type 속성
+1. text
+2. password
+3. checkbox
+4. radio
+5. image
+6. file
+7. hidden
+8. button
+9. reset
+10. submit

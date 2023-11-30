@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+.bo1{
+    width: 800px;
+    background-color: aqua;
+}
+.bo2{
+    width: 800px;
+    padding: 100px;
+    color : white;
+    background-color: black;
+}
+.bo3{
+    width: 800px;
+    padding: 100px;
+    border: 100px solid white;
+    background-color: yellow;
+}
+.bo4{
+    width: 100%;
+    background-color: magenta;
+}
+.bo5{
+    width: 100%; 
+    padding: 100px;
+    background-color: beige;
+    box-sizing: border-box;
+}
+.bo6{
+    width: auto; 
+    background-color: blanchedalmond;
+}
+.bo7{
+    width: auto; 
+    background-color: blanchedalmond;
+    padding: 200px;
+}
+.bo8{
+    width: 80%; 
+    background-color: brown;
+}
+.bo9{
+    width: 80%; 
+    padding: 5%;
+    background-color: aqua;
+}
+.bo10{
+    width: 80%; 
+    padding: 100px;
+    background-color: yellow;
+}
+.bo11{
+    /* width: 80%;  */
+     /* box-sizing: border-box; */
+    width:calc(80% - 200px);
+    padding: 100px;
+    background-color: blueviolet;
+   
+}
+        </style>
+
+</head>
+<body>
+    <div class="bo1">
+        width 800px
+    </div>
+    <div class="bo2">
+        width 800px  padding 100px
+    </div>
+    <div class="bo3">
+        width 800px  padding 100px border 100px
+    </div>
+    <div class="bo4">
+        width 100%  
+    </div>
+    <div class="bo5">
+        width 100% 
+        padding 100px 
+    </div>
+    <div class="bo6">
+        width auto 
+    </div>
+    <div class="bo7">
+        width auto 
+        padding 100px
+    </div>
+    <div class="bo8">
+        width 80% 
+    </div>
+    <div class="bo9">
+        width 80% 
+        padding 5%
+    </div>
+    <div class="bo10">
+        width 80% 
+        padding 100px  간격이 오류남 총 간격 80% 맞추려면
+        
+    </div>
+    <div class="bo11">
+        width 80% 
+        content area + padding 100px = width 80%
+        2가지 방법  calc속성으로 width: calc(80% - 200px)  해당기능 사용시 띄어쓰기 필수 but 넓이에만 계산되어 적용되기 때문에 높이값에는 적용이 안되므로 정렬에 문제가 발생함
+        혹은 box-sizing : border-box  : 해당기능은 높이와 넓이 전부 적용되기 때문에 정렬에는 문제가 없음
+        선택적으로 
+    </div>
+</body>
+</html>

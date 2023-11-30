@@ -1,0 +1,7 @@
+h1:hover{color :rgba(0, 132, 255, 0.76)}
+
+.공지사항{font-size : 5px;
+          border: 5px dashed black;
+          font-style: italic;   
+          text-decoration: double;
+}

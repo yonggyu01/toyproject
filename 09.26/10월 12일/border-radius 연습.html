@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#borderBox ul{
+    text-align:center;
+    color:black;
+}
+#borderBox ul li{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    list-style: none;
+    float:left;
+    margin-right:20px;
+}
+#borderBox ul li:nth-child(3){
+    width: 200px;
+}
+.menu{
+    border:2px solid blue;
+ /* 상자를 공으로 만들고 싶으면 radius를 상자 크기의 50%를 지정해주면 원 모양으로 바뀜  */
+}
+.menu:first-child,.menu:nth-child(3){
+    border-radius: 50%;
+}
+.menu:nth-child(4){
+    border-bottom-left-radius: 20%;
+    border-top-right-radius: 30%;
+}
+        </style>
+
+</head>
+<body>
+ <h1>border-radius</h1>
+ <div id="borderBox">
+    <ul>
+        <li class="menu">Menu</li>
+        <li class="menu">Menu</li>
+        <li class="menu">Menu</li>
+        <li class="menu">Menu</li>
+        <li class="menu">Menu</li>
+        <li class="menu">Menu</li>
+    </ul>
+ </div>
+
+
+</body>
+</html>

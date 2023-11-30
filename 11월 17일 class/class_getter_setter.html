@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+
+class School {
+    constructor(teacher , schoolName){
+        this.teacherName = teacher;
+        this.schoolName = schoolName;
+
+    }
+    get full(){
+        return '학교이름 ' + this.teacherName + ' 선생님이름 ' + this.schoolName ;
+    }
+    set full(nn){
+        return this.teacherName = nn
+    }
+    teachers(){
+        return this.full + this.teacherName + ' 바보 ';
+    }
+   
+}
+
+let aa = new School('강나미','서울대학교');
+console.log(aa.teachers())
+aa.full = 'xxx'
+console.log(aa.full)
+
+
+
+</script>
+
+</head>
+
+
+<body>
+    
+</body>
+</html>

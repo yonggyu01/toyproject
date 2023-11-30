@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       document.addEventListener('DOMContentLoaded',function(){
+        var button = document.querySelector('button')
+        var box = document.querySelector('.box')
+        var ptag;
+        var inputb = document.querySelector('input')
+        inputb.addEventListener('click',function(){
+            ptag= document.createElement('h2')
+            ptag.innerHTML = '다른버튼을 눌렀네?'
+            box.appendChild(ptag)
+            start('다른버튼');
+        })
+        button.addEventListener('click',function(){
+            ptag= document.createElement('p')
+            ptag.innerHTML = '함수를 실행했습니다'
+            box.appendChild(ptag)
+            start('첫번째버튼');
+        })
+        function start(a){
+            alert(a+'함수실행해서 좋아?'+'\n rksekfkQld')
+            }
+            //함수를 재사용성을 높이는 방법도 생각해보자...
+            
+
+
+       }) 
+     
+    </script>
+    <style>
+        .button{
+            width: 800px;
+            margin: 0 auto 50px;
+           padding: 100px 50px;
+           
+        }
+        button{
+            width: 220px;
+            height: 100px;
+            background: red;
+            color:white;
+            border: 0 none;
+
+            border-radius: 20px;
+            font-size: 20px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.432);
+            margin-right: 40px;
+        }
+        input{
+            width: 220px;
+            height: 100px;
+            background: red;
+            color:white;
+            border: 0 none;
+            border-radius: 20px;
+            font-size: 20px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.432);
+        }
+        .box{
+            width: 800px;
+            margin: auto;
+        }
+        .box p{
+            font-size: 30px;
+            text-align: center;
+            /* position: absolute; */
+            top:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="button">
+        <button type="button">눌러주세요</button>
+        <input type="button" value="다른버튼이에요"> 
+    </div>
+    <div class="box"></div>
+</body>
+</html>

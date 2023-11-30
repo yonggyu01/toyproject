@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>section{
+        border: 5px solid black;
+    }</style>
+</head>
+<body>
+    
+<div class="qgh">
+    <p class="q23">qhlqh</p>
+</div>
+<section>
+    <a href="#none" id="qqqq">hlkjeh</a>
+    <a href="#none" id="q2">hlkjeh</a>
+    <a href="http://naver.com" id="gq">hlkjeh</a>
+</section>
+
+<div class="qq11">
+    qgqg
+</div>
+
+<script>
+    let mode = 0;
+    document.onclick=function(e){
+        e.preventDefault();
+console.log(e.target.children.length)
+e.target.children[0].style.color =  'red'
+e.target.children[1].style.color =  'red'
+mode++
+switch (mode%2){
+    case 0 :
+        e.target.style.border = '5px solid black' 
+        break;
+    case 1 :
+    e.target.style.border = '0 none'
+        break;    
+    }
+    console.log(mode)
+    }
+</script>
+</body>
+</html>

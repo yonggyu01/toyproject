@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>객체 접근</title>
+<style>
+    body, input, button {font-size: 24px}
+    .redText {color: red; border: 5px solid #f00}
+    .greenText {color: green}
+    .blueText {color: blue}
+</style>
+<script>
+    window.onload = function(){
+        // 객체 생성
+        /* let rBtn = document.getElementById("rBtn");
+        let gBtn = document.getElementById("gBtn");
+        let bBtn = document.getElementById("bBtn"); */
+
+        // 빨강 버튼을 클릭하면 문장의 글자색 바꾸기
+        // object.eventHandler = function( ){  }
+        rBtn.onclick = function(){ // 익명함수(이름 없는 함수)
+            document.getElementById("changeText").className = "redText";
+            // changeText.className = "redText";
+        }
+        // 화살표 함수
+        /* rBtn.onclick = () => { // 익명함수(이름 없는 함수)
+            document.getElementById("changeText").className = "redText";
+        } */
+        /* rBtn.onclick = () => document.getElementById("changeText").className = "redText"; */
+
+        gBtn.onclick = function(){
+            document.getElementById("changeText").className = "greenText";
+        }
+        bBtn.onclick = function(){
+            document.getElementById("changeText").className = "blueText";
+        }
+    }
+</script>
+</head>
+<body>
+<p id="changeText">클릭한 버튼에 따라 다른 스타일이 적용됩니다.</p>
+<p><button type="button" id="rBtn">빨강</button></p>
+<p><button type="button" id="gBtn">초록</button></p>
+<p><button type="button" id="bBtn">파랑</button></p>
+</body>
+</html>

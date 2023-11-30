@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <style type="text/css">
+        body, button{font-size:24px}
+    </style>
+    <script>
+        function testFunc(s_name, score){
+            /* alert("이름 : " + s_name);
+            alert("점수 : " + score); */
+
+            alert("\"이름\" : " + s_name + "\n점수 : " + score);
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="testFunc('김철수', 95)">김철수</button>
+    <button type="button" onclick="testFunc('최영희', 100)">최영희</button>
+</body>
+</html>

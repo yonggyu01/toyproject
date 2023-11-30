@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        gap : 10px;
+    }
+</style>
+<body>
+    
+   
+    <div class="text">
+        <textarea name="" id="" cols="80" rows="80">
+            
+            동기식과  비동기식
+            function test1(){
+                console.log("print text")
+            }
+            function test2(){
+                console.log("print text2")
+            }
+           setTimeout(test1, 3000)  <- 이경우 test1을  3초 후에 
+           // 콜백함수의 특징은  앞에있는 함수가 실행되기 전까지 뒤에 내용은 실행하지 않음
+
+           * 콜백함수
+           1. 다른함수에 인수로 전달되는 함수
+           2. 함수가 오나료된 후 콜백함수 실행
+
+
+           * 콜백 대안
+           1. 비동기 프로그래밍을 통해 장기 실행 작업을 병렬로 실행가능
+           2. 비동기 프로그램은 작성하기 어렵고 디버깅하기 어려움
+           3. 최신 비동기 javascript 메서드는 콜백 대신 promise 사용
+
+            *비동기
+            1. 다른 함수와 병렬로 실행되는 함수
+            ex) setTimeout (실행할 함수, 시간)
+             - setTimeout 함수가 실행된 후 호출된 함수 실행
+             2. 호출할 함수가 많아지면 코드량 증가 (콜백지옥)
+
+             *Promise 객체
+             1. Promise 객체에는 생성 코드와 소비 코드에 대한 호출 모두 포함
+             # 구문
+             let PromiseFunc = new Promise(function(successFunc, failFunc){
+                        //프로미스 함수는 인자가 반드시 2개이다.
+                successFunc();// 함수 실행 성공시 수행할 코드
+                failFunc(); // 함수 실행 실패시 수행할 코드
+            });
+
+            * .then()  -> promise가 fulfilled (이행된 상태에서만 실행됨)
+             1. Promise.then() 은 성공에 대한 콜백과 실패에 대한 콜백 두가지 인수 사용
+             2. 둘다 선택 사항이므로 성공 또는 실패에 대한 콜백 추가 가능
+
+
+            // Promise 함수가 완료된 후에 실행할 함수
+            PromiseFunc.then(
+                function(value){ /*함수 실행 성공시 수행할 코드 */}
+                function(error){ /*함수 실행 실패시 수행할 코드 */}
+            );
+
+             *Promise 개체 속성
+             1. Promise객체는 state(상태) 및 result 라는 두가지 속성을 지원
+             2. state & result
+               - pending(보류 중) : undefined
+               - fulfilled (이행됨): 결과값 반환
+               - rejected(거부됨)  : 에러 반환
+
+
+
+
+
+        *async  &  await
+
+         1. async 와  await 는 promise를 좀더 편하게 사용
+        2. async는 함수가 Promise를 반환하도록함
+        3. await는 함수가 Promise를 기다리게 함
+
+        *async 
+        1.함수가 promise를 반환
+        2. promise 가 아닌 값을 반환하더라도
+        이행 상태의 프라미스 (resolved promise)로 값을 감싸 이행된 프라미스 반환
+
+        * await 
+        1.함수가 실행을 일시 중지하고 해결된 약속을 기다리도록 함
+        2. async 함수 내에서만 사용가능
+         let value = await Promise
+
+
+            await는 사용하려면 반드시 프로미스 혹은 async가 사용된 곳에서만 사용가능함
+
+        **ajax
+        1.전체 페이지를 다시 로드하지 않고 웹페이지의 일부를 업데이트
+        2. 백그라운드에서 웹서버로 데이터 전송
+        3. 브라우저 내장객체인 XMLHttpRequest (웹서버에서 데이터 요청)
+         javaScript 및 HTML DOM(데이터 표시 또는 사용)를 조합하여 사용
+         4. 최신 브라우저는 XMLHttpRequest 객체 대신 Fetch API를 사용
+         5.  Http 또는 https 에서만 동작함
+
+
+         ** XMLHttpRequest 객체
+
+         // XMLHttpRequest 객체 생성
+         const xhttp = new XMLHttpRequest();
+
+         //콜백함수 정의
+            xhttp.onload =function(){
+                if(xhttp.status == 200){
+
+                }else{ 'err = ' +  xhttp.status}
+            }
+        // 요청보내기
+        xhttp.open('GET' ,'파일명.확장자명')
+        xhttp.send();
+
+        </textarea>
+    </div>
+    <h1 id="dsp"></h1>
+
+    <script>
+        function dspFunc(rst){
+            dsp.innerHTML = rst;
+        }
+
+        let prom = new Promise(function(suc_value,rej_value){  //앞쪽에 성공했을때, 뒤쪽이 실패했을때
+            let val =5;
+            if(val == 5){
+                suc_value('성공');
+
+            }else{
+
+                rej_value('실패');
+            }
+        }).then(
+            //인자가 2개인데 ,로 구분해서 작성하면됨  // 이렇게 만들면 promise 끝난뒤에만 실행이됨
+            //fulfilled 되었을때 실행됨    ,로 구분하며 앞쪽이 성공했을때 내용을 담아오고 뒤쪽은 실패했을때를 담아옴
+            function(value){   //성공시 
+                dspFunc(value)
+            },
+            function(value){
+
+                dspFunc(value)
+            }
+
+        )  // 이렇게 바로 붙여서 작성해도 되고 혹은 , prom.then() 이렇게 써도됨
+
+    </script>
+    
+    <div id="dpp"></div>
+
+    <script>
+        function dppfunc(rst){
+            dpp.innerHTML = rst;
+        }
+
+        // setTimeout(function(){
+        //     dppfunc('hello')
+        // },3000)
+            let pp = new Promise(function(aa,bb){  // <-- 인자 2개가 필수값인데 인자 2개는 내부에서 사용될 함수 이름이 된다.
+              
+                aa('성공11111');
+                // 처음꺼는 성공할때 할일   
+                bb('실패22222');
+                // 두번째 인자는 실패시 실행할 함수이름이다.
+            }).then(function(value){
+                dppfunc(value);
+            },function(value){
+                dppfunc(value);
+            }); // aa가 할일이 앞쪽, bb가 할일이 뒤쪽에 배치됨  // 만약 실패가 없어도 되는 값이면 생략해도 상관없음
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

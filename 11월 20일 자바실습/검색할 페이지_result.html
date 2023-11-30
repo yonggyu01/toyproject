@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색결과 표시 페이지</title>
+    <style>body{font-size: 2rem;
+    }</style>
+    <script>
+        function return_id(){
+            //opener 를 넣으면 본인을 열어준 창에 값을 가져와서 자동으로  연결됨.  
+            // 단 서버에서만 가능함. 라이브서버에서 하면 작동함
+            opener.document.getElementById('user_id').value = 'admin'
+            window.close();
+        } 
+    </script>
+</head>
+<body>
+    <h2>'admin' 검색결과</h2>
+    <p>입력한 아이디는 사용할 수 있는 아이디 입니다.</p>
+    <p>
+        <a href="#none" onclick="return_id()">사용하기</a>
+        <a href="#none" onclick="history.back()">뒤로가기</a>
+</p>
+</body>
+</html>

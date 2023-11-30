@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{border: 1px solid gray; margin : 20px; text-align: center; font-weight: bold;font-size:20px;}
+        td{border:1px solid #aaa; width: 100px; height: 100px; box-sizing: border-box;}
+        .sel{background-color: #f00;color:#fff;font-weight: bold;}
+        *{padding: 0;}
+
+</style>
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        // $('td:first').addClass('sel')
+        // $('td:eq(0)').addClass('sel')
+        // $('td:eq(1)').prev().addClass('sel')
+        // $('td:lt(1)').addClass('sel')
+      
+        let tt = 0;
+        let taa = 0;
+        // this 도 e.target 과 같음   
+        // $('td').click(function(e){
+        //     switch (tt%3){
+        //         case 0 :
+        //         $(e.target).css({background : "blue", border : '3px solid pink'})
+        //         tt ++;
+        //         break;
+        //         case 1 :
+        //         $(e.target).css({background : "pink", border : '1px solid green'})
+        //         tt ++ ;
+        //         break;
+        //         case 2 :
+        //         $(e.target).css({background : "yellow", border : '5px solid blue'})
+        //         tt ++ ;
+        //         break;
+        //     }
+        // })
+        $('td').hover(function(e){
+            switch (taa%3){
+                case 0 :
+                $(e.target).css({background : "blue", border : '3px solid pink'})
+                taa ++;
+                break;
+                case 1 :
+                $(e.target).css({background : "pink", border : '1px solid green'})
+                taa ++ ;
+                break;
+                case 2 :
+                $(e.target).css({background : "yellow", border : '5px solid blue'})
+                taa ++ ;
+                break;
+            }},function(){
+                $(this).css({background : "white", border : '0 none'})
+            })
+            
+            //마우스 enter와 leave가 합쳐진 효과는 jquery에서는 hover임 그래서 파라메터 2개 써야함
+
+
+
+    })
+</script>
+</head>
+<body>
+    <h2>이벤트</h2>
+    <table>
+        <tr>
+            <td class="aa">1</td>
+            <td>2</td>
+            <td class="tt">3</td>
+            <td>4</td>
+            <td>5</td>
+            <td class="aa">1</td>
+            <td>2</td>
+            <td class="tt">3</td>
+            <td>4</td>
+            <td>5</td>
+            <td class="aa">1</td>
+            <td>2</td>
+            <td class="tt">3</td>
+     
+        </tr>
+    </table>
+</body>
+</html>

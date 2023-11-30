@@ -1,0 +1,406 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 16px;
+}
+a,address{
+    color:inherit;
+    text-decoration: none;
+    
+}
+.bannerfull{
+    width: 100%;
+    background: #082680;
+    height: 75px;
+}
+.bannertop{
+    width: 980px;
+    height: 75px;
+    margin: auto;
+    background: url(images/bannertop.jpg) no-repeat;
+
+
+}
+.xx{
+    display: block;
+    width: 0;
+    height: 0;
+    text-indent: -999999999px;
+    overflow :hidden;
+    line-height: 0;
+}
+header{
+    position: relative;
+    z-index: 3;
+}
+.logo_top{
+    width: 980px;
+    margin: auto;
+    padding: 30px 6px 25px 5px;
+    display:grid;
+    box-sizing: border-box;
+    grid-template-columns:275px 250px 455px;
+    grid-template-rows: 57px;
+    grid-template-areas: 'a b c';
+    align-items: end;
+
+
+}
+.logo{
+    width: 117px;
+    height: 53px;
+    background: url(images/logoRed.png) center/cover;
+    /*백그라운드 속성중 사이즈 속성은 포지션(center top right 등등의 값 뒤에  / 넣고 써주면 되고
+    단독으로 쓸거면 따로 작성해야함 포지션 값이 무조건 앞에 따라와야 한방에 기입이 가능하다.
+    */
+}
+
+.gnb{
+    width: 100%;  
+
+
+}
+.g1{
+    grid-area: a;
+}
+.logoname{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    width: 274px;
+ 
+}
+.logoname>p{
+    font-size: 30px;
+}
+.topmenu{
+    grid-area: c;
+}
+
+.topmenu>ul{
+    display: grid;
+    grid-template-columns: 135px 80px 80px 80px 80px;
+    grid-template-rows: 57px;
+    grid-template-areas:
+    'a b c d e';
+    align-items: end;
+}
+
+.topmenu>ul>li:first-child>a{
+    grid-area: a;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 57px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    
+    background: url(images/16758461047540.png) no-repeat center/contain;
+    text-indent: -99999999px;
+}
+.topmenu>ul>li:nth-child(2)>a{
+    grid-area: b;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 57px;
+    overflow: hidden;
+    display: block;
+    background: url(images/loginPassword.png) no-repeat top/50%;
+    line-height: 90px;
+    text-align: center;
+    font-size: 14px;
+    color : #b3afac;
+}
+.topmenu>ul>li:nth-child(3)>a{
+    grid-area: c;
+    width: 100%;
+    height: 57px;
+    overflow: hidden;
+    display: block;
+    background: url(images/loginJoin.png) no-repeat top/50%;
+    line-height: 90px;
+    text-align: center;
+    font-size: 14px;
+    color : #b3afac;
+
+}
+.topmenu>ul>li:nth-child(4)>a{
+    grid-area: d;
+    width: 100%;
+    height: 57px;
+    overflow: hidden;
+    display: block;
+    background: url(images/loginMember.png) no-repeat top/50%;
+    line-height: 90px;
+    text-align: center;
+    color : #b3afac;
+    font-size: 14px;
+}
+.topmenu>ul>li:last-child>a{
+    grid-area: e;
+    width: 100%;
+    height: 57px;
+    overflow: hidden;
+    display: block;
+    background: url(images/loginCustomer.png) no-repeat top/50%;
+    line-height: 90px;
+    text-align: center;
+    color : #b3afac;
+    font-size: 14px;
+}
+/* logo 상단 끝  아래 navi 생성*/
+.gnb{
+width: 100%;    
+position: relative;
+}
+
+.navi1{
+    width: 980px;
+    margin: auto;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 500px 240px 240px;
+    grid-template-rows: 50px;
+    grid-template-areas: 'a b c';
+}
+.main_menu{
+   grid-area: a;
+   display:flex;
+   flex-direction: row;
+   width: 480px;
+   justify-content: space-between;
+   height: 50px;
+   padding: 0 10px;
+   box-sizing: border-box;
+}
+.main_menu>li a{
+    font-size: 16px;
+    font-weight: bold;
+}
+.main_menu>li{
+    width: 80px;
+    margin: auto;
+    position: relative;
+}
+/* 2뎁스 메뉴 */
+.depth2{
+    height: 0;
+/* 숨기기 */
+
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    padding-top: 50px;
+    top:30px
+}
+.white{
+    width: 100%;
+    background-color: rgb(165, 43, 43);
+    height: 350px;
+}
+.whitebox1{
+    position: absolute;
+    top:20px;
+    /* left:-500px; */
+    margin-top: 30px;
+    display: block;
+    border-top: 1px red solid;
+    width: 100%;
+    height: 350px;
+    background: gray;
+
+}
+
+.re{
+    grid-area: c;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.re fieldset{ border : 0;
+    border-left:1px solid gray ;
+    border-right: 1px solid gray;
+    border-width: 50%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.re input{border: 0;
+
+    width: 180px;
+}
+.re button{
+    border: 0;
+    /* border-radius: 15px; */
+    display: block;
+    width: 28px;
+    height: 28px;
+   background: url(images/window.png) center/100% no-repeat;
+    /* object-fit: contain; */
+    text-indent: -9999999px;
+
+}
+
+/* 메인 */
+
+.ad{
+    width: 100%;
+    height: 470px;
+    background: pink;
+
+}
+.mainmovie1{
+    width: 980px;
+    margin: auto;
+    }
+.mainmovie>video{
+
+}
+.fon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 470px;
+    gap:20px;
+}
+.fon p:first-child{
+    font-size: 30px;
+    font-weight: bold;
+}
+.bott{
+    width: 195px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.bott button{
+    display: block;
+    width: 100px;
+    height: 31px;
+    border-radius: 15px;
+}
+
+/*  무비차트 부분  */
+.bgbar2{
+    background: rgba(206, 203, 203, 0.212);
+    width: 100%;
+}
+.chart1{
+    width: 1040px;
+    margin: auto;
+    height: 460px;
+    box-sizing: border-box;
+    padding: 50px 30px 60px;
+    position: relative;
+}
+.slidebox>ul>li{ 
+    width: 170px;
+    position: relative;
+   
+}
+
+.chart1 > h2{
+font-size: 30px;
+margin-bottom: 25px;
+}
+.chart1 img{
+    /* max-width: 100%; */
+    width: 170px;
+    height: 234px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.slidebox h3{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 170px;
+    white-space: nowrap;
+}
+.slidebox .crank{
+    display: block;
+    position: absolute;
+    top: 0px;
+    border-radius: 15px;
+    left: 0px;
+    width: 170px;   
+    height: 234px;
+    background: rgba(128, 128, 128, 0.5) 100% 50% ;
+    color: white;
+    line-height: 440px;
+    text-indent: 5px;
+    font-size: 50px;
+
+}
+.slidebox{
+    width: 980px;
+    overflow: hidden;
+}
+.chart1>.slidebox>ul{
+    display: flex;
+    flex-flow : row nowrap;
+    width: 100%;
+    height: 295px;
+    gap :30px
+}
+
+/*  상영예정작 파트 */
+
+.chart2>h2{
+    position: absolute;
+    top : -65px;
+    left : 160px;
+    font-size: 30px;
+    padding-left: 30px;
+    border-left: 1px solid black;
+}
+.chart2{
+    height: 0;
+    overflow: hidden;
+    /* 잠시 숨김 위에 두줄 삭제시 나타남 */
+    position: absolute;
+    top:115px;
+}
+.chart2>.slidebox>ul{
+    display: flex;
+    flex-flow : row nowrap;
+    width: 100%;
+    height: 295px;
+    gap :30px
+}
+
+/* 이벤트 페이지 */
+
+.event{
+    padding: 60px 0 6px;
+    height: 395px;
+    width: 100%;
+}
+
+.page h2{
+    width: 100%;
+}
+.page{
+    width: 980px;
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    margin: auto;
+    gap :20px;
+}
+.youtube1{
+    width: 310px;
+}
+.youtube1 img{
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}

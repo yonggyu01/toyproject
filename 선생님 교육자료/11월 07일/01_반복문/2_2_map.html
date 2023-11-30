@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>map() 메서드</title>
+<script>
+    const array = [
+        {name: 'John', age: 25},
+        {name: 'Sera', age: 21}
+    ];
+    document.write("array : ", array);
+    document.write("<hr>");
+
+    // document.write("array[0].name : ", array[0].name);
+
+    // array[0].name = "Kane";
+    // document.write("array[0].name : ", array[0].name);
+    
+    const map = array.map(function( item ){
+        var obj = {};
+        // document.write(obj);
+        // document.write(item);
+        // document.write(item.key);
+        // document.write(item.age);
+        obj[item.key] = item.age -1;
+        document.write(obj[item.key] + ", ")
+    });
+</script>
+</head>
+<body>
+
+</body>
+</html>

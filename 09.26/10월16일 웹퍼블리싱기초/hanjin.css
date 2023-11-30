@@ -1,0 +1,665 @@
+/*css 초기화
+태그들이 가지고 있는 기본 속성과 값 (예를들면 사이트 바탕색과, 글자색, a태그의 글자색등을 미리 지정해두고 시작
+이런값들을 미리 수정해두는것
+**줄간격 line-height : 1.5 <-- 1.5배   이게 디자이너들이 내린 결론인것 같다.
+address 태그는 무조건 우편물 보내는 경우에만 적용해야함 
+*****공통클래스
+이 페이지에서 가장 자주쓸 것 같은것들
+screenout{
+    화면에서 지우고싶은 클래스를 미리 만들어서 효과를 넣어두고 거기에 필요할때마다 
+    해당 클래스를 넣어서 없애버리자
+    display :none; -> 이건 다른동작을 통해 나타날 수 있는경우에는 써도되고( 메뉴안에 메뉴 표현할때 정도에서는쓰고)
+             보통은 안쓰는게 나을것 같다
+               리더기에서 읽지를 않는다
+
+             이미지 리플레이스(ir기법 : image replacement : 글자를 그림으로 표현)
+    이미지 감추기는 보통 2가지를 사용한다. : 화면에서 안보는 곳에 배치해서 안보이게  (들여쓰기나 화면위로 올리기 등으로)
+                                    하거나 작게 만들어서 숨기거나 .. (오버플로우 히든기능으로)
+
+*/
+body,h2,h3,h1,ul,li{
+    margin: 0;
+    padding: 0;
+    /*마진오토는 margin : 0 auto 0 auto 랑 같음 */
+}
+ul,li,dt,dd{
+    list-style: none;
+
+}
+a{
+    color:inherit;
+    text-decoration: none;
+}
+address{
+    font-style: normal;
+}
+.screen_out{
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    width: 0;
+    position: absolute;
+    text-indent: -9999999px;
+}
+/* 로고   블럭요소 안에 인라인요소가 있다면 인라인요소를 그림으로 바꿔주는게 좋다.*/
+.logo{
+    /*마진오토로 정렬하기 위해서 박스 사이즈를 정해줄것임 */
+    width: 184px;
+    margin: 27px auto 21px;
+    height: 60px;
+    
+    /* *****마진은 탑방향에 이슈가 있음, 윗쪽으로 마진주면 밀려야하는데 안밀림 -****
+   위쪽 여백을 위해 마진탑주면 위쪽에 있는 로고가 밑으로 밀려야하는데 안밀림
+    
+    부모이건 자식이건간에 float , display : flex / grid 
+    position : absolute / fixed 등이 포함되어있거나 
+    ***부모에게 border - top이 있거나 하면 마진탑 이슈 부분이 해결이 가능함 (배경색하고 같은색으로 주면 안보이니)***
+    
+    */
+}
+/*.logo a{
+이미지 리플레이스 : 글자를 그림으로 바꾸기 (3가지 동작이 필요함)
+1. 박스크기지정
+
+display: block;
+ 2. 지정하려는 요소가 븍락요소면 상관없으나 인라인요소에 지정하려면 블락요소로 지정해야 크기지정이 가능하다
+
+width: 184px;
+height: 39px;
+추후 삭제
+ 3. 배경 이미지 적용
+background: url(images/logo.jpg) no-repeat;
+ 4. 글자를 감추기 해야함 _ 들여쓰기 (방향으로 스크린에서 감추기 할거면 무조건 왼쪽이나 위로 해서 감춰라)
+text-indent: -99999px;
+요즘 사용하는 또 다른 방법 
+}
+
+요즘 사용하는 또 다른 방법  가상의 컨텐츠를 보여주는 방식
+ 필수 항목 content : ""; 이건 비워두고
+ display : block;  디스플레이를 블락형태로 만들어줘야함
+ **content로 넣은 항목은 인라인요소로 추가되기 때문에 사이즈 지정이 어려워 블락형태로 꼭 지정해야함
+
+*/
+.logo a::before{
+    content:'';
+    display: block;
+    width: 184px;
+    height: 39px;
+    background: url(images/logo.jpg);
+    text-indent: -99999999px;
+   /*  ::before 속성은 보통 'content' 속성과 함께 사용되고 있습니다
+    'content' 속성에 정의도니 값을 선택된 요소 (p태그) 의 첫번째 자식 요소로 추가합니다!
+    ::after는 선택된 요소의 마지막 자식 요소(가상요소)를 생성합니다
+   */
+}
+header{
+    position: relative;
+  
+    border-top: 1px white solid;
+}
+.headerline{
+    width: 100%;border-top:1px solid black ;
+    
+}
+.utill{width: 1000px;
+margin: auto;
+position: relative;}
+.utill>ul{display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* gap: 20px; */
+    position: absolute;
+    top : -140px;
+    right : 30px;
+    /*가운데 선 만들때  백그라운드 이미지로 똑같은 이미지 만들어서 한쪽에 적용후 
+    옆으로 움직여서 옆으로 밀어 간격만 맞춰주면 됨   옆에 컨텐츠는 마진으로 미뤄주고
+    한쪽에 패딩줘서 옆으로 미뤄주면 됨.
+    */
+
+}
+.utill>ul li:first-child::after{
+    content: '|' ;
+    margin: 0 10px;
+    color:rgba(0, 0, 0, 0.425);
+    /* border-right : 0.5px solid rgba(0, 0, 0, 0.377);
+    padding-right: 10px;
+    margin-right: 10px;; 
+    가상의 태그로 처리하는 이유는 리더기로 꼭 들려줄 필요 없는 경우 
+    */
+    
+}
+
+.first_menu{
+    display: flex;
+    flex-flow:row nowrap;
+    justify-content: space-between;
+    /*화면 전체로 무언가를 하려면 꼭 상자 2개로 작업해라 하나의 상자는 상자 전체에 , 나머지 상자로 원래 하려던걸 해라*/
+    /* gnb메뉴와 로고의 간격을 유지하려면 꼭 gnb 네비에 좌우 크기와 정렬을 따로 해줘야함*/
+    /* hover a 는 뒤에  a에다가 적용한다느 ㄴ소리인데   형제요소끼리는 불가하고 자식요소에게만  적용할 수 있음*/
+    width: 1000px;
+    margin: 0 auto 0 auto;
+}
+.first_menu>li:first-child>a::before{
+    content:url(images/menu_01.jpg);
+    display: block;
+    width: 119px;
+    height: 72px;
+}
+.first_menu>li:nth-child(2)>a::before{
+    content:url(images/menu_02.jpg);
+    display: block;
+    width: 119px;
+    height: 72px;
+}
+.first_menu>li:nth-child(3)>a::before{
+    content:url(images/menu_03.jpg);
+    display: block;
+    width: 119px;
+    height: 72px;
+}
+.first_menu>li:nth-child(4)>a::before{
+    content:url(images/menu_04.jpg);
+    display: block;
+    width: 119px;
+    height: 72px;
+}
+.first_menu>li:nth-child(5)>a::before{
+    content:url(images/menu_05.jpg);
+    display: block;
+    width: 119px;
+    height: 72px;
+}
+.first_menu>li:nth-child(6)>a::before{
+    content:url(images/menu_06.jpg);
+    display: block;
+    width: 119px;
+    height: 72px;
+}
+.first_menu>li:nth-child(7)>a::before{
+    content:url(images/menu_07.jpg);
+    display: block;
+    width: 119px;
+    height: 72px;
+}
+/* main{width: 1000px;
+margin: auto;} */
+.mainPic::before{
+content: '';
+display: block;
+width: 1000px;height: 519px;
+background: url(images/main_01.jpg) no-repeat;
+margin: 0 auto 60px ;
+}
+.biz_intro{
+    margin: 0 auto 60px;
+    width: 1000px;
+}
+.biz_intro_logo>h2::before{
+content:'';
+display: block;
+width: 550px;height: 24px;
+background: url(images/glp_title.jpg) no-repeat;
+}
+.biz_intro_logo>h2{
+    width: 550px;
+    margin: 0 auto 10px;
+
+}
+.biz_intro_logo>p{
+    text-align: center;
+    margin-top: 0px;
+}
+.biz_intro_logo p:first-child{
+    margin-bottom: 25px;;
+}
+.biz_intro_logo p:nth-child(2){
+    margin-bottom: 45px;;
+}
+main{position: relative
+    ;z-index: 2;}
+
+.glpdown::before{
+    content:'';
+    display: inline-block;
+    width: 8px;height: 7px;
+    background: url(images/glp_down.jpg) no-repeat;
+}
+.menu3>dl:first-child>dt>a::before{
+    content:url(images/glp_image1.jpg);
+    display: block;
+    width: 307px;
+    height: 230px;
+}
+.menu3>dl:nth-child(2)>dt>a::before{
+    content:url(images/glp_image2.jpg);
+    display: block;
+    width: 307px;
+    height: 230px;
+}
+.menu3>dl:nth-child(3)>dt>a::before{
+    content:url(images/glp_image3.jpg);
+    display: block;
+    width: 307px;
+    height: 230px;
+}
+
+.menu3>dl:first-child>dd>a::before,.menu3>dl:nth-child(2)>dd>a::before,.menu3>dl:nth-child(3)>dd>a::before{
+    content:url(images/glp_more.jpg);
+    display: block;
+    width: 69px;
+    height: 24px;
+}
+.menu3>dl:first-child{
+    width: 321px;
+    height: 400px;
+    border-bottom:1px gray solid;
+    border-right: 1px gray solid;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.menu3>dl:nth-child(2){
+    width: 321px;
+    height: 400px;
+    border-bottom:1px gray solid;
+    border-right: 1px gray solid;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+.menu3>dl:last-child{
+    width: 321px;
+    height: 400px;
+    border-bottom:1px gray solid;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+
+.menu3 dt{
+      display: flex;
+    flex-flow: column nowrap;
+ /* justify-content: center; */
+ align-items: baseline;
+ padding-bottom: 10px;
+ font-weight: bold;
+ margin-bottom: 16px;
+ font-size: 16px;
+}
+.menu3 dl{
+    display :flex;
+    flex-flow: nowrap column; 
+    /* justify-content: space-around; */
+    align-items: center;
+    position: relative; /* 포지션 absolute 주는경우 flex가 해지되어버림 우선순위가 포지션이 더 높다.*/
+}
+.menu3 dd{
+    margin-left: 5px;
+    
+    }
+    .menu3 dd a{
+        position: absolute;
+        bottom: 10px;
+        left : 10px;
+
+    }
+
+
+.menu3{display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 1000px;
+    justify-content: center;
+}
+.biz>h2{
+    width: 227px;
+    height: 18px;
+    background: url(images/ob_title.jpg) no-repeat;
+    text-indent: -999999999999px;
+    margin: auto;
+}
+.biz{position: relative;
+     box-sizing: border-box;
+     width: 1000px;
+     margin: 0 auto 60px;
+}
+
+.biz>p{
+    text-align: center;
+}
+.bizall1{
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+}
+.biz1{content:'';
+    display: block;
+    width: 760px;
+    height: 429px;
+    background-image: url(images/ob_image1.jpg);
+    position: relative;
+    z-index: 2;
+    margin: auto;
+}
+.biz2{
+    content:'';
+    width: 92px;
+    height: 31px;
+    background-image: url(images/ob_more.jpg);
+    border-radius: 15px;   
+    position: absolute;
+    bottom:10px;
+    right: 30px;
+}
+.bluefull{
+    /* position: relative; */
+    margin-bottom: 250px;
+}
+.blueline{
+    width: 100%;
+    top : 1200px;
+    position: absolute;
+    z-index: 3;
+    color:white;
+    padding-bottom: 20px;  
+    display: flex;
+
+}
+.biz dd{margin-left: 0;
+width: 500px;}
+.biz dt{
+    width: 150px;
+}
+.fullblue{
+    position: absolute;
+    top : 1080px;
+    width:100%;
+    height: 250px;
+    background: blue;
+}
+ .blueline>dl{/*display: flex;
+flex-direction: row;
+justify-content: space-evenly; */
+width: 760px;
+margin:auto;
+box-sizing: border-box;
+
+}
+.blueline>dl>dt,.blueline>dl>dd {
+    padding: 0 5px;
+    width: 100%;
+}
+.arrow{position: absolute;
+width: 100%;
+top : 900px;
+display: flex;
+justify-content: space-between;
+padding: 0 40px;
+box-sizing: border-box;
+}
+
+.arrow a:first-child,.arrow a:last-child{
+font-size: 50px;
+color:gray;
+}
+.new{
+    margin-top: 100px;
+}  
+.new>h2{
+    display: block;
+    background-image: url(images/news_title.jpg);
+    width: 211px;height: 18px;
+
+    text-indent: -99999px;
+    margin: auto;
+}
+.new>p{
+    text-align: center;
+}
+.newsbox{display:flex;
+justify-content: center;
+gap : 10px;
+margin: auto;
+}
+.newsbox img{
+    object-fit: fill;
+    width: 100%;
+}
+.newsbox>dl>dt{ 
+    display:flex;
+    flex-flow: nowrap column;
+    width: 274px;
+   
+}
+.newsbox>dl>dt>p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.newsbox>dl{
+    border:1px solid black;
+height: 400px;
+width: 274px;
+display: flex;
+flex-flow: column nowrap;
+box-sizing: border-box;
+overflow: hidden;
+justify-content: space-evenly;
+padding-bottom: 50px;
+position: relative;
+
+
+
+}
+.newsbox>dl>dd{
+    white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;
+margin-left: 0;
+padding: 0 15px;
+
+}
+.newsbox img{
+    max-width: 100%;
+object-fit:contain;
+}
+.mans{
+    position: absolute;
+    bottom: 15px;
+    left : 15px
+}
+.new>a{
+    display: block;
+    content: '';
+    width: 116px;
+    height: 39px;
+    background-image: url(images/news_more.jpg);
+    text-indent: -999999999px;
+    margin: auto;
+}
+.cimenu{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+    padding-left: 50px;
+}
+.cimenu p{
+    display: block;
+    background: url(images/ci_text.jpg);
+    width: 400px;height: 38px;
+    text-indent: -99999999px; 
+}
+.cimenu a{
+    display: block;
+    background: url(images/ci_view.jpg);
+    width: 178px;height: 38px;
+    text-indent: -99999999px; 
+    border-radius: 10px;
+}
+.viedo{
+    display: flex;
+    flex-flow:wrap row;
+    justify-content: space-evenly;
+    margin: 0 auto 30px;
+    width: 850px;
+}
+.you, .comu{
+    display: flex;
+    flex-flow:wrap row;
+    width: 400px;
+}
+.you h2{
+    display: block;
+    content: '';
+    width: 144px;
+    height: 14px;
+    background-image: url(images/video_title.jpg);
+    text-indent: -999999999px;
+    margin: 10px 0 15px 10px;
+}
+.you a{
+    display: block;
+    content: '';
+    width: 22px;
+    height: 22px;
+    background-image: url(images/video_more.jpg);
+    text-indent: -999999999px;
+    margin: 10px 0 15px 10px;
+}
+.video1{
+    display: block;
+    content: '';
+    width: 472px;
+    height: 270px;
+    background-image: url(images/video_image.jpg);
+}
+.comu h2{
+    display: block;
+    content: '';
+    width: 193px;
+    height: 14px;
+    background-image: url(images/social_title.jpg);
+    text-indent: -999999999px;
+    margin: 10px 0 15px 10px;
+}
+.comu a{
+    display: block;
+    content: '';
+    width: 22px;
+    height: 22px;
+    background-image: url(images/video_more.jpg);
+    text-indent: -999999999px;
+    margin: 10px 0 15px 10px;
+}
+.img{
+    display: block;
+    content: '';
+    width: 472px;
+    height: 270px;
+    background-image: url(images/social_image.jpg);
+}
+footer{
+    background-color: rgb(150, 147, 147);
+    position: relative;
+    z-index: 2;
+}
+.end{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    padding: 50px 0;
+    margin: 0 50px;
+  
+}
+.law{ 
+    width: 620px;
+}
+.law>ul{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap :10px;
+}
+footer li, footer a, footer h3, footer p, footer address{
+    color :white;
+}
+.foo1{
+    display: flex;
+    flex-direction: row;
+    border-top: 1px white solid;
+    padding-top: 20px;
+    
+}
+.group{position: relative;
+width: 200px;height: 30px;
+margin-right: 30px;}
+.group > h3 a{
+    border: 1px solid white;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 28px;
+    background: no-repeat url(images/family_down.jpg) 150px center;
+    
+    /*
+    글자 중앙정렬시 박스의 높이 등을 계산해서 해도 되고
+    line -height 줄간격으로  정렬시 내가 정렬할 박스가 30px이면  보더사이즈 1px있으면
+    28px이 줄간격이라 작성시 정렬이 됨
+    */
+}
+.group>ul>li>a:hover{ background: black;
+    color : yellow;    
+}
+.group>ul>li>a{
+    display: block;
+    width: 100%;
+    padding: 2px 5px 2px 0;
+    box-sizing: border-box;
+    text-indent: 15px;
+    
+}
+.group>ul{
+    position: absolute;
+    top:-100px;
+    left : 0px;
+    width: 200px;
+    border: 1px white solid;
+    background: gray;
+    box-sizing: border-box;
+}
+
+.ender{
+    display: block;
+    content: '';
+    width: 142px;
+    height: 29px;
+    background-image: url(images/logo_footer.jpg);
+    margin-left: 50px;
+    margin-right: 100px;
+    margin-bottom: 20px;
+}
+.ender2{
+    width: 100%;
+    margin: 0 auto 50px;
+
+}
+.wrap1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+address::after, .ceo::after{
+    content : '/';
+    margin: 0 10px;
+}

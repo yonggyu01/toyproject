@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hoisting</title>
+    <script>
+        let txt = '텍스트'
+        console.log(txt)
+        console.log(txt1)
+        // 가능하나
+        let txt1 ='병병병'
+
+        // 이런경우엔 성립이 안된다.
+
+        function qq(){
+            alert('qg')
+        }
+
+            qq() // 이 함수는 어디에서 불러와도 읽을 수 있음
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

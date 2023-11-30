@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5rem;
+        width: 350px;
+        text-decoration: none;
+        height: 300px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.442);
+        background-color: red;
+        color: rgb(255, 255, 255);
+    }
+   </style>
+</head>
+<body>
+    <div id="display"></div>
+    <div id="display1"></div>
+    <a href="#none" class="stop">정지버튼</a>
+    <script>
+        var dsp =document.getElementById('display')
+        var dsp1 =document.getElementById('display1')
+        dsp.innerHTML = "<em>aaa</em>"
+        dsp1.textContent = '<em>bbbb</em>'  // 태그 안먹힘
+    
+        let date = new Date();
+        let date1 = new Date('2020-11-15')
+        dsp.innerHTML = date
+        dsp1. innerHTML = date1
+        // Year Month Date Day ,, Hour  Min  Sec  시간 가져올때 앞글자는 전부 대문자임
+        // 
+        let year = date.getFullYear();  // getyear의 특징은 1900년도 이후로만 계산함, 전체년도로 해야 2023 이렇게 나옴
+        let month = date.getMonth()+1; // month와 date 특징도 0부터 시작함
+        // 글자로 반환하고 싶다면 배열에 글자값 저장해서 배열로 불러오면 편함
+        let pp = document.createElement('h1')
+        let pp2 = document.createElement('h1')
+        let pp3 = document.createElement('h1')
+        let pp1 = document.createElement('h1')
+       let stop = document.querySelector('.stop')
+       let starttt='';
+        // console.log(day)
+        // pp.innerHTML = year
+        // dsp.appendChild(pp) 
+        // pp1.innerHTML = month
+        
+        // dsp1.appendChild(pp1)
+        let days = ['sun','mon','tue','wed','thu','fri','sat']
+        // pp2.innerHTML = '오늘은'+ days[day] + ' '+  (date11+1) + '일입니다';       
+        // dsp1.appendChild(pp2);
+      
+   
+        // 컴퓨터의 시간은 0~23시까지임
+        // 12시간제로 바꾸려면 1시부터 12시까지 이기 때문에 
+        // 12시간제로 바꾸게되면 0시일때와 12시일때 조건과 1시~11시 까지  오전과 오후  조건이 필요해서
+        // 최소 4개으 ㅣ조건이 필요하다.
+
+        //
+  
+         // 조건이 2개이니 삼황조건문 해도 됨
+        function display_time(){
+            let now_date = new Date();
+            let hour = now_date.getHours();
+            let nowhour='';
+            let minute = now_date.getMinutes();
+            let sec = now_date.getSeconds();
+         if(minute<=9){
+            minute ='0'+minute
+         }else{
+            minute = minute
+         }
+         if(sec<=9){
+            sec ='0'+sec
+         }else{
+            sec = sec
+         }
+            if(hour == 0){
+              nowhour = 'am 12시' 
+                }else if(hour <12){
+               nowhour = 'am' + hour
+                }else if(hour== 12){
+                nowhour = 'pm 12시'
+                }else{
+                nowhour = 'pm' + hour
+            }
+
+            let date11 = now_date.getDate();
+            let day = now_date.getDay();
+            let p2p = document.createElement('h2')
+            dsp1.innerHTML=  `<h2>현재시간은 ${nowhour}시 ${minute}분 ${sec}초야.  오늘 날짜는 ${date11}일이고 요일은 ${days[day]}요일이야</h2> ` ;
+            starttt=setTimeout(display_time,1000)
+        }
+        window.onload = function(){
+            display_time();
+        }
+        stop.onclick= function(){
+            clearTimeout(starttt)
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

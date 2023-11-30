@@ -1,0 +1,219 @@
+css 속성 정리
+1-1 css 속성정리
+ -1 css 속성정리_김용규.hwp
+1-2 속성정의 정리
+ -2 속성정의_김용규.hwp
+1-3 속성별 값 정리
+ -3. 속성별 값_김용규.hwp
+
+네이버
+1. css 효과 종류만
+border-color
+-webkit-box-shadow
+box-shadow
+background-color
+border
+width
+height
+background-position
+color
+background-color
+display : none;
+position : absolute ; 
+left : 0;
+top : 0;
+right: 0;
+bottom: 0;
+position: fixed;
+z-index: 5950;
+ font-family:
+border-radius
+letter-spacing:
+ line-height
+overflow: hidden;
+display: inline-block;
+white-space: nowrap;
+vertical-align: top;
+background: url();
+background-size: 290px 274px
+text-decoration: none
+white-space: nowrap;
+vertical-align: top;
+margin: auto
+ opacity: .7
+ float: left
+box-sizing: border-box;
+ text-overflow: ellipsis;
+ -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+  transform: translateY(-50%)
+  font-weight: 700;
+  vertical-align: top;
+
+다음 사이트
+z-index: 1;
+flex: 1;
+ min-height: 250px
+ touch-action: pan-x
+    touch-action: pan-y
+transition-timing-function: ease-out;
+ -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    min-resolution:1.5dppx
+  text-indent: -9999px
+background-repeat: no-repeat
+    clear: both
+filter: alpha(opacity=60)
+inset: 0;
+cursor: pointer
+
+kfc타겟사이트
+ resize: none
+     -webkit-appearance: checkbox
+ visibility: hidden
+  content: "";
+
+2. 무슨효과인지
+text효과
+text-align : 문단정렬
+vertical-align : 이미지나 폼 요소를 세로 정렬합니다
+text-indent : px, %단위로 문단의 첫머리 들여쓰기 간격
+text-transform : 대소문자 변경 
+text-decoration : 글자에 및줄, 윗줄, 가운데줄 등을 표시, 없애는것도 가능
+배경
+background-color : 배경색상
+background-image: 배경이미지
+background-repeat : 배경이미지의 반복 속성
+background-position : 배경 이미지의 위치 (가로 : left, right center, px, % em의 값) (세로 : top bootom center px % em값)
+background-attachment : 배경이미지를 고정시킬지 스크롤시킬지 설정 (scroll, fixed)
+레이아웃 관련속성
+display: grid  : 행과 열을 사용해 2차원 레이아웃을 생성함 이를통해 요소를 수평 및 수직 방향으로 자유롭게 배치 할 수 있음
+display:inline-grid  그리드를 인라인 레벨 요소로 정의
+float : 블럭과 인라인 요소들을 적절히 배치하는데 많이 쓰이는 요소
+븍록요소와  인라인요소에 사용
+display : 
+
+
+transition : transform이나 animation 효과에 대한 지속시간, 딜레이, 모션감 등을 설정하는 기능
+
+
+display : none;
+
+
+3. 각 속성별로 입력방법
+text-align : left, center, right,  justfy
+vertical-align : top, middle, bottom
+text-indent : 0px or 0%
+text-transform : uppercase, lowercase,    capitialize (첫글자만 대문자)
+text-decoration : line-through, none 등등  (a태그에 밑줄 삭제가능)
+배경
+background-color : rgb값 입력
+background-image : url("images/back.png")
+background-repeat : repeat, no-repeat, repeat-x, repeat-y
+background-position : 가로 세로의 값 지정
+background-attachment : scroll, fixed
+레이아웃
+float : left  박스 왼쪽에 배치하고 나머지 컨텐츠를 주변에 배치
+float: right 박스 오른쪽에 배치하고 나머지 컨텐츠를 주변에 배치
+clear: both 옆으로 배치하지 않고 다시 원래대로 배치하기 위해 초기화
+display:flex : 요소들의 가로 또는 세로축을 따라 정렬하고 배치하는 레이아웃 모델
+여유공간에 따라 높이나 위치등을 자유롭게 변형이 가능하고 손쉽게 화면을 분할하여 필요한 html요소를 배치 할 수 있음
+flex 플렉스 박스를 박스레벨요소로 정의함 
+inline-flex 플렉스 박스를 인라인 레벨 요소로 정의함
+flex-direction: row or column or row-inverse or column-inverse ; (방향지정) 설정하지 않으면 기본값인 row로 지정됨
+flex-wrap : no-wrap , wrap, wrap-reverse : 플렉스 항목을 여러 줄에 표시하며 기존 방향과 반대로 배치함
+flex-direction과 flex-wrap 속성을 동시에 설정하고 싶으면 flex-flow를 사용
+flex 사용시  항목순서 바꾸고 싶을때
+order:숫자 를 사용해서 재정리 가능 1-> 9~ 순으로 1번이 최상단으로 올라오게됨
+.box1{order:2}
+.box2{order:4}
+.box3{order:3}
+.box4{order:1} 박스 4번이 맨앞으로 
+
+
+
+
+display: grid   그리드를 박스 레벨 요소로 정의합니다
+display:inline-grid  그리드를 인라인레벨 요소로 정의
+grid-template-columns : 열의 비율;
+grid-template-rows :  행의 비율;
+
+grid-template-columns: 1fr 1fr; = 가로를 1 : 1 비율로 꽉 채운다.
+grid-template-columns: 1fr 1fr 1fr; = 가로를 1 : 1 : 1 비율로 꽉 채운다.
+grid-template-columns: repeat(3, 1fr); = 1fr을 3번 반복한다.
+grid-template-columns: repeat(3, 100px); = 100px를 4번 반복한다.
+grid-template-columns: minmax(150px, 1fr) repeat(3, 1fr); = 최소 크기 150px 최대 크기 1fr
+grid-template-columns: max-content repeat(3, 1fr); = 내용물을 가능한 한 펼쳐서 길이를 정한다.
+grid-template-columns: min-content repeat(3, 1fr); = 내용물을 가능한 한 좁혀서 길이를 정한다.
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); = 자식이 있는 만큼만 적용된다.
+grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); = 자식 말고도 조건이 되면 가능한 한 빈 공간으로 채운다.
+gap : 간격;  그리드의 컨테이너와 그리드 아이템들의 간격을 설정
+row-gap:  간격;  그리드 행의 간격설정
+columm-gap : 간격;  그리드 열의 간격설정
+-------------------------
+grid-area: 그리드 아이템의 별칭을 지정한다.
+grid-template-areas : 영역 이름으로 그리드 아이템들을 배치한다.
+.container {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+    grid-template-areas: 
+        "h h h h"
+        "a a b b"
+        "f f f f"
+    ;
+}
+header {
+    grid-area: h;
+    background-color: #D0021B;
+}
+
+section.a {
+    grid-area: a;
+    background-color: #9013FE;
+}
+
+section.b {
+    grid-area: b;
+    background-color: #F8E71C;
+}
+
+footer {
+    grid-area: f;
+    background-color: #50E3C2;
+}
+-------------------------
+이런식으로 지정하면 해당열에 알아서 배치된다.,
+----------------------------------
+블록, 인라인요소
+display: block = 해당요소를 블록레벨로 지정
+display:inline = 해당요소를 인라인 레벨로 지정(인라인요소는 한줄로 배치는 가능하나 너비나 높이 마진의 값은 적용되지 않는다.)
+display:inline-block  만약 인라인으로 배치하면서 블록처럼 너비나 높이등을 지정하고 싶다면 inline-block을 사용하면 됩니다
+display:none = 이 속성을 지정하면 해당 요소를 화면에 아예 표시하지 않으며 공간도 차지하지 않음
+
+
+
+
+
+
+
+
+transition 
+1. 지속시간
+transition-duration을 통해 지속시간 설정가능 숫자옆에 s(초) ms(밀리초)를 적는다.
+2.움직이는 느낌
+transition-timing-function으로 전환효과의 움직이는 느낌 설정가능
+ease, ease-in, ease-out, ease-in-out, linear, step-star, step-end가 있다.
+위 설정값은 animation에도 사용됨
+3. 함수에 직접 값을 입력해서 세밀한 모션감도 설정가능하다.  :  cubic-bezier(n,n,n,n)
+
+transition에 숫자 뒤에 s 또는 ms를 사용해서 지속시간만 설정도 가능하고 , 콤마를 활용해 여러가지 메소드를 설정 할 수있다.
+4. 딜레이
+transition-delay로 전환효과가 시작되기까지의 시간을 지연 할 수 있다.
+
+div{
+ transition : margin-right 4s ease-in-out 1s;
+}
+
+	

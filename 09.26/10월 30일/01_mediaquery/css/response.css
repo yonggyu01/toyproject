@@ -1,0 +1,12 @@
+/* 일반 PC : width 1,000px 이상 */
+
+	body{color:#fff;font-size:50px;background:#ff99cc}
+
+/*태블릿 PC : width 1,000px 미만 640px이상 */
+@media screen and (max-width:999px){
+	body{color:#fff;font-size:30px;background:#99cc33}
+}
+/*모바일 : width 640px 미만 */
+@media screen and (max-width:600px){
+	body{color:#fff;font-size:14px;background:#0099ff}
+}

@@ -1,0 +1,6 @@
+* 웹 페이지 개발 방법
+1. 분리해서 코딩
+ - 구조(Structure) : html
+ - 표현(Presentation) : css
+ - 동작(Behavior) : javascript
+ 

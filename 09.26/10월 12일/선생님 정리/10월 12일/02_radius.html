@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>border-radius</title>
+<style type="text/css">
+#borderBox ul{
+		text-align:center;
+		color:#000
+}
+#borderBox ul li{
+		width:100px;
+    height:100px;
+		line-height:100px;
+		list-style:none;
+		float:left;
+		margin-right:20px
+}
+.menu{
+		border:2px solid #0066ff;
+		/* border-radius: 20px; */
+    /* border-radius: 30%; */
+    /* border-radius: 50px; */
+    /* border-radius: 50%; */
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+</style>
+</head>
+
+<body>
+<h1>border-radius</h1>
+  <div id="borderBox">
+    <ul>
+      <li class="menu">MENU</li>
+      <li class="menu">MENU</li>
+      <li class="menu">MENU</li>
+      <li class="menu">MENU</li>
+    </ul>
+  </div>
+</body>
+</html>

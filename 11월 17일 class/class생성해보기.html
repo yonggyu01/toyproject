@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    const year = new Date();
+    const now_year = year.getFullYear();
+
+
+console.log(now_year)
+    class Student{
+        constructor(name,age){
+          this.name =name;
+         this.age= age;
+        }
+        get full(){
+            for(let x in this){
+             document.write(`${x} + ${this[x]} <br>`)
+             };
+        }
+        get birth(){
+            document.write(now_year - this.age)
+            return now_year - this.age
+        }
+    }
+    let tt = new Student('김여울',25);
+
+
+  const kim = new Student('김철수',33)
+  class Mid extends Student{
+    constructor(name, age , hobby){
+        super(name, age)
+        this.hobby = hobby;
+    }
+  }
+  
+  const Chulsu = new Mid('안철수',55,'영화보기')
+Chulsu.full;
+
+tt.full;
+
+document.write(Chulsu.birth)
+function Teacher (name,className){
+    this.name = name;
+    this.className = className;
+    this.tt = function(){
+        document.write(this.name + this.className);
+    
+    }
+    this.tt();
+}
+const le = new Teacher('이혁도','병아리반')
+
+console.log(le.birth)
+
+
+class School{
+    constructor(schoolName,teacherName){
+        this.schoolName = schoolName;
+        this.teacherName = teacherName;
+
+
+    }
+    teachera(){
+            return this.schoolName + '나는 여기학교야';
+        
+    }
+    
+}
+
+const kick = new School('한강대','강수리')
+kick.teachera();
+
+class Location extends School {
+    constructor(schoolName,teacherName,loc){
+        super(schoolName,teacherName)
+        this.location = loc
+    }
+    get schloc(){
+        return this.teachera() + '여기는 ' + this.location + '야';
+    }
+
+}
+
+const mama = new Location('서울대','광나루','대한민국');
+
+
+console.log(mama.schloc)
+
+console.log(mama.schloc)
+
+
+class People{
+    constructor(peopleNum){
+        this.Number  = peopleNum
+    }
+    static PeopleMaker(number){
+        return new People(number)
+    }
+}
+
+class Kims extends People{
+    constructor(peopleNum, Name){
+        super(peopleNum)
+        this.newName = Name;
+    }
+}
+
+let bb = new Kims(99,'강나미')
+
+let qq = People.PeopleMaker(55)
+console.log(qq)
+console.log(bb)
+let oo = bb.PeopleMaker(99)
+
+console.log(oo)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+    <div id="dsp" class="dsp"></div>
+</body>
+</html>

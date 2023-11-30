@@ -1,0 +1,359 @@
+*{
+    max-height: 10000000px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    position: relative;
+    z-index: 3;
+    margin: auto;
+    width: 1200px;
+}
+main{
+    width: 1200px;
+    margin: auto;
+   
+}
+.headd{
+    height: 30px;
+}
+.b1{
+    visibility: hidden;
+}
+h1{
+    text-align: center;
+}
+nav{background-color: white;
+
+}
+#gnb{
+    /* position:sticky; */
+    
+}
+#gnb > ul{
+    /* position:relative; */
+    width: 1200px;
+    margin:auto;
+
+}
+nav#gnb ul > li{
+    float:left;
+    width: 133px;
+    color : black;
+    
+
+}
+nav#gnb ul>li>ul{
+   font-size: 12px;
+   position: absolute;
+   
+}
+#gnb ul>li>ul>li{
+   width:100%;
+}
+
+.outer {
+    clear: both;
+
+}
+nav#gnb a
+{
+    text-decoration: none;
+    color:#000;
+}
+.top_menu{
+    clear:both;
+}
+.top_menu a,.sns_and_search a{
+    text-decoration: none;
+    color:#000;
+}
+.top_menu ul{
+    display:flex;
+ width: 50%;
+ position: absolute;
+ top : 10px; 
+ 
+}
+
+.top_menu li{
+    /* float:left; */
+    width: 10%;
+    font-size: 8px;
+    text-align: left;
+    
+}
+
+
+.sns_and_search{
+    position: absolute; 
+    display: flex;
+    top : 10px;   
+    /* width: 50%; */
+    margin:auto;
+    right:5px;
+    justify-content: space-between;
+    
+}
+#searching>fieldset{
+    border: none;
+    outline: none;
+}
+#searching input{
+    border:none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+/* #searching{
+    position: sticky;
+    width : 50px;
+} */
+.customer>h2,.down>h2,.second_product>h2,#searching legend,.item_scroll>h2,.item_scroll>h3,.notice>h3, .top_menu>h2, .sns_and_search>h2 , .product_menu>h2{
+    visibility: hidden;
+    display:none;
+}
+.sns_and_search>ul{
+    display: flex;
+    /* float: left; */
+    width: 200px;
+}
+.sns_and_search>ul>li{
+    margin : 0 5px;
+    font-size: small;
+
+}
+
+.main_pic1{
+    /* margin: 0 auto; */
+    /* position: sticky; */
+    display:grid;
+    grid-template-columns: 900px 295px;
+    grid-template-rows: 444px 144px; 
+    grid-gap: 5px;
+    z-index: 0;
+}
+.main1{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end:2;
+}
+.banner1{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end:1;
+}
+.notice{
+    grid-column: 2 / 2;
+    grid-row: 2 / 2;
+}
+.notice a{
+    text-decoration: none;
+    color:black;
+}
+main{
+    clear: both;
+}
+.black1{
+    margin: 80px;
+}
+.banner3{
+    display: grid;
+    grid-template-columns: 392px 392px 392px;
+    grid-template-rows: 224px 224px;
+    grid-gap:8px;
+
+}
+.a01{
+    background-color: aquamarine;
+    grid-column: 1 /1;
+    grid-row:1/2;
+}
+.notice{
+    padding:0 5px;
+
+}
+.notice>table{
+    width: 295px;
+    border-collapse: collapse;
+
+}
+.notice>table>thead>tr>th{
+ 
+    border-bottom: 1px solid black;
+}
+
+
+/* 왜 테이블 표에 밑줄이 안들어가는지 */
+.a02{
+    background-color: mediumaquamarine;
+    grid-column: 2 /2;
+    grid-row:1/1;
+}
+.a03{
+    background-color: brown;
+    grid-column: 2 /2;
+    grid-row:2/2;
+}
+.a04{
+    background-color: yellow;
+    grid-column: 3/3;
+    grid-row:1/2;
+}
+.product_name{
+    font-size: 20px;
+    text-align: center;
+    display: block;
+}
+.subname{
+    font-size: 12px;
+    text-align: center;
+    display: block;
+}
+.product_icon{
+    display:table;
+    width: 1220px;
+    gap:10px;
+   
+    /* flex-direction: row;
+    flex-wrap: wrap;
+    width: 1200px;
+    justify-content: flex-start;  */
+}
+.product_icon>li{
+    display:table-cell;
+    
+
+    /* border-spacing: 11px; */
+
+    /* width: 289px;
+    height: 463px; */
+}
+.product_icon a,.product2>ul>li a {
+    text-decoration: none;
+    color: #000;
+}
+.pi1>img{
+    width: 289px;
+    height: 289px;
+    
+}
+.tab1{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+     margin:0 10px; 
+
+}
+.tab1>li{
+    padding: 5px;  
+    font-size: small;  
+    
+
+}
+.tab1 li:first-child{
+    border-bottom: 1px solid gray;
+    
+}
+.sliderflex{
+    display: flex;
+    width: 1200px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+   
+}
+.slide{
+    position: relative;
+}
+.slide>a img{
+    width: 200px;height: 200px;
+    object-fit: cover;
+    object-position: center;
+    z-index:2px;
+}
+.slide2{
+    position:absolute;
+    left:5px; top:5px;
+    z-index:1px;
+    color:white;
+
+}
+.product2{
+    display: table;
+    width: 1220px;
+    gap:10px;
+
+}
+.product2>ul>li{
+    display: table-cell;
+    gap:10px;
+    padding: 5px;
+    /* border-spacing: 11px; */
+}
+.item_scroll{
+    position: relative;
+    width: 1200px;
+}
+.button{
+    position: absolute;
+    top :160px;
+    width: 1200px;
+}
+.left{
+    position: absolute;
+ left : 0px;
+}
+
+.button>.right{
+    position: absolute;
+   right : 1px;
+}
+footer{
+    width: 1200px;
+    margin: auto;
+    border-top: 1px soild black;
+    position: relative;
+    z-index: 2;
+}
+footer>.customer>ul{
+    display:flex;
+    width: 1200px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.down>ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;   
+}
+.down>ul a{
+    text-decoration: none;
+    color:gray;
+}
+.down>ul>p{
+    position: absolute;
+    left :0px;
+    
+}
+.inlinep{
+    display: inline;
+}
+
+address{
+    display: inline;
+}
+.underline1{
+    width: 1200px;
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+
+}
+.black2{
+    margin: 30px;
+}

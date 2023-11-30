@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+    <title>webfont</title>
+    <style>
+        @font-face{
+    font-family: "카카오"; /*적용할 폰트으 ㅣ이름을 지정하는것 -> 웹폰트에서는 class 나 id 부여하는것으로 보아라*/
+    src:url('fonts/HYBDAM.eot') /*적용할 폰트 경로*/
+    /* src:url('fonts/HYBDAM.TTF.woff') 적용할 폰트 경로 */
+    src:local('※'), url('fonts/HYBDAM.eot') format('eot');}
+            body{
+                font-size:30px
+            }
+            #textBox p{
+                margin-bottom:10px;
+            } /* 폰트는 2가지 유형으로 많이쓰는데,  한글, 영어, 딩백폰트?(폰트명 뒤에 ding이라고 써있음)  <- 아이콘 만들때 사용*/
+            .ex01{
+                font-family:"돋움", ; /*적용할 폰트 스타일을 지정하는것으로 @font-face에 사용되는 font-family와는 다르다*/
+                border:1px solid #ccc;
+                padding: 10px;
+            }
+            .ex02{
+                font-family:"카카오",Arial ;
+                border:1px solid #ccc;
+                padding: 10px;
+            }
+            .ex03{
+                font-family:'Noto Sans KR', sans-serif; ;
+                border:1px solid #ccc;
+                padding: 10px;
+            }
+            
+        </style>
+</head>
+<body>
+ <h1>웹폰트</h1>   
+<h2>서버측 폰트를 사용할 수 있는 font-family를 생성</h2>
+<div id="textBox">
+    <p class="ex01">돋움,dotum</p>
+    <p class="ex02">굴림, gulim</p>
+    <p class="ex03">휴먼 가는샘체, human sam</p>
+</div>
+</body>
+</html>

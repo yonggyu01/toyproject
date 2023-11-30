@@ -1,0 +1,67 @@
+* CSS (Cascading Style Sheet)
+ 웹 페이지의 표현(디자인)을 나타내는 언어
+
+
+
+ <  A     B   =   " C "     B  =  " C " ... >
+
+ selector(선택자 : 누구한테) {
+    
+		property(속성 : 어떤효과)  :  value(값 : 얼만큼)  ;
+
+		B  :  C  ;
+
+}
+
+
+
+* 선택자
+1. 태그 선택자
+- html 태그에 직접 효과 적용
+- 해당 태그 작성 시 자동으로 효과 적용
+
+2. 클래스 선택자
+- 중복 가능
+.name{효과}
+<요소  class="name">
+
+3. 아이디 선택자
+- 중복 불가
+#name{효과}
+<요소   id="name">
+
+4. 다중 선택자
+ A, B, C { 효과 }
+
+5. 후손 요소 선택자
+ A   B  { 효과 }
+
+6. 자식 요소 선택자
+ A  >  B  { 효과 }
+
+
+
+** 스타일 적용방법
+* 내부 방식
+1. 내부 스타일(Embedded)
+<head>
+<style type="text">  <--- 스타일 선언문
+ selector { property : value }
+</style>
+
+2. 인라인 방식
+<elem  style="property:value; property:value">
+
+
+* 외부 방식
+selector { property : value }  <--- name.css 로 저장, 선언문 생략
+
+1. 링크 방식
+<head>
+<link rel="stylesheet" type="text/css" href="name.css">
+
+2. 임포트 방식
+<head>
+<style type="text">
+ @import "name.css";
+</style>

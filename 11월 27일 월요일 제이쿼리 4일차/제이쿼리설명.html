@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        img{
+            width: 100%;
+        }
+        .img1{
+            width: 200px;height: 200px;overflow: hidden;margin-bottom: 20px;
+        }
+        .img1 img{
+            width: 200px;height: 200px;overflow: hidden;
+            position: relative;
+            transition: all 1s;
+        }
+        .img2{
+            width: 200px;height: 200px;overflow: hidden;margin-bottom: 20px;
+            position: relative;
+        }
+        .img2 img{
+            transition: all 1s;
+            width: 200px;height: 200px;overflow: hidden;
+        }
+        .img2 img:hover{
+            /* transform: scale(1.1,1.1); */
+        }
+        .img3 img:hover{
+            /* transform: scale(1.1,1.1); */
+        }
+        .img3{
+            width: 200px;height: 200px;overflow: hidden;margin-bottom: 20px;
+            position: relative;
+        }
+        .img3 img{
+            transition: all 1s;
+            width: 200px;height: 200px;overflow: hidden;
+        }
+        h1{
+            transition: all 1s;
+            text-align: center;
+        }
+        .fade1{
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        .fade1 span{
+            width: 200px;height: 200px;position: absolute;left:0;top:0;background-color: black;opacity: 0.6;
+        }
+        .fade2{
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+        .fade2 img{
+            opacity:0.4;
+        }
+        .fade3{
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+        .fade3 img{opacity:0.4}
+
+        .m1{
+            width: 200px;height: 200px;
+            background: url(img1.jpg);
+            background-size:  100% 100%;
+            margin-bottom:20px;position: relative; overflow: hidden;
+        }
+        .m1 span{width: 200px;height: 200px;position: absolute;left:0; top:160px;
+             background-color: rgba(0, 0, 0, 0.612);}
+        .m2{
+            width: 200px;height: 200px;
+            background: url(img2.webp) ;
+            background-size:  100% 100%;
+            margin-bottom:20px;position: relative;
+        }
+        .m2 span{width: 200px; height: 40px;position:absolute;
+            left : 0; top: 160px; background-color: rgba(0, 0, 0, 0.612)
+        }
+        .m3{
+            width: 200px;height: 200px;
+            background: url(img1.jpg);
+            background-size:  100% 100%;
+            margin-bottom:20px;position: relative; overflow: hidden;
+        }
+        .m3 span{width: 200px;height: 200px;position: absolute;left:0; top:160px;
+             background-color: rgba(0, 0, 0, 0.612);}
+
+   </style>
+    <script>
+        $(document).ready(function(){
+            //이건 모든타겟 크기조절 연습
+            // $('body>*').hover(function(e){
+            //     console.log(e.target)
+            //     $(e.target).stop().css({display : 'block',margin : '0 auto',transform : "scale(1.5,1.5)",border : '1px solid black'})
+            // },function(e){
+            //     $(e.target).stop().css({display : 'block',border : '0 none',transform : "scale(1,1)"})
+            // })
+            /// 아래는 페이드 효과 연습
+
+            $('.fade1 span').hover(function(){
+                $(this).stop().animate( {opacity:0}  )
+            },function(){
+                $(this).stop().animate( {opacity:0.6}    )
+            })
+            $('.fade2 img').hover(function(){
+                $(this).stop().animate( {opacity:1}  )
+            },function(){
+                $(this).animate( {opacity:0.6}    )
+            })
+            $('.fade3 img').hover(function(){
+                $(this).stop().animate( {opacity:1}  )
+            },function(){
+                $(this).stop().animate( {opacity:0.4}    )
+            })
+
+            // 상자 보이기
+            $('.m1').hover(function(){
+                $(this).find('span').stop().animate({top:0})
+            },function(){
+                $(this).find('span').stop().animate({top:160})
+            })
+
+
+        })
+
+    </script>
+</head>
+<body>
+    <div class="img1">
+        <a href="#none">
+            <img src="img1.jpg" alt="">
+        </a>
+    </div>
+    <div class="img2">
+        <a href="#none">
+            <img src="img2.webp" alt="">
+        </a>
+    </div>
+    <div class="img3">
+        <a href="#none">
+            <img src="img3.jpg" alt="">
+        </a>
+    </div>
+    <h1>그냥 이렇게 하자</h1>
+
+<hr>
+<hr>
+<hr>
+<hr>
+
+<h2>fade1</h2>
+<div class="fade1">
+    <img src="img1.jpg" alt="">
+    <span></span>
+</div>
+
+<hr>
+<br>
+<hr>
+
+<h2>fade2</h2>
+<div class="fade2">
+    <img src="img2.webp" alt="">
+
+</div>
+<hr>
+<br>
+<hr>
+<h2>fade3</h2>
+<div class="fade3">
+    <img src="img3.jpg" alt="">
+</div>
+
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<div class="m1">
+    <span></span>
+</div>
+<hr>
+<hr>
+<hr>
+<div class="m2">
+    <span></span>
+</div>
+<hr>
+<hr>
+<hr>
+<div class="m3">
+    <span></span>
+</div>
+</body>
+</html>

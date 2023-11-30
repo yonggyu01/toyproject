@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <script src="jquery-3.7.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        p{
+            font-size: 30px;
+
+        }
+        input{
+            width: 200px 
+            ;
+            height: 80px;
+
+        }
+        option{
+            outline:0 none !important; 
+        }
+    </style>
+    <script>
+        // css() 사용법, 값이 숫자만 있거나 px인 경우 숫자만 적어도 됨  여러값 한번에 주려면 {} 객체 형식으로 작성하면됨 
+        $(document).ready(function(){
+            $(':text').css('width','350px').css('border','none').css('background','red').css('color','white').css('font-size','40px')
+            $(':password').css({width:'150px', border:'none',background:'red' }).css('color','white').css('font-size','40px')
+            $(':checked').css({outline :'5px solid red'})
+            $(':selected').css({color:'red'})
+        })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2></h2>
+    <p><input type="text" placeholder="text"></p>
+    <p><input type="password" placeholder="pass"></p>
+    <p><input type="checkbox" checked="checked">checkbox 1 </p>
+    <p><input type="checkbox">checkbox 2</p>
+    <p><input type="checkbox" checked="checked">checkbox 3 </p>
+    <select name="" id="" multiple="multiple">
+        <option value=""> option 1</option>
+        <option value=""> option 2</option>
+        <option value="" selected="selected"> option 3</option>
+        <option value=""> option 4</option>
+    </select>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item{
+            /* width: 5px 45px; */
+            background: black;
+            height: 50px;
+            padding: 5px 50px;
+            /* margin: 0 10px; */
+
+        }
+        p{
+            color: white;
+
+        }
+        .container{
+            background: #aaa;
+            display: flex;
+            margin: 0 10px;
+
+        }
+        .jc-flex-start{
+            justify-content: flex-start;
+            gap :10px;
+        }
+        .jc-flex-end{
+            justify-content: flex-end;
+            gap:10px;
+        }
+        .jc-center{
+            justify-content: center;
+            gap: 10px;
+        }
+        .jc-space-between{
+            justify-content: space-between;
+            gap:10px;
+            /* 양끝 여백은 없음 */
+        }
+        .jc-space-evenly{
+            justify-content: space-evenly;
+            gap:10px;
+            /* 양끝 여백도 동일하게 생기며 아이템간 여백도 동일하게 적용됨  between과 비슷하나 양끝 여백유무의 차이*/
+        }
+        .jc-space-around{
+            justify-content: space-around;
+            gap:10px;
+            /* 아이템간 여백간격이 동일하게 생기기 때문에 아이템의 중간여백과 좌우끝쪽 아이템간의 여백은 차이가 발생함
+              좌측끝< 아이템 >< 아이템 >< 아이템 >우측끝   아이템간 여백을 똑같이 주기에 양끝은 여백이 작아보인다.
+             */
+        }
+        
+
+        </style>
+</head>
+<body>
+<h2>justify-content 아이템의 수평축</h2>
+    <h3>justify-content :flex-start</h3>
+    <div class="container jc-flex-start">
+        <div class="item">
+            <p>1</p>
+        </div>
+        <div class="item">
+            <p>2</p>
+        </div>
+        <div class="item">
+            <p>3</p>
+        </div>
+        <div class="item">
+            <p>4</p>
+        </div>
+    </div>
+    <h3>justify-content :flex-end</h3>
+    <div class="container jc-flex-end">
+        <div class="item">
+            <p>1</p>
+        </div>
+        <div class="item">
+            <p>2</p>
+        </div>
+        <div class="item">
+            <p>3</p>
+        </div>
+        <div class="item">
+            <p>4</p>
+        </div>
+    </div>
+    <h3>justify-content :center</h3>
+    <div class="container jc-center">
+        <div class="item">
+            <p>1</p>
+        </div>
+        <div class="item">
+            <p>2</p>
+        </div>
+        <div class="item">
+            <p>3</p>
+        </div>
+        <div class="item">
+            <p>4</p>
+        </div>
+    </div>
+    <h3>justify-content :space-between</h3>
+    <div class="container jc-space-between">
+        <div class="item">
+            <p>1</p>
+        </div>
+        <div class="item">
+            <p>2</p>
+        </div>
+        <div class="item">
+            <p>3</p>
+        </div>
+        <div class="item">
+            <p>4</p>
+        </div>
+    </div>
+    <h3>justify-content :space-evenly</h3>
+    <div class="container jc-space-evenly">
+        <div class="item">
+            <p>1</p>
+        </div>
+        <div class="item">
+            <p>2</p>
+        </div>
+        <div class="item">
+            <p>3</p>
+        </div>
+        <div class="item">
+            <p>4</p>
+        </div>
+    </div>
+    <h3>justify-content :space-around</h3>
+    <div class="container jc-space-around">
+        <div class="item">
+            <p>1</p>
+        </div>
+        <div class="item">
+            <p>2</p>
+        </div>
+        <div class="item">
+            <p>3</p>
+        </div>
+        <div class="item">
+            <p>4</p>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

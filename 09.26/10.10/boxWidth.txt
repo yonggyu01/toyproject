@@ -1,0 +1,59 @@
+*** box-sizing: content-box ***
+** Real Width : width( = content area) + padding + border
+
+- width:800px
+* Real Box Width : 800px
+
+- width:800px; padding: 100px
+* Real Box Width : 
+  W800 + (PL100 + PR100) = 1000px
+
+- width:800px; padding: 100px; border: 100px
+* Real Box Width : 
+  W800 + (PL100 + PR100) + (BL100 + BR100) = 1200px
+
+- width:100%
+* Real Box Width : (*부모의) 100%
+
+- width:100%; padding: 100px
+* Real Box Width : 100% + 200px
+
+- width:100%; padding: 100px; border: 100px
+* Real Box Width : 100% + P200px + B200px
+
+- width:auto
+* Real Box Width : (*부모의) 100%
+
+- width:auto; padding: 100px
+* Real Box Width : 100% ( content area : 100% - 200px )
+
+- width:auto; padding: 100px; border: 100px
+* Real Box Width : 100% ( content area : 100% - P200px - B200px)
+
+-------------------------------------------------------------------------------------
+
+*** box-sizing: border-box ***
+** Real Width : content area + padding + border = width
+
+- width:800px; padding: 100px; border: 100px
+* Real Box Width : W800 + (PL100 + PR100) + (BL100 + BR100) = 1200px
+
+* Box Width : 800px
+- width:400px; padding: 100px; border: 100px (; box-sizing: content-box)
+* Real Box Width : W400 + (PL100 + PR100) + (BL100 + BR100) = 800px
+
+* Box Width : 800px
+- width:800px; padding: 100px; border: 100px; box-sizing: border-box
+* Real Box Width : ContentArea400 + (PL100 + PR100) + (BL100 + BR100) = 800px
+
+* Box Width : 100%
+- width:auto; padding: 100px; border: 100px
+* Real Box Width : ContentArea400 + (PL100 + PR100) + (BL100 + BR100) = 800px
+
+* Box Width : 80%
+- width:40%; padding: 10%; border: 10%(X)
+* Real Box Width : ContentArea40% + (PL10% + PR10%) + (BL10% + BR10%)
+
+* Box Width : 80%
+- width:calc(80%-400px); padding: 100px; border: 100px
+- width:80%; padding: 100px; border: 100px; box-sizing: border-box

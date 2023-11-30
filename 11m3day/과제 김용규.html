@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생점수기록부 용규</title>
+    <style>
+        a{
+            text-decoration: none;
+            color:inherit;
+        }
+        .databox{
+            width: 50%;
+            margin: 0 auto 50px;
+            border: 1px solid black;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.459);
+            padding: 0 5px;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .inputa{
+            display: flex;
+            flex-direction: row;
+            gap:3px;           
+            margin-bottom: 10px; 
+        }
+        .inputa button{
+            background: red;
+            border-radius: 20px;
+            color:white;
+            width: 80px;
+            font-size: 25px;
+            border-collapse: collapse;
+        }
+        body{
+            min-width: 1000px;
+        }
+        #username{
+            width: 150px;
+            height: 40px;
+            padding-left: 5px;
+
+        }
+        #grade{
+            width: 120px;
+            height: 40px;
+            padding-left: 5px;
+        }
+        textarea{
+            width: 95%;
+            font-size: 5em;
+            border: 0 none;
+            display: none;
+        }
+        .monthinput{
+            display: flex;
+            flex-direction: row;
+            gap : 10px;
+            align-items: center;
+            padding: 5px;
+        }
+        .monthreturn{
+            width: 50%;
+            margin: 0 auto 50px;
+            border: 1px solid black;
+            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.411);
+            padding: 5px;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .monthreturn h2{
+            font-size: 40px;
+        }
+        .retrunHuge{   
+            position: relative;
+            height: 0px;
+            transition: all 0.3s;
+        }
+        .retrunHuge p{
+            color : inherit;
+            top:-140px;
+            width: 300px;
+            left:20px;
+            font-size: 130px;
+            position: absolute
+            ;text-shadow: 3px 5px 5px rgba(0, 0, 0, 0.247);
+        }
+        .monthinput h3{
+            font-size: 35px;
+        }
+        .month_select{
+            width: 80px;
+            height: 40px;
+            font-size: 25px;
+        }
+        .monthinput a{
+            display: inline-block;
+            width: 80px;
+            border: 1px solid red;
+            background: red;
+            color : white;
+            border-radius: 15px;
+            height: 40px;
+            font-size: 25px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.467);
+        }
+        .two{
+            width: 50%;
+            margin: auto;
+            border: 1px solid black;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.445);
+            padding: 10px;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .box{display: flex;
+            gap :10px
+            ; align-items: center;
+            
+        }
+        .box input{
+            font-size: 20px;
+            width: 150px;
+            height: 30px;
+        }
+        .box a{
+            width: 80px;
+            background: red;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.452);
+            border-radius: 20px;
+            text-align: center;
+            color : white;
+            font-size: 20px;
+            display: inline-block;
+            height: 30px;
+        }
+        .returnbox2{
+            /* height: 100px; */
+            width: 600px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            transition: all 0.5s;
+        }
+        .returnbox2 p{
+            position: absolute;
+            top:-240px;
+            right:40%;
+            ;transform: scale(3 ,3);
+            font-size:  6em;
+            
+        }
+ 
+        .close{
+            position: absolute;
+            font-size: 20px;
+            border: 1px solid black;
+            color:red;
+            width: 20px;
+            height: 20px;
+            top:0px;
+            right:0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 0 none;
+        }
+  
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var username = document.querySelector('#username')
+            var usergrade = document.querySelector('#grade')
+            var summitb = document.querySelector('.inputa>button')
+            var textreturn = document.querySelector('textarea')
+            var _name, _grade;
+
+            username.addEventListener('mouseenter',function(){
+                if(!_name){
+                username.style.background = 'yellow'}else{
+                    username.style.background = 'orange'
+                }
+            })
+            username.addEventListener('mouseleave',function(){
+                if(!_name){
+                username.style.background = 'white'}else{
+                    username.style.background = 'orange'
+                }
+            })
+            usergrade.addEventListener('mouseenter',function(){
+                if(!_grade){
+                    usergrade.style.background = 'yellow'}else{
+                        usergrade.style.background = 'orange'
+                }
+            })
+            usergrade.addEventListener('mouseleave',function(){
+                if(!_grade){
+                    usergrade.style.background = 'white'}else{
+                        usergrade.style.background = 'orange'
+                }
+            })
+
+            usergrade.addEventListener('change',function(){
+                _grade = usergrade.value
+                console.log(_grade)
+            })
+            username.addEventListener('change',function(){
+                _name = username.value
+            })
+            summitb.addEventListener('click',function(){
+                textreturn.style.display  ='block';              
+                if((_name == undefined)||(!_name)){textreturn.value = '이름입력하세요'
+                }else{
+                    if((_grade >=90)&&(_grade<=100)){
+                        textreturn.value = `${_name}님은 A등급`
+                    }else if((_grade>=80)&&(_grade<90)){
+                        textreturn.value = `${_name}님은 B등급`
+                    }else if((_grade>=70)&&(_grade<80)){
+                        textreturn.value = `${_name}님은 C등급`
+                    }else if((_grade>=60)&&(_grade<70)){
+                        textreturn.value = `${_name}님은 D등급`
+                    }else if((_grade>=0)&&(_grade<60)){
+                        textreturn.value = `${_name}님은 F등급`
+                    }else{
+                        textreturn.value = '다시입력해'
+                    }       
+                }
+            })
+
+            // Switch 조건문 작성
+            var month_select = document.querySelector('.month_select')
+            var selectedM;
+            var moption = document.querySelectorAll('.month_select option')
+            var monthButton = document.querySelector('.monthinput a')
+            var returnMonth = document.querySelector('.retrunHuge')
+            // 1월부터 12월까지 확인결과  31일이 7번  28일이  1번  29일 없음  30일 4번 있음
+            // switch 문 작성시 중복되는 값들은 묶어서 하나로 처리하는 방향으로
+            // 태그에서 value값에 a28은 28일  a30은 30일  a31은 31일로 받아서 처리하면 될것같음.
+            // 31일이 연속적으로 선택된다면 글자가 똑같아서  변화가 없는것 처럼 보임
+            // 선택버튼을 누를때마다 화면에 글자의 색이 계속 바뀌었으면 좋겠음
+            var datecounta = ['<p>28일</p>','<p>29일</p>','<p>30일</p>','<p>31일</p>']
+            var colorchange = ['black','red','blue','orange','yellow']
+            var a = 0;
+            month_select.addEventListener('change',function(){
+                selectedM = month_select.value;
+                console.log(selectedM) 
+                moption[0].setAttribute('disabled','')
+            })
+            monthButton.addEventListener('click',function(){
+                
+                switch(selectedM){
+                    case 'a28' : 
+                    returnMonth.innerHTML = datecounta[0]
+                    returnMonth.style.color = colorchange[a]
+                    returnMonth.style.height = 220+'px'
+                    //색상변경용 조건문
+                    if((a >= 0) && (a < colorchange.length-1)){a += 1}else{ a = 0}
+                    //2초후 자동으로 꺼지는 타이머
+                    setTimeout(function(){
+                        returnMonth.innerHTML = '';
+                        returnMonth.style.height = 0+'px'    
+                    },2000)
+                    console.log(a)
+                    break;
+                    case 'a30' : 
+                    returnMonth.innerHTML = datecounta[2]
+                    returnMonth.style.color = colorchange[a]
+                    returnMonth.style.height = 220+'px'
+                    if((a >= 0) && (a < colorchange.length-1)){a += 1}else{ a = 0}
+                    setTimeout(function(){
+                        returnMonth.innerHTML = '';
+                        returnMonth.style.height = 0+'px'    
+                    },2000)
+                    console.log(a)
+                    break;
+                    case 'a31' : 
+                    returnMonth.innerHTML = datecounta[3]
+                    returnMonth.style.color = colorchange[a]
+                    returnMonth.style.height = 220+'px'
+                    if((a >= 0) && (a < colorchange.length-1)){a += 1}else{ a = 0}
+                    setTimeout(function(){
+                        returnMonth.innerHTML = '';
+                        returnMonth.style.height = 0+'px'    
+                    },2000)
+                    console.log(a)
+                    break;
+                    default: alert('월을 선택하세요')
+                }
+                
+            })
+           
+            /*삼항 조건문 연습*/
+            var boxinput = document.querySelector('.box>input')
+            var boxsummit = document.querySelector('.box>a')
+            var returnbox2 = document.querySelector('.returnbox2')
+            var inputnumber,TrueorNot;
+            boxinput.addEventListener('change',function(){
+                inputnumber = boxinput.value;
+      
+                // console.log(typeof inputnumber) str로 들어옴
+            })
+            console.log(boxinput.value)
+            
+          
+            boxsummit.addEventListener('click',function(){
+                TrueorNot = Number(inputnumber%2) == 0 ?  '<p>💑</p>' :  '<p>👤</p>'
+                    if(!boxinput.value){
+                        alert('숫자를 입력해주세요!!') 
+                    }else{
+                        returnbox2.innerHTML = TrueorNot
+                        returnbox2.style.transform = 'scale(2.5 ,2.5)'
+                        returnbox2.style.position = 'fixed'
+                        returnbox2.style.top = '70%'
+                        returnbox2.style.right = '20%'
+                        var timera = setTimeout(function(){
+                            returnbox2.style.position = 'relative'
+                            returnbox2.style.transform = 'scale(0.5 ,0.5)'
+                            returnbox2.style.top = '-60px'
+                            returnbox2.style.right = '-160px'
+                        },1000)
+
+
+                    }
+               
+            })
+            /* 종료버튼 */
+            var closeb = document.querySelectorAll('.close')
+            var closebox3 = document.querySelectorAll('.databox, .monthreturn, .two')
+            closeb.forEach(function(box,idx){
+                box.addEventListener('click',function(){
+                    console.log(box)
+                    for(i=0; i<closebox3.length; i++){
+                        if(idx==i){
+                            closebox3[i].style.display = 'none'
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <!--
+    ** 학습내용 : if 문 **
+* 개요
+1. 사용자 입력 창을 출력하고 점수를 입력하여 등급을 출력하는 프로그램을 작성하고자 한다. 다음의 요구사항을 반영하여 결과물을 작성하시오.
+
+* 요구 사항
+1. 반드시 if문을 사용하여 작성하시오.
+2. 각 점수별 등급이 다음과 같이 출력되도록 프로그래밍하시오.
+ - 다음 - 
+ 입력된 점수 : 90 ~ 100    |  s  출력 등급 : A 
+ 입력된 점수 : 80 ~ 89     |    출력 등급 : B 
+ 입력된 점수 : 70 ~ 79     |    출력 등급 : C 
+ 입력된 점수 : 60 ~ 69     |    출력 등급 : D 
+ 입력된 점수 : 0 ~ 59      |    출력 등급 : F 
+ 입력된 점수 : 0 ~ 100 외  |    출력 등급 : 잘못된 점수입니다.
+
+
+ ** 학습내용 : switch 문 **
+* 개요
+1. 사용자 입력 창을 출력하고 월(month)을 입력하여 해당월의 마지막 날짜를 출력하는 프로그램을 작성하고자 한다. 다음의 요구사항을 반영하여 결과물을 작성하시오.
+
+* 요구 사항
+1. 반드시 switch문을 사용하여 작성하시오.
+2. switch문의 특성을 반영하여 프로그래밍하시오.
+3. 입력한 달과 날짜가 출력되도록 프로그래밍하시오.
+4. 날짜는 28, 30, 31중에 출력되도록 프로그래밍하시오.
+5. 1~12의 값이 아닌 경우 "잘못된 값입니다."를 출력하시오.
+-->
+<div class="databox">
+    <a href="#none" class = "close">X</a>
+<div class="title">
+    <h1>점수에 따른 등급을 출력해주는 프로그램</h1>
+    <p>점수에 따라 등급이 나뉩니다.</p>
+    
+</div>
+<div class="inputa">
+<input type="text" id="username" maxlength="3" placeholder="이름입력"> 
+<input type="number" id="grade" min="0" max="100"  placeholder="점수입력">
+ <button type="button">입력</button>
+</div>
+<div class="textvalue">
+    <textarea name="점수출력창" id="score" cols="10" rows="1" readonly></textarea>
+</div>
+</div>
+<section class="monthreturn">
+    <a href="#none" class = "close">X</a>
+<div class="title2">
+    <h2>마지막 날짜 알려주는 프로그램</h2>
+    <p>month를 입력하면 마지막 날짜가 출력 후 2초뒤 사라집니다.</p>
+    
+    <!-- 선생님의 의도는 이번년도의 1~12월을 입력하면 해당 월에 맞게  마지막 날짜가 
+        출력되게 만드는것을 원하는것 같음.  이 경우 입력창을 prompt로 받는것보다는
+        태그를 작성시 select option을 이용해서 처음부터 1~12의 선택지를 주는 방향이 
+        유리하다고 생각됨
+    -->
+</div>
+<div class="monthinput">
+    <h3>2023년</h3>
+    <select class="month_select">
+        <option value="a">월</option>
+        <option value="a31">1월</option>
+        <option value="a28">2월</option>
+        <option value="a31">3월</option>
+        <option value="a30">4월</option>
+        <option value="a31">5월</option>
+        <option value="a30">6월</option>
+        <option value="a31">7월</option>
+        <option value="a31">8월</option>
+        <option value="a30">9월</option>
+        <option value="a31">10월</option>
+        <option value="a30">11월</option>
+        <option value="a31">12월</option>
+    </select>
+    <a href="#none"> 선택 </a>
+
+</div>
+<div class="retrunHuge">
+<p></p>
+</div>
+
+</section>
+
+<section class="two">
+    <a href="#none" class = "close">X</a>
+    <div class="title3">
+        <h2>삼항 조건문 연습용</h2>
+        <p>삼항조건문 연습용 숫자를 입력하고 입력한 값이 <br>
+            짝수이면 💑  홀수이면 👤 를 표시함
+        </p>
+    </div>
+    <div class="box">
+        <p>숫자입력</p> <input type="number" placeholder="숫자 넣어봐" min="0"> <a href="#none">입력</a>
+        
+    </div>
+    <div class="returnbox2">
+        
+    </div>
+
+</section>
+</body>
+</html>

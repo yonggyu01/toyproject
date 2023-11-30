@@ -1,0 +1,4 @@
+h2 { color: teal }
+a { text-decoration: none; color: rgb(64, 65, 64) }
+a:hover { color: rgb(15, 141, 245) }
+.txt { background: tomato }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class inheritance</title>
+    <script>
+        class Schools {
+            constructor( school ){
+                this.schoolname = school;       
+            }
+            mySchool(){
+                return "My School is " + this.schoolname;
+            }
+        }
+        // let school1 = new Schools("Seoul Univ");
+
+        // class Location { // 객체 생성
+        class Location extends Schools{ // 객체 상속
+            constructor( school, loc ){
+                super(school);
+                this.location = loc;
+            }
+            schoolLocation(){
+                // return "It is in " + this.location;
+                return this.mySchool() + ", It is in " + this.location;
+            }
+        }
+        // let location1 = new Location("Seoul"); // 객체 생성
+        let location1 = new Location("Seoul Univ", "Seoul"); // 객체 상속
+        
+
+        console.log(
+            // "School Name : ", school1.schoolname
+            // school1.mySchool()
+            location1.schoolLocation()
+        );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang ="ko">
+    <head>
+        <meta charset = "utf-8">
+        <title>
+            오늘은 메모장
+        </title>
+        <style type="text/css">
+            body{text-align:center}
+            h1{color:blue}
+            h2:hover{color:burlywood}
+            #upbar{padding:0.5em 0; margin: 0 0 20px 0; text-align : left;
+            letter- spacing : 5px; background: yellow; }
+            #upbar:hover{color:red;}
+            body{background-color : rgb(29, 109, 69)}
+            body:hover{color:black}
+            h1{text-color: blue}
+            p{font-size:5em; text-align:unset; color:white}
+
+        </style>
+        <script>
+     var inputID = prompt('아이디');
+    var inputPass = prompt('패스워드');
+      var ID = ['kim','you','screen','power']
+       var Pass = [1,14,11,23]
+for(a=0; a<ID.length; a++){
+    if(ID[a] == inputID && Pass[a] == inputPass)
+    {alert(inputID+'님'+'로그인 성공')
+    a= ID.length}
+    else{alert('아이디 및 비번이 틀렸습니다.')
+    a= ID.length}
+}
+        </script>
+    </head>
+        <body>
+            <h1>css_test_start_01.html 입니다.</h1>
+            <br>
+            <hr>
+            <ul id="upbar">
+                <li>자료실</li>
+                <li>게시판</li>
+                <li>갤러리</li>
+
+            </ul>
+            <h2>2023.09.19 메모입니다.</h2>
+            오늘의 메모입니다.<br>
+            css를 하고 있어요
+            <h2>2023.09.19 메모입니다.</h2>
+            내일의 메모입니다.<br>
+            css를 하고 있을 겁니다.
+            <p>오늘도 이렇게 하루가 가네</p>
+        </body>
+</html>

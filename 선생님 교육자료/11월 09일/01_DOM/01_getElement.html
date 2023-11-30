@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>객체 접근</title>
+<style>
+    body, input, button {font-size: 24px}
+</style>
+<script>
+    function printText(){
+        // 기존 폼 요소 선택 : 배열(순서) 또는 name 속성값
+        // document.forms[0].elements[0]
+        // document.form1.txt.value="글자 출력하기";
+
+        // getElementById("선택할 요소의 id 속성값")
+        document.getElementById("uid").value="글자 출력하기";
+    }
+</script>
+</head>
+<body>
+<form name="form1" action="" method="">
+    <p>* 버튼을 클릭하면 텍스트 필드에 글자가 나타납니다.</p>
+    <p>
+        <input type="text" name="txt" id="uid">
+        <button type="button" onclick="printText()">글자 출력</button>
+    </p>
+</form>
+</body>
+</html>

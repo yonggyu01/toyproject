@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    </script>
+
+    <style>
+        :root{
+            font-size: 16px;
+        }
+        p{
+            /* font-size: 30px; */
+            margin-bottom: 20px;
+            /* border: 1px solid black; */
+            color: black;
+        }
+        a{
+            text-decoration: none;
+            /* color:inherit; */
+        }
+        .red1{
+            background-color: red;
+        }
+        .black{
+            font-size: 25px;
+        
+        }
+        .blue1{
+            color:blue;
+      
+        }
+        .bbb{
+            color : palevioletred;
+            border: 1px solid black;
+            }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('a[href = "http://blog.naver.com"]').addClass('black');
+            $('a[href *= "naver"]').css('display','block').css('height','120px');
+            $('a[href != "http://blog.naver.com"]').css('opacity','0.5')
+            $('a[href ^= "http://blog"]').css('font-size','90px').css('text-align','center')
+            $('a[href $= "com"]').css('border' ,'6px solid blue');
+            $('a[href]').addClass('blue1');
+            $('a[href $= "com"][target = "_blank"]').css('border' ,'3px solid pink').css('transform','rotate(30deg)').css('position','absolute').css('top','600px');
+
+        })
+    </script>
+
+</head>
+<body>
+    <p><a href="http://blog.naver.com" title="네이버블로그로 이동">네이버블로그</a></p>
+    <p><a href="http://cafe.naver.com" target="_blank" class="aaa">네이버카페</a></p>
+    <p><a href="http://me.naver.com">네이버me</a></p>
+    <p><a href="http://www.daum.net" target="_blank">다음</a></p>
+    <p><a href="http://blog.daum.net">다음블로그</a></p>
+    <p><a href="http://cafe.daum.net" target="_blank">다음카페</a></p>
+</body>
+</html>

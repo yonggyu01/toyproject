@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>filter() 메서드</title>
+<script>
+    const array = [1, 5, 8, 11, 16];
+    document.write(array);
+    document.write("<hr>");
+
+    // filter() : callback함수는 true와 false만 반환하며, true인 값들만으로 새로운 배열 생성
+    const map = array.filter( function( item ){
+        // item = item % 2;
+        // return item
+
+        // return item % 2;
+        // return !(item % 2);
+        // return item % 2 === 0;
+
+        return item > 10
+    } )
+    document.write(map);
+</script>
+</head>
+<body>
+    
+</body>
+</html>

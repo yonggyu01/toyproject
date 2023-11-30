@@ -1,0 +1,9 @@
+body{  }
+#head{color:violet}
+h1, h2{font-family: 'Lucida Sans', Verdana, sans-serif;
+color:yellow; 
+}
+h1{border-bottom: 2px solid blue;}
+time:hover{font-family : arial; color:red; font-size:5em;}
+#address:hover{color:red; font-size:5em;}
+p{background-color: bisque;}

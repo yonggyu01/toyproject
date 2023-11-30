@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .power{
+            display: block;
+            font-size: 40px;
+            border: 2px red dashed;
+            height: 150px;
+            width: 500px;
+            }
+        .nopower{
+            display: block;
+            font-size: 12px;
+            border: 2px solid black;
+            height: 150px;
+            width: 500px;
+        }
+        .man{
+            display: block;
+            font-size : 15px;
+            border: 0 none;
+            height: 150px;
+            width: 500px;
+        }
+        div{
+            position: absolute;
+            top : 20%;
+            display: flex;
+            gap :20px;
+            
+        }
+    </style>
+  
+</head>
+<body>
+    <h1 class="colorchange">클릭하면색이바뀌어요</h1>
+    <div>
+    <p><button type="button" class="cb">빨강</button></p>
+    <p><button type="button" class="cb">초록</button></p>
+    <p><button type="button" class="cb">파랑</button></p>
+    </div>
+    <script>
+        /* object.eventHandler = function(){ 흔한 문법임 }
+        (변수에 저장한 태그).onclick = function(){
+            document.getElementById('아이디').className = 'red'
+        }
+        화살표 표기법으로 변경해도 잘 작동함
+        (변수에 저장한 태그).onclick = () => document.getElementById('아이디').className = 'red'
+        이런식으로 작성해도 잘 작동함
+        
+        html의 문서상 ID를 지정한 태그들은 변수를 따로 지정하지 않아도 
+    
+        바로 아이디 값을 가져올 수 있다.
+                
+        */
+ window.onload = function(){
+
+    var colorh1 = document.querySelector('.colorchange')
+        let button = document.querySelectorAll('.cb')
+        let three = ['power','nopower','man']
+        let color = ['red','green','blue']
+        let num =0;
+        function colorchangeing(item,aa,bb){
+            item.style.color = aa
+            colorh1.style.color =aa
+            colorh1.className = bb
+        }
+        button.forEach(function(item,idx){
+            item.addEventListener('click',function(){
+                num ++
+                colorchangeing(item,color[idx],three[(idx+num)%3])
+                
+            })
+        })
+            //리무브 이벤트리스너 사용시  이벤트명만 쓰면됨
+            // item.removeEventListener('click')
+            
+
+
+ }
+        
+
+      
+    </script>
+
+</body>
+</html>

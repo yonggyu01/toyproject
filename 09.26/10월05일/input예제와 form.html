@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인풋예제</title>
+</head>
+<body>
+    <form name="가주아" id="뭥미" action="insert.php" method="get">
+        <!-- 폼태그는 이름은 꼭 입력하자 대부분의 폼 안에는 인풋으로 작성한다. -->
+        <input type="text" placeholert="입력해주세요" maxlength="10">
+        <button type="button" autofocus onclick=" for(i=0; i<500; i++){document.write('당신이 이걸 누를줄 알았습니다.<br>')}+alert('바보')">누르지마 </button>
+            <p> text
+            </p>
+            <input type="text" name="문서" id="그냥" placeholder="입력하세요" minlength="2" maxlength="10">
+            <input type="button" value="확인">
+        <br>password
+            <input type="password" name="" id="" value="확인"><br>
+            <input type="search">
+            <hr>
+
+
+            checkbox  여러개 선택가능
+            <input type="checkbox" name="2" id="" value="a">1
+            <input type="checkbox" name="2" id="" value="b">2
+            <input type="checkbox" name="2" id="" value="c">3<br>
+             <!-- 해당 체크박스 선택시 value 값이 action 으로 전송된다. -->
+             <!-- 처음부터 선택되어 있게 지정하고 싶으면 -->
+             <!-- <input type="checkbox" name="2" id="" value="b" checked> -->
+            <hr>
+
+            radio  name의 값이 같은것 중에 하나만 선택가능
+            <input type="radio" name="1" id="" value="확인">유
+            <input type="radio" name="1" id="" value="미확인" checked>무<br>
+            <!-- 둘중하나만 선택가능하기에 checked를 동시에 사용시 마지막checked의 값이 선택된 상태로 표시됨 -->
+            <hr>
+<br>
+이미지는 역할은 submit 버튼이나 실무에서는  잘 안씀  
+            image
+            <input type="image" src="##" alt="바보다" width="50px" height="50px" value="확인"><br>
+            <br>
+
+            
+            hidden
+            <input type="hidden" name="" id="" value="확인"><br>
+            file
+            <input type="file" name="" id="" value="확인"><br>
+
+            <hr>
+
+            아래 버튼들은 네임이나 아이디는 필요는 없음 다만 value는 필요함 
+            버튼의 value는 전송되는 값이 아니고 모양의 이름을 나타냄
+            <br>
+            <hr>
+            button
+            <input type="button"  value="대충 버튼이라고 할수있다" onclick="alert('감히 이걸 누르다니?')"> <br>
+            이 버튼은 기능이 없어서
+            내가 부여하여 사용이 가능하다<br>
+            <br>
+
+
+            
+            아래 버튼 두개는 기능이 정해져 있음
+            <br>
+
+            submit
+            <input type="submit"  value="전송하기 버튼"><br>
+            reset
+            <input type="reset"  value="초기화 버튼임"><br>
+           
+
+        </form>
+
+        <p> 좋아하는 치킨은?
+            <select name="kfc" id="메뉴">
+                <option value="1">양장피치킨</option>
+                <option value="2">탄두리치킨</option>
+                <option>교촌치킨</option>
+                <option>허니머스타드</option>
+                <option value ="5"selected>케챱치킨</option>
+                <option>허니버터치킨</option>
+            </select>
+        </p>
+        <p> 싫어하는 치킨은? 
+            <select name="kfc1" id="메뉴" size="4" multiple>
+                <optgroup label="존맛탱치킨">
+                <option value="1">양장피치킨</option>
+                <option value="2">탄두리치킨</option>
+            </optgroup>
+                <optgroup label="맛없는치킨">
+                    
+                    <option>교촌치킨</option>
+                    <option>허니머스타드</option>
+                    <option value ="5"selected>케챱치킨</option>
+                    <option>허니버터치킨</option>
+                </optgroup>
+            </select>
+        </p>
+        <textarea name="게시판" id="내용적는칸" cols="30" rows="10" placeholder="그냥 적어보세요"></textarea>
+
+        <button type ="button" onclick="alert('크크크')">  클릭해보세요 text </button>
+
+
+</body>
+</html>

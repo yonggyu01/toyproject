@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭메뉴</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        div,h2,p{
+            margin: 0;
+            padding: 0;
+            font-size: 30px;
+        }
+        .tabs{width: 400px;height: 330px;position: relative;
+            border: 1px solid black; display: flex;}
+        .tab1{width: 400px;
+            background-color: white;text-align:center;
+            box-sizing: border-box
+            ;}
+            .tab1 h2{
+                line-height: 30px ;border:1px solid rgb(26, 25, 25); 
+            width: 80px;background-color: white;text-align: center;box-sizing: border-box
+            }
+
+        .tab1 p{ height: 300px;position: absolute;left: 0;top:32px;display: none;
+        }
+        .tab2{
+            width: 400px;
+        }
+        .tab2 h2{line-height: 30px ;border:1px solid rgb(26, 25, 25); 
+            width: 80px;background-color: white;text-align: center;box-sizing: border-box;}
+        .tab2 p{
+            height: 300px;
+            position: absolute;left: 0;top:32px;display: none
+        }
+        .tab3{width: 400px;}
+        .tab3 h2{line-height: 30px;border: 1px solid gray; 
+            width: 80px;background-color: white
+            ;text-align: center;box-sizing: border-box;
+     
+        }
+        .tab3 p{height: 300px;position: absolute;left: 0;top:32px;display: none}
+        article{margin-bottom: 100px;height: 1px;}
+
+
+</style>
+    <script>
+        $(document).ready(function(){
+            // $('.tabs h2').click(function(){
+            //     // $('p').not($(this).next()).css({display : 'none'})
+            //     // $(this).next().css({display : 'block',color:'red'})
+            //     $('p').not($(this).next()).hide()
+            //     $(this).next().show()
+            // })
+            $('.tabs h2').click(function(){
+                let idx = $(this).parent().index();
+                console.log(idx)
+                $('p').not($('.tabs div').eq(idx).find('p')).hide() //이런식으로 조합해서 선택을 제외하고 지정 가능하다.
+                $(this).next().show()
+            })
+        })
+    </script>
+
+</head>
+<body>
+    <article></article>
+<div class="tabs">
+    <div class="tab1">
+        <h2>1</h2>
+        <p>111115151515151</p>
+    </div>
+    <div class="tab2">
+        <h2>2</h2>
+        <p>2215151551222</p>
+    </div>
+    <div class="tab3">
+        <h2>3</h2>
+        <p>1616161616133333</p>
+    </div>
+</div>
+<section>
+
+
+</section>
+
+    
+</body>
+</html>

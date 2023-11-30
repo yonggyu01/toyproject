@@ -1,0 +1,41 @@
+*************
+border-radius
+box model 외각선으 ㅣ곡률 지정
+
+*사용방법
+border-radius : [length]
+
+속성값
+1. length : 곡률의 크기
+2.  border- top - left -radius 로 개별지정가능
+
+
+수직방향 먼저 선택후 수평방향을 지정해서 정해라
+                top  
+        left[        ]right  <- 상자의 
+             bottom
+             위 상자의 왼쪽 위를 둥굴게 하고싶으면 top left 값이고
+             오른쪽 아래에 위치한 부분을 둥굴게 하고싶으면 bottom right 값을 지정해주면됨
+             수직  + 수평값으로  속성을 지정한다.
+ border -top -left -radius
+ border -bottom -right -radius
+
+ radius값이 해당 상자의 50%를 넘거나 50%와 같다면  둥그런 모양으로 변한다
+
+
+ -------------
+
+
+ text -overflow
+ 오버플로어 되는 텍스트의 표시를 지정
+
+ *사용방법
+
+ text-overflow속성값
+
+ *속성값
+ 1. clip : 지정된 영역의 크기로 잘라낸다
+
+ 2.ellipsis : 지정된 영역의 크기에 맞게 말줄임표 표시됨
+ 
+             

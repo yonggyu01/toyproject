@@ -1,0 +1,225 @@
+객체 object
+
+1. 여러개의 값을 가지는 자료구조
+2. 값은 이름 :값 쌍으로 기록
+3. 일반적으로 const 키워드로 선언
+
+객체 정의
+1. 객체 리터럴을 사용해서 정의
+
+-const person = {firstName : 'john', lastName:'Doe', age:50, eyeColor:'blue'}
+2. 공백 , 줄바꿈 무관
+3. 여러줄에 걸쳐 객체 정의 가능
+- const person = {
+    firstName : 'john',
+    lastName:'Doe',
+    age:50,
+    eyeColor:'blue'
+}
+
+
+객체 생성자
+1. 생성자 함수으 ㅣ이름 첫을자는 가급적 대문자 지정s
+예
+function Person(first, last, age, eye){
+    this.firstName =first;
+    this.lastName = last;
+    this.age =age;
+    this.eyeColor =eye;
+}
+const myFather = new Person('kim','aaa','60','brown')
+
+
+
+/// 이런식으로 회원관리페이지 관리 가능할듯함
+이따 해보자 /
+보통 아이디는 변경불가이니
+아이디 = 를 객체명으로 생성하게 하면 될것같음
+
+// 질문해보니 객체명은 보통 members로 통일해서 받는형식이라하고
+// 객체로 생성해서는 안한다 하시는데 왜일까
+
+
+
+// 데이터베이스 관련 설명해주심
+cli gui 관련 내용임
+
+
+
+속성추가
+1. 단순히 값을 지정하여 기존 객체에 새 속성 추가
+예시
+person.nationality = 'english'
+
+2.생성자 함수에 속성추가
+function Person(first last, age, eyecolor){
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+    this.nationality = 'English' -> 생성자 추가
+}
+
+순서대로 값이 들어감
+
+const myfather = new Person(first, last,, eyecolor)
+이렇게 입력해서 생성하게되면
+ age 값은 null; 값이 들어가게됨
+ const myfather = new Person(first, last,'', eyecolor)
+ 이렇게 만들면
+ age에 ''; 값으로 들어감
+  안입력하면
+  age 에 eyecolor값이 들어가게되니
+  파라매터는 순차적으로 들어간다고 알고있자
+
+
+  ///
+
+  3. 프로토타입 상속
+
+  - Person.prototype.nationality = 'English';
+  document.getElementByid('demo').innerHTML = 
+  'The Nationality of my father is =' + myFather.nationality;
+
+4. prototype 속성을 이용한 메서드 추가
+Person.prototype.name = function(){
+    return this.firstName + '' + this.lastName;  // 여기에서 리턴은 필수값임, 리턴문은 한개의 값만, 그리고 값을 반환하고 함수를 바로 종료시킴
+}
+console.log(myFather.name())
+이벤트 형식으로 쓰려면 함수로 만들어라!!
+
+* 속성삭제
+1. delete 키워드 : 속성과 값 모두 삭제
+예시
+const person ={
+    firstName = first;
+lastName = last;
+age = age;
+eyeColor = eyecolor;
+}
+delete person.age;
+또는 delete person['age']
+속성과 값 저눕 삭제됨
+
+중첩 객체 엑세스
+1. 객체의 값에 다른 객체 사용
+예시
+ myObj = {
+    name:"john",
+    age:30,
+    cars:{
+        car1:"ford",
+        car2:"bmw",
+        car3:"fiat"
+    }
+ }
+    myObj.cars.car1   // ford 출력됨
+
+
+2. 점표기법 또는 대괄호 표기법을 사용하여 중첩된 객체에 엑세스
+대괄호 표기법은  함수등을 사용할때 변수명으로 쓸수 있음
+. 표기법은 변수명 사용불가함
+
+변수로 사용시
+
+let p1 = 'cars'
+let p2 = 'car1'
+
+myObj[p1][p2]  //ford; 출력
+
+객체 메서드
+1. 객체에 대해 수행 할 수 있는 작업
+2. 함수방식과 속성(접근자) 방식
+ fullName : function(){ }  - 함수방식
+ -person.fullName()
+ 3.속성방식 (get, set)
+ get fullName(){ }
+ -person.fullName
+ set fullName(){ } -> 값을 바꿀때 사용
+ -person.fullName = 'qgq'
+
+
+
+객체 접근자는 객체 내부에 함수를 만들어서 쓰는것임
+접근자 get으로 작성하게되면 호출시 함수도 속성으로 변경된다, 그래서  함수명()로 호출하게되면
+함수가 아니라고 오류발생함
+
+set으로 값을 변경시
+const person ={
+    firstName : 'john',
+    lastName : 'doe'
+    language :'',
+    set lang(lang) {
+        this.language = lang
+    }
+}
+
+person.lang = "en"
+document.getElementByid('demo').innderHTML = person.language;
+
+위에 값을 함수랑 비교하게되면
+language : function(lang){
+    this.language =lang ;
+}
+이렇게 만들게되고  값을 넣어줄때도
+person.language ('us')
+이런식으로 함수호출하듯 해야하는데
+
+set으로 설정해서 호출시에는
+person.language = "us";
+이렇게  값 입력 방식으로 변경됨
+
+
+객체 반복 (for ..in)
+ 
+ const person ={
+    fname:"john",
+    lname:"doe",
+    age : 25
+ }
+ for (let x in person){
+    txt += person[x]
+ }
+ 1. x는 키값 반환 ()
+ 2. 값 반환받으려면  객체명[x] 이런식으로 작성
+ 3. 속성값 반환 : 속성 반환 변수 [객체를 담을 변수]
+
+
+
+*중첩배열 및 객체 반복
+const myObj = {
+    name : "john",
+    age : 30,
+    cars:[
+        {name:'ford',models:["fiesta","focus","mustang"]},
+        {name:'bmw',models:["320","x3","x5"]},
+        {name:'sonata',models:["e500","s100"]}
+
+    ]
+}
+
+for ( i in myObj.cars){
+    x+="<h1>"+myObj.cars[i].name+'</h1>';
+        for(j in myObj.cars[i].models){
+            x+= myObj.cars[i].models[j];
+        }
+}
+let x = '';
+
+
+자바스크립트의 객체는 json데이터로 사용이 가능한데
+
+
+ {
+json데이터의 특징은 키값도 문자열로 들어옴
+    "name" : "jojn"
+ }
+ 
+ 형태변환이 필요함
+
+ json.parse()
+ json파일을 스크립트로 변경시
+
+ 스크립트에서 json으로 파일변경시
+ JSON.stringify(변수)
+ 해당 과정이 필요함

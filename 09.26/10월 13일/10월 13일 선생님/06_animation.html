@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>animation</title>
+<style type="text/css">
+@keyframes aniTest{
+	from{opacity:1.0;transform:rotate(0deg)}
+	50%{opacity:0.1}
+	to{opacity:1.0;transform:rotate(360deg)}
+}
+
+img{
+	animation-name:aniTest;
+	animation-delay:2s;
+	animation-duration:4s;
+	animation-iteration-count:infinite;
+	animation-timing-function:ease-in-out;
+	animation-direction:alternate
+}
+</style>
+</head>
+
+<body>
+<h2>animation</h2>
+  <div>
+    <img src="images/bg.jpg" width="320" height="240" alt="애니메이션">
+  </div>
+</body>
+</html>
+
+
+
+
+
+

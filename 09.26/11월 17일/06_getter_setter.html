@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getter and setter</title>
+    <script>
+        class Schools{
+            constructor( school ){
+                // this.school = school;
+                this._SchoolName = school;
+            }
+            // SchoolName(){ }  //  mySchool.SchoolName()
+            /* get SchoolName(){
+                return "School : " + this.school;
+            }
+            set SchoolName(nm ){
+                return this.school = nm;
+            } */
+            get SchoolName(){
+                return "School : " + this._SchoolName;
+            }
+            set SchoolName(nm ){
+                return this._SchoolName = nm;
+            }
+        }
+        let mySchool = new Schools("Seoul Univ");
+        // mySchool.SchoolName("Korea Univ");
+        mySchool.SchoolName = "Korea Univ"; // getter
+
+        console.log(
+            // mySchool.SchoolName()
+            mySchool.SchoolName
+        );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

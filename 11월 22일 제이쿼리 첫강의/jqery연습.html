@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+            .pink{
+                background-color: pink;
+            }
+            .blue{
+                color:blue
+            }
+            table{width: 800px;
+            height: 240px;
+            border:1px solid black
+        ; text-align: center;
+        }
+        td{
+            border:1px solid gray;
+        }
+        .greenText{
+            color :greenyellow
+        }
+        .whitetext{
+            color : white;
+        }
+        input[type=text] { 
+            font-size: 50px;
+            /* 속성 선택자임 */
+        }
+</style>
+    
+    <!--1. 라이브러리 가져오기 -->
+    <!-- 1-1 local import -->
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <!-- 1-2 CDN : 외부주소 참조 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+    <!-- 2. 문서가 준비 되었는지 확인하기 -->
+    <!-- js : window.onload =function(){} -->
+    <!-- jq: $(document).ready(function(){
+
+    }) -->
+<script>
+    // $(document).ready(function(){   }) 하지만 document.ready() 이것만 작성시 생략가능
+    // $(function(){  내용작성 }) 위와 같은 것임
+    $(function(){
+        $('#red').addClass('pink')
+        $('.blue').addClass('greenText')
+        $('td').addClass('pink')
+        $('#red,td').addClass('whitetext')
+        // $('.pink').addClass('whitetext')  이런식으로 해도 가능
+
+        // 속성 선택자
+        $('input[type=\'text\']').addClass('pink')
+
+    })
+</script>
+
+
+</head>
+<body>
+    
+<p id="red">제이쿼리를 이용하여 스타일 적용하기</p>
+<p class="blue"> 스타일 시트를 선택자를 그대로 사용 가능합니다</p>
+<table>
+    <tr>
+        <td>첫번째 셀</td>
+        <td>두번째 셀</td>
+        <td>세번째 셀</td>
+        <td>네번째 셀</td>
+    </tr>
+</table>
+    <input type="text" name="" id="">
+    <input type="button" name="" id="">
+</body>
+</html>

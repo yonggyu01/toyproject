@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hoisting</title>
+    <script>
+        // console.log(txt);  // undefined
+        // var txt = "텍스트";
+        // console.log(txt);  // 텍스트
+
+        // printText(); // O
+        /* function printText(){
+            alert("텍스트");
+        } */
+        // printText(); // O
+
+        let print1 = new PrintText("텍스트"); // ReferenceError
+        class PrintText{
+            constructor( txt ){
+                this.txt = txt;
+            }
+        }
+        // let print1 = new PrintText("텍스트"); // O
+
+        console.log(print1.txt);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

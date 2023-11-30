@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: transparent ;}
+        </style>
+</head>
+<body>
+
+    <p  style="text-decoration:line-through; font-size:90px;">간다라빙</p>
+    <a href="#none">2222빙</a>
+    <a href="#none">간44빙</a>
+
+    <script>
+        var link = document.getElementsByTagName('a')
+        console.log(link)
+            link.forEach(function(item, idx){
+            item.addEventListener('focus',function(){   
+                this.style.backgroundColor = "yellow";
+                this.style.color = "red";
+            });
+        });
+        </script>
+</body>
+</html>

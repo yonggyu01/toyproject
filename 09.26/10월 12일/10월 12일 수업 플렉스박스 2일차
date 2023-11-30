@@ -1,0 +1,110 @@
+flex
+
+flex-wrap 줄넘김 처리설정
+- 아이템 줄바꿈 속성
+
+1. nowrap 줄바꿈을 하지 않음
+2. wrap 줄바꿈
+3. wrap - reverse 역순으로 배치 후 줄바꿈
+
+
+flex-flow
+1.flex-direction과 flex-wrap을 한번에 지정
+2. flex-direction, flex-wrap를 순서에 상관없이 공백으로 구분
+
+
+아이템 정렬
+1.justify : 수평축 정렬
+2. align : 수직축 정렬
+
+
+
+justify-content : 메인축 방향 정렬
+
+-수평축 방향으로 아이템 정렬
+
+1.flex-start(기본값) 아이템들을 시작점으로 정렬
+ - flex-direction : row (왼쪽 )  column (위)
+
+ 2. flex-end : 아이템들을 끝점으로 정렬
+  - flex-direction : row (오른쪽), column (아래)
+
+  3. center 아이템들을 가운데로 정렬
+  
+  4. space-between : 아이템들 사이에 균일한 간격 생성  -> 맨끝에 여백은 없음
+                화면 >[item  ><  item  ><  item] <화면  
+  5. space-around 각 아이템의 좌우에 균일한 간격 생성  -> 아이템 여백 
+                  화면 >[<  itme  ><  item  >]<-화면끝  아이템 중간의 여백이 크다
+  6. space -evenly : 아이템들의 사이에 양끝에 균일한 간격 생성  -> 맨끝에 여백도 있고 아이템 사이에 여백도 생김
+                화면[< itme >< item >< item >< item >]화면
+
+
+align-items 수직축 방향정렬
+-수직축 방향으로 아이템 정렬    : row 행이 1개일때 사용 { 여러줄일때  사용시 space between처럼 정렬됨}
+
+1. stretch 기본값 :  아이템들을 위아래 방향으로 끝까지 늘림
+2. flex-start : 아이템을 위쪽으로 정렬
+ - flex-direction :  column인 경우
+3. flex-end : 아이템들을 아래쪽으로 정렬
+ - flex-direction : column인 경우
+4. center 아이템들을 중간 정렬
+5. baseline : 아이템들을 텍스트 베이스라인 기준으로 정렬
+
+여러행 정렬시  :
+align-content : 여러행 정렬시 사용
+ - flex-wrap :wrap이 설정된 상태에서 아이템들의 행이 2줄 이상인 경우 수직축 방향 정렬 지성
+ stretch
+ flex-start
+ flex-end
+ center
+ space-between
+ space-around
+ space-evenly
+ 
+
+*align-self
+
+-align-items로 교차축 (cross axis)아이템 정렬
+-align-items 속성보다 우선적용됨
+-컨테이너 안의 모든 아이템에 적용
+-특정 아에팀의 정렬을 따로 정할 경우 align-self 속성 사용
+- 기본값은 auto로 align-items 속서으이 값을 상속
+
+1. auto
+ -부모 컨테이너의 align-items 속성을 상속 받음
+ - 부모 컨테이너가 없는 경우 stretch 적용
+
+ 2. stretch 컨테이너에 맞게 변경
+
+ 3. center 컨테이너 중심에 위치
+
+4. flex-start 컨테이너 앞단 부분에 위치
+5. flex-end : 컨테이너 끝단 부분에 위치
+
+6. baseline 컨테이너의 기본선에 위치까지의
+7. initial 이속성의 기본값으로 설정
+8. inherit 부모 요소의 속성값 상속
+
+
+
+flex는 상태적용후 
+웹 브라우저로 열어서
+개발자도구로 flex 적용한 컨테이너를 확인시
+우측에  display : flex 옆에 네모난 박스모양의 기호가 나오게 된다.
+해당기호를 클릭하면
+좀더 간편하게 flex로 어떻게 방향 전환하고 맞출지를 눈으로 보면서 적용이 가능하고
+내가 원하는 모양이 나오면 해당 값을  
+개발중인 페이지에 반영해도 됨. **꿀팁 ** 
+
+
+
+*************
+border-radius
+box model 외각선으 ㅣ곡률 지정
+
+*사용방법
+border-radius : [length]
+
+속성값
+1. length : 곡률의 크기
+2.  border- top - left -radius 로 개별지정가능

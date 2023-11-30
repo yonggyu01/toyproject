@@ -1,0 +1,115 @@
+@media screen and (max-width:1023px){
+    .maintitle{
+        flex-direction: column;
+    }
+    .maintitle>h2{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .maintitle>p{
+        width: 100%;
+        border-left:none;
+        text-align: center;
+    }
+
+ .work h2{
+    width: 100%;
+    text-align: center;  
+}
+.flexbox ul li{
+width: 50%;
+}
+.blog{
+    flex-wrap: wrap;
+}
+.blog h2{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.blogcon{
+    width: 100%;
+}
+
+}
+
+
+@media screen and (max-width:767px){
+    /* 모바일 디자인시 유의사항으로는
+        화면이 작을대는 flex의 column 방향으로 할꺼면  display block으로
+        하는게 훨 나음 (속도 문제)
+    */
+    .gnb>h1{
+        line-height: 80px;
+        vertical-align: bottom;
+    }
+    .bugger{
+        
+        display: flex;
+        flex-direction: column;
+        gap:5px;
+        width: 20px;
+        height: 20px;
+        align-items: center;
+
+    }
+    .bugger span{
+        width: 20px;
+        height: 1px;
+        background: gray;
+
+    }
+    
+
+    .topmenu>ul{
+        position: absolute;
+        top:50px;
+        right:-50px
+        ;background: white;
+        display: none;
+        height: 216px;
+
+    }
+    .topmenu>ul>li{
+        border: 1px solid black;
+        padding: 10px;
+    }
+    .box{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .box1,.box2,.box3,.box4{
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    .work>h2{
+        padding-left: 0;
+    }
+    .flexbox>ul>li{
+        width: 100%;
+    }
+    .blogcon ul{
+        flex-direction: column;
+    }
+    .blogcon{
+        width: 100%;
+
+    }
+
+    .blogcon>ul>li{
+        width: 100%; 
+        /* flex방향을 바꿔서 잡을때는 위스값에 auto를 주면안됨
+            li요소가 인라인 블럭 상태라
+            만약 사진이 없었다면
+            컨텐츠 사이즈만큼만 커지게됨
+            그래서 100% 잡아야함
+        */
+    }
+
+
+}

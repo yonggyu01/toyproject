@@ -1,0 +1,61 @@
+      /* object.eventHandler = function(){ 흔한 문법임 }
+       let Bbtn = document.getElementById('Bbtn')
+       변수 만들때 변수명은 가능하면 id값과 일치시키는게 중요
+
+        (변수에 저장한 태그).onclick = function(){
+            document.getElementById('아이디').className = 'red'
+        }
+        화살표 표기법으로 변경해도 잘 작동함
+        (변수에 저장한 태그).onclick = () => document.getElementById('아이디').className = 'red'
+        이런식으로 작성해도 잘 작동함*/
+
+    --------------------
+    id값은 변수명으로 저장하지 않아도
+    바로 가져다 쓸수있게 되어있음
+
+    그래서 내가 tag에 아이디를  bb로 저장해둔 녀석이 있으면
+    
+<html>
+<p id="aa"> 이거니 </p>
+<div id ='vva'> </div>
+</html>
+
+    스크립트에서 변수를 먼저 저장하지 않아도
+
+    그냥 aa.onclick = function(){
+        vva.style.color = 'red'
+    }
+
+    이런식으로 함수에 저장할 필요가 없이 바로 가져올 수 있긴 함
+
+// 생략은 가능하나 외부 문서에서 작업시 혹시나 하는 문제가 있으니 변수로 저장하는 과정을 
+생략하지 않는게 좋다.
+
+
+
+스크립트의 위치에 따라서 사용가능여부가 갈리는데
+스크립트 시작시
+window.onload = function(){
+    이속에 내가 원하는 스크립트를 적어 넣어도 코드 작동이 다 됨
+
+
+    document.addeventListener('DOMContentLoaded',function(){
+
+        위에 적는것과 같은 효과임
+    })
+
+}
+
+2번째 문법
+
+이벤트 핸들러(이벤트리스너, 이벤트 처리기)
+1. 이벤트가 발생했을 때 그 처리를 담당하는 함수
+2. 지정되 ㄴ타입의 이벤트가 특정요소에서만 발생하면, 웹브라우저는
+그 요소에 등록된 이벤트 핸들러 실행
+
+ex) obj.addeventListener('이벤트',실행할 함수);
+실행할 함수 부분에는 (다른문법에도 동일)
+
+함수에 이름이 있으면 함수 이름만 넣어도 되고
+혹은 함수를 직접 짜서 넣어두 됨
+

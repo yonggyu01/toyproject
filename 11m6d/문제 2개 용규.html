@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        h1,h2{
+            margin: 0;
+            vertical-align: top;
+        }
+
+        a{
+            color : inherit
+            ; text-decoration: none;
+        }
+        section{
+            max-width: 1000px;
+            margin: 0 auto 50px;
+            border: 1px solid black;
+            position: relative;
+        }
+        .body3 p{
+            margin: 5px;
+        }
+        .closeb{
+            position: absolute;
+            top : 0;
+            right : 0;
+        }
+        .body4 h2{margin: 5px;}
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var body1 = document.querySelectorAll('.body1,.body2,.body3,.body4')
+       
+            var p = 0;
+            var sumi='';
+            for(a=1; a<10; a++){
+                sumi= sumi + String(a)
+                }
+            for(i=0; i<5; i++){
+                /* 태그를 생성해서 어떤 태그에 넣고싶을때 여러번 반복하게 하려면 
+                이런식으로 변수를 생성해서 자식요소에 붙이는 방식이 필요함*/
+                var po = document.createElement("P");
+                po.innerHTML ='같은문장 5번 반복'
+                body1[0].appendChild(po)
+            }
+            for(i=1; i<=10; i++){
+                p = p + i
+                body1[1].innerHTML = `<p>1에 ${i}더한 값은 = ${p}</p>`
+            }
+            for(i=0; i<5; i++){
+                var tt =document.createElement('p')
+                tt.innerHTML = `[${i+1}] ${sumi}`
+                body1[2].appendChild(tt)
+            }
+            for(i=2; i<=9; i++){
+                var title = document.createElement('h2')
+                title.innerHTML = `[${i}단]`
+                body1[3].appendChild(title)
+                for(b=1; b<=9 ; b++){
+                    var ninetonnine=document.createElement("p") 
+                    ninetonnine.innerHTML= `${i} * ${b} = ${i*b} <br>`;
+                    body1[3].appendChild(ninetonnine)
+                }
+            }
+        })
+    </script>
+</head>
+<body>
+        <section class="num1">
+            <div class="topbox">
+            <a class="closeb" href="#none">x</a>
+            </div>
+            <div class="main">
+                <h1>같은문장 5번 출력 for문 사용해서</h1>
+                <div class="body1"></div>
+            </div>
+        </section>
+        <section class="num2">
+            <div class="topbox">
+                <a class="closeb" href="#none">x</a>
+            </div>
+            <div class="main">
+                <h2>for 으로 1부터 10까지 출력하기 </h2>
+                <div class="body2">
+
+                </div>
+            </div>
+            
+        </section>
+        <section class="num3">
+            <div class="topbox">
+                <a class="closeb" href="#none">x</a>
+            </div>
+            <div class="main">
+                <h2>for 화면에 저렇게 [1~5까지 출력되도록 포문 작성] </h2>
+                <div class="body3">
+
+                </div>
+            </div>
+
+        </section>
+        <section class="num4">
+            <div class="topbox">
+                <a class="closeb" href="#none">x</a>
+            </div>
+            <div class="main">
+                <h2>for 으로 구구단 완성 </h2>
+                <div class="body4">
+
+                </div>
+            </div>
+
+        </section>
+</body>
+</html>

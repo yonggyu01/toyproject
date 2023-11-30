@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="" cols="220" rows="50">
+        *** 제이쿼리 효과
+        ** 기본효과
+
+        1.hide()
+        - 지정된 요소를 감추기
+        - 매개변수 없음
+        - $('대상').hide()
+
+        2.show()
+        - 지정된 요소를 보이기
+        - 매개변수 없음
+        - $('대상').show()
+
+        3.toggle*()
+        - 지정된 요소의 속성을 교차
+        - $("대상").toggle() // 안보이면 보이게  보이면 안보이게 해줌
+
+
+        *fading 효과    -> show  / hide   + animation
+
+
+        fade뒤에 앞 첫글자는 대문자
+
+        .fadeIn()
+            대상을 서서히 나타나게
+            $('대상').fadeIn([duration][, complete])
+            duration 과 complete생략 가능한데  duration은 숫자나 문자  
+            duration 
+            - 애니메이션이 진행되는 시간
+            - string 타입, number 타입
+            - ' slow', 'fast' 1/1000s
+
+            complete는 콜백함수
+            function(){   } 타입
+            해당 대상이 duration = defalt 값 400 이 경과후에 실행할 내용 작성
+
+        
+        .fadeOut()
+        - 대상을 서서히 사라지게함
+        fadeIn과 사용법 동일
+
+        .fadeToggle()
+         지정된 대상의 opacity를 변경
+         fadeToggle([duration][,easing][,complete]) 
+
+        .fadeTo()  -> 투명도 값을 지정할 수 있음
+         - 지정된 opacity 값까지 Fade함  -> 나머지 fade효과의 최대 opacity를 변경하는것임
+         - $('대상').fadeTo(duration, opacity [, complete])
+         - duration : fadein과동일 하나 필수값임
+         - opacity : Number 타입, 0~1 사이의 값을 사용함  필수값
+         - complete : fadeIn 과 동일
+
+    
+         * slide 효과
+         1. slideDown
+         - 미끄러지는 듯한 효과
+         - slideDown([duration][ , complete])
+         둘다 옵션임
+          duration 
+          애니메이션이 진행되는 시간 (기본값 400)
+          - string 타입 number 타입
+           - "slow", "fast", 1/1000s
+         complete
+         - function() 타입
+         - 해당 대상이 효과를 완료했을 때 실행할 내용
+
+         * animation 효과
+         1. animate
+          - css 로 제어가능한 속성을 변화시키는 메소드
+          - animate( properties [, duration] [, easing] [, complete])
+          -  properties : css로 제어 가능한 속성과 값, 여러 개 사용 가능
+          - duration : Number 또는 String 타입
+                    애니메이션 진행시간 (기본값 : 400)
+          - easing : String 타입
+                    가속효과 (기본값 : swing)
+          - complete : function() 타입
+                    효과가 완료 되었을 때 실행할 내용
+
+                    
+
+
+
+
+    </textarea>    
+
+</body>
+</html>

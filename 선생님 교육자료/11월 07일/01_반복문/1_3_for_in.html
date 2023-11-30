@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>for ~ in</title>
+<style>
+body{font-size:24px}
+</style>
+<script>
+    let person = {
+        // key(property) : value
+        fname : 'Hong',
+        lname : 'Gilding',
+        age : 23
+    }
+    // console.log(person);
+    // document.write(person);
+    // document.write(person.fname);
+    // document.write(person['fname']);
+
+    // for(객체가 들어있는 변수의 값을 하나씩 나누어 저장할 변수 in 객체가 들어있는 변수)
+    /* for ( item in person ){
+        // document.write(item + "<br>"); // key 출력
+        // document.write(person[item] + "<br>"); // value 출력
+
+        document.write( item + " : " + person[item] + "<br>");
+    } */
+
+    let itemList = "";
+    for ( item in person ){
+        itemList += item + " : " + person[item] + "<br>";
+    }
+    document.write( itemList);
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

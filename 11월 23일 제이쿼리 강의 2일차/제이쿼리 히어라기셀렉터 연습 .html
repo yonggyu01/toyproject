@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{line-height: 40px;font-size: 24px;}
+        /* .brd{border:1px solid red} */
+        div,span{
+            display: block; width:150px; height: 150px; margin:10px;background: blue;float:left;font-size: 16px;
+        }
+        #small{width: 100px;height: 60px; font-size:14px; background: pink;}
+        .brd{border:5px solid red;}
+</style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('li').addClass('brd')
+            $('.domtree>li:first-child').css('font-size','90px').css('display','block').css('height','150px')
+            // $('.domtree>li>ul>li').css('color','blue')
+            // $('li li').css('color','blue')
+            $('span+div').css('font-size','60px').css('background','white')
+            $('#prev~div').css('height','600px')
+            // 메소드로도 선택가능
+            $('span').next()// span앞에꺼 선택
+            $('span').prev()// span뒤에 선택
+            $('span').siblings()// 본인제외 형제요소 전부 선택
+            // 꿀팁 jquery 메소드들 특징은  보통..2가지 기능을 제공함
+            
+            $('span').parent()// 부모요소 선택함  // 두번쓰면 조상요소 선택됨.parent().parent()
+            $('span').children()// 자식요소 선택함  // 두번쓰면 자식의 자식요소가 선택됨.children('태그명') 적으면 자식요소중 그요소 선택함
+            $('span').find()// 자식요소 혹은 후손요소 선택가능 .find([selector]) 공란으로 두면 바로 다음자식이 선택됨
+             
+            // next prev siblings parent children find.. 돔방식 선택방법
+            // closet()  eq()
+            // parents([selector])  <-- 상위 조상 요소 전부 반환함 특정한 부모 찾으려면 파라메터로 값 주면됨
+            
+        })
+
+    </script>
+</head>
+<body>
+    <section class="box">
+        <ul class="domtree">
+            <li>ul의 하위계층</li>
+            <li>ul의 하위계층</li>
+            <li>
+                <ul>
+                    <li>여기는 손자계층</li>
+                    <li>여기는 손자계층</li>
+                </ul>
+            </li>
+            <li>ul의 하위계층</li>
+            <li>ul의 하위계층</li>
+            <li>ul의 하위계층</li>
+        </ul>
+    </section>
+    <div>DIV</div>
+    <span id="prev">SPAN#PREV</span>
+    <div>#PREV의형제DIV</div>
+    <div>PREV의형제DIV
+        <div id="small">후손DIV #small</div>
+    </div>
+    <span>prev의 형제 #span</span>
+    <div>qkg</div>
+
+
+</body>
+</html>

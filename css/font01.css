@@ -1,0 +1,16 @@
+body{
+    /* font-family: monospace ;
+    font-size: 2em; 
+    color: red;
+    font-weight : bold;
+    text-decoration:  overline; 
+    font-size: 20px;*/
+    color: green;
+    font-weight : normal;
+    text-decoration: underline;
+}
+.times{font-family: times, verdana, sans-serif;
+       color : red}
+.verdana{font-family: verdana;
+        color: magenta}
+.fantasty_font{font-family: fantasy;}

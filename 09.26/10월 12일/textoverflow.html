@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 20px;
+        }
+        #textBox p{
+            margin: 0 auto;
+        margin-bottom: 10px;
+        border: 1px solid black;
+        padding: 10px;
+        width: 90%;
+        height: 40px;
+        white-space: nowrap; /*중요*/ 
+        overflow :hidden;  /*중요*/
+
+        }
+        .clipText{
+            text-overflow: clip;
+        }
+        .ellipsisText{
+            text-overflow: ellipsis;
+        }
+        /* 
+         text-overflow는 단독으로 사용불가
+         함께 사용해야하는 옵션이 두개 존재함
+          -> white-space(줄바꿈 속성임) : nowrap; (줄바꿈 없음) *한글은 글자단위로 줄바꿈됨  영어는 단어단위로 줄바꿈됨 
+          -> overflow : hidden; 넘치는 부분을 숨기게 해야함
+
+        우선순위를 기억해라
+           !important > inline  > id  > class > 태그     
+        */
+
+</style>
+</head>
+<body>
+<h1>Text-overflow</h1>
+<div id="textBox">
+    <h2>clip</h2>
+
+    <p class="clipText">영역을 벗어나는 텍스트를 오버플로된 텍스트라하는데 이러한 오버플로된 텍스트를 생략부호...로 처리하는속성입니다</p>
+    <h2>ellipsis</h2>
+
+    <p class="ellipsisText">영역을 벗어나는 텍스트를 오버플로된 텍스트라하는데 이러한 오버플로된 텍스트를 생략부호...로 처리하는속성입니다</p>
+</div>
+
+</body>
+</html>

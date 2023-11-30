@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href="#none">눌러용1</a></li>
+        <li><a href="#none">눌러용2</a></li>
+        <li><a href="#none">눌러용3</a></li>
+        <li><a href="#none">눌러용4</a></li>
+        <li><a href="#none">눌러용5</a></li>
+        <li><a href="#none">눌러용6</a></li>
+        <li><a href="#none">눌러용7</a></li>
+        <li><a href="#none">눌러용8</a></li>
+        <li><a href="#none">눌러용9</a></li>
+        <li><a href="#none">눌러용0</a></li>
+        <li><a href="#none">눌러용11</a></li>
+        <li><a href="#none">눌러용12</a></li>
+        <li><a href="#none">눌러용13</a></li>
+        <li><a href="#none">눌러용14</a></li>
+        <li><a href="#none">눌러용15</a></li>
+        <li><a href="#none">눌러용16</a></li>
+        <li><a href="#none">눌러용17</a></li>
+    </ul>
+    <div class="box"></div>
+<script>
+      
+    let do1 = document.querySelectorAll('a')
+    let box = document.querySelector('.box')
+    
+    for(let t of do1){
+        let aoa = 0;
+        let qd = document.createElement('h2')
+        t.onclick =function(){
+            aoa++
+            console.log(t)
+            qd.innerHTML= "바보" + aoa
+            box.appendChild(qd)
+        }
+    }
+</script>
+</body>
+</html>

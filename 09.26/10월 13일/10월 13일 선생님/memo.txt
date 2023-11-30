@@ -1,0 +1,65 @@
+* background
+
+1. 기존 배경은 한 번에 하나만 적용이 가능하지만
+   css3에서는 여러 개의 배경을 동시에 적용 가능
+    * 먼저 작성된 이미지가 위에서 출력
+
+2. 배경의 범위 및 시작 위치 설정 가능
+
+3. 배경의 크기 조정 가능
+
+
+
+**background-size
+  백그라운 이미지의 크기 지정
+
+1. 사용방법
+  background-size : X, Y
+
+2. 속성 값
+  X%, Y% : 적용되는 요소의 크기에 비례하여 적용
+  Xpx, Ypx : 절대 크기로 배경 이미지 적용
+  cover : 배경 이미지를 늘려 요소 전체에 표시
+  contain : 배경 이미지의 가로 세로 비율을 맞춰 
+               요소에 표시할수 있는 최대 크기로 표시
+
+
+
+** 전환효과(transition)
+  - CSS 속성이 변화할 때 애니메이션
+  - 2차원 변환(transform) 함수
+
+1. 사용 방법
+  - transition : 변환속성  애니메이션시간
+
+2. 속성값 
+  - 변환속성 : 변환할 속성
+              all로 지정되면 모든 속성 영향
+  - 애니메이션시간 : 애니메이션 재생 시간(duration) 지정
+
+3. 변환 함수(transform)
+  - translate(translateX, translateY) : 지정된 값만큼 이동
+  - scale(scaleX, scaleY) : 지정된 값만큼 확대 및 축소
+  - skew(angleX, angleY) : 지정된 값만큼 기울림
+  - rotate(angleZ) : 지정된 값만큼 회전
+ 
+
+
+
+** animation
+ CSS 의 속성값 변화를 애니메이션
+
+1. keyframes : 효과 작성, 키프레임 지정
+  - from : 시작 프레임 설정
+  - to : 끝 프레임 설정
+  - 중간 키프레임 : %단위로 지정
+
+2. animation : 효과 적용
+  animation-name : 설정된 keyframe 지정
+  animation-duration : 실행 시간 지정
+  animation-iteration-count : 반복 횟수 지정
+  animation-timing-function : 속도 형태 지정
+  animation-delay : 대기 시간 지정
+  animation-direction : 진행 형태 지정
+  
+  

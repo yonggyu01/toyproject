@@ -1,0 +1,159 @@
+**요소 레벨 (element level)
+
+태그가 어떻게 보여지는가에 대한 구분
+
+
+블록레벨
+독립된 행을 갖는 요소 집합
+크기 지정, 위치 조정 가능
+p, h1~h6  ul ol  li div table 등등
+다른 블록레벨 요소와 인라인요소 포함 가능
+p h  dt address 같은 일부 요소는 다른 블록 포함 불가
+블록의 크기는
+부모의 100% 크기임
+블록들의 기본 높이는 0에서 시작  컨텐츠가 포함되면 자동으로 높이가 생김
+ 그래서 컨텐츠가 많은 부분에 높이를 고정으로 지정하게되면  
+ 넘치는 부분은 overflow로 지정해서 처리해야함
+
+overflow에서 scroll 과 auto는 둘다 스크롤바가 생성되나
+scroll은 우측과 하단에 무조건 스크롤바가 생성되고 컨텐츠가 넘치는 부분에만 활성화 된다.
+
+auto는 컨텐츠가 넘치는 부분에만 스크롤바가 생성된다.
+
+하단은 overflow-x 
+우측부분은 overflow -y 로 생성을 조절할 수 있다.
+
+
+인라인 레벨
+범위표시 요소의 집합
+크기(예외 img ), 위치 조정 불가
+a em strong img span....
+블록레벨 요소는 포함할 수 없고 인라인 요소만 포함 가능
+html5이후  a 요소는 블럭 포함 가능
+높이 속성 사용불가
+
+
+
+요소레벨 변경
+자동 (강제) 변경 : 
+-  float
+- display : flex, grid  
+- position : absolute / fixed
+
+2. display : 요소 레벨 변경
+ - inline / block / inline-block / none
+
+nav>ul>li*5>a
+
+
+인라인요소는 인라인요소만 포함가능
+블록포함시 오류
+
+블록은 인라인요소 블럭요소 둘다 포함가능
+예외  p h  address등등...
+
+
+
+--------------------------
+margin & padding
+마진과 패딩은 여백을 나타냄
+
+margin 선의 바깥쪽 여백, 요소의 위치를 변경시킴
+padding은 박스의 안쪽 여백, 요소의 크기가 변경됨
+
+
+margin :  top  right  bottom  left  방향순으로 입력됨 정해져있음
+               margin: 50px 100px 150px 200px;
+입력시 해당 방향 순으로 입력됨
+
+margin : 50 px 100px 150px   -> 한쪽방향 생략하고 3개만 작성시
+        top    right  bottom    (left 생략 = same Right)
+이기 때문에   right값과 left값이 같다로 판단하여 입력한  right값과 동일한 수치가 left에 부여됨
+
+margin  : 50px 100px  (나머지 생략시)
+     -> top  right   (생략된 수치는 아래와 왼쪽    =  위  오른쪽 수치와 동일하게 적용된다.)
+
+margin : 50px  =>  생략된 모든 방향에 동일한 값을 적용하겠다로 해석
+        top right bottom left 모든방향에 50px적용됨
+한쪽만 지정하고 싶다면 직접 margin 방향을 직접 지정해서 기입해라
+(컴퓨터 작업속도 향상)
+
+margin : auto;  -> 블럭요소 가운데정렬할때 사용한다.
+ 
+margin: 0 auto;
+margin: 50px auto 0;
+margin: 0 auto 50px;
+
+**인라인요소 가운데정렬시***
+****text-align: center;***
+text-align이라 글자만 적용되는게 아니라 인라인요소는 이 효과로 정렬시킨다.
+
+
+
+정렬을 시킬때  내가 정렬시킬 요소가   블럭요소인지 인라인 요소인지만 생각해라
+block요소를 정렬시킬거면  margin: auto를 사용해라
+
+inline요소는 text-align : center;
+
+블럭요소를 정렬시킬때 필수값으로는 width가 필요하다
+이유는 블록요소는 width값이 없으면 한 줄을 전부 차지하기 때문에 정렬을 아무리 해도 이미 한줄 전체를 사용중이다
+그러므로 width값을 잘 지정해줘라
+
+* border + padding은 상자의 크기에 영항을 줌
+
+
+---------------------------
+box-sizing :  content box  (기본값임)
+ ** 실제 width는 : width(=content area )+ padding + border
+---------------------------
+width 100% 
+real box width (부모의 100%)
+
+width 100% + padding 100px 
+ = width100 % paading 200px추가되어 나옴
+
+ width auto  무조건 최종값이 100% 
+ =>   padding값 혹은 border값이 주어지는경우
+  콘텐트 area 자동조절되어 부모의 100% 값을 넘어가지 않게 조절됨.
+  콘텐츠 공간이 자동 조절.
+  (content area : 100% - padding값) 해서 자동조절됨
+  ---------------------
+
+========================================================
+  **box-sizing : border-box **
+  * 실제 box width : content area + padding + border = width
+
+  ex )
+  width : 800px; padding :100px;  border: 100px  = > 박스 길이 1200px
+  만약 box의 width가 800px을 원할시
+  width 400px padding 100px border 100px
+  해야 박스 사이즈가 800px이 된다..
+
+  width 800 px padding 100px border 100px , box-sizing:border-box 효과를 적용시
+  실제 박스 사이즈 : contentArea400 + 패딩left 100 + 패딩 right 100 + 보더L 100 보더R 100 =  800px
+  이렇게 자동계산 가능하다.
+   둘중 아무거나 써도됨
+   -----------------------------------------------------------
+box width : 100%
+ width : auto padding 100px border 100px
+알아서 계산되어 반영됨
+
+  box width : 80%
+  width: calc(100%-400px); padding: 100px ; border: 100px ; (%메뉴는 px과 + 할수가 없어서 calc를 사용해서 계산하거나)
+위방식을 쓰거나
+
+width 80% padding 100px border 100px  (box-sizing : border-box ) <- 이 효과를 적용해서
+width를 맞출 수 있다.
+
+-----------------------------------------------------------------
+
+*auto는 무조건 100%를 표기해줌 패딩이 있으면 합쳐서 계산됨
+
+
+
+
+
+
+
+
+

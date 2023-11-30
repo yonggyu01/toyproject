@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script>
+        function pagecolor(){
+            let color = document.getElementById('sc').value;
+            let ptag = document.getElementById('changeText');
+            ptag.style.color = color 
+            ptag.style.PROP = color 
+        }
+
+    </script>
+</head>
+<body>
+    <p id="changeText">버튼을클릭하면문장의글자색이변함</p>
+    <p><input type="text" id="sc" name="sc">색상입력</p>
+    <p><button type="button" onclick="pagecolor()">글자색상바꾸기</button></p>
+</body>
+</html>

@@ -1,0 +1,65 @@
+주요태그
+1. meta
+문서의 속성 정의
+head 태그 내에 작성
+    property  ="og:title"
+    property  ="og:url"
+    property  ="og:image" content="그림파일"
+    외부 링크로 보냈을때 작동하는 정보임
+    *트위터는 외부링크시 표시가 잘 안되서 태그를 따로 작성해야함
+
+
+
+title
+문서의 제목 정의
+head 태그 내에 작성
+
+
+
+
+
+body 태그에서 사용하는 주요 태그
+h (heading)
+h1 ~ h6 큰~ 작은 제목
+줄바꿈 + 볼드체 적용
+
+p (paragraph) 문단구분
+br(break) 줄바꿈
+
+Semantic Elements = 
+<time datetime = "2023-09-26">  좌측에 있는 데이트 타임의 내용
+
+게시판  tab menu
+
+
+
+6 목록태그
+ul  (unordered list :비순차 목록)
+ol (ordered list : 순차목록)
+dl ( definition list :  정의목록)
+
+li ( list item : ol, ul 의 항목)
+
+dt (definition term : 목록에 대한 정의 ) ***     ( dt(목록제목)  ->  dd(목록내용)   ) -> dl 로 묶으라고 함
+dd (definition description : 정의 목록의 항목)
+
+
+a (anchor)
+ 링크생성
+ <a href="#"> </a>
+ 임시링크 생성은 위처럼. 단  임시링크 기본기능이 클릭시 스크롤을 맨위로 이동시킴
+  해당조건을 캔슬하려면
+   <a href = "#none"> </a>  이렇게 생성하면 임시링크 클릭시 스크롤이동 옵션 미적용됨
+
+
+ img (웹페이지 이미지 불러오기)
+   <img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png" alt="다음"> 
+
+
+ div 
+ 여러개의 요소를 그룹화
+ 
+<p style = " position : absolute; left: 300px; top : 900px"><a> 클릭할 글자</a> <p>
+
+  다중선택자  ALT + 클릭
+  

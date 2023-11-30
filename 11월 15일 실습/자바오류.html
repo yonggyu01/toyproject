@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="btn">
+    <button type="button" id="test"> test</button>
+
+    <script>
+        let btn='';
+        let test = document.getElementById('test');
+        function testn (){
+            try{
+
+                if(btn==0) throw '값이 없습니다' 
+                if(btn<0) throw '값이 0보다 작습니다' 
+                if(btn>5) throw '값이 5보다 큽니다' 
+            }
+            catch(err){
+                console.log(err)
+            }
+            finally{
+                console.log('에러와 관계없습니다.')
+            }
+        }
+        test.onclick = function(){
+            btn = document.getElementById('btn').value;
+            testn();
+        };
+
+    </script>
+</body>
+</html>

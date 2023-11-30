@@ -1,0 +1,12 @@
+body{
+    font-size: 24px;
+}
+table{
+    border:1px solid black;
+    font-size: 24px;
+}
+td, th{
+    width: 200px;
+    height: 100px;
+    border: 1px solid black;
+}

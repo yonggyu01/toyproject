@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>객체 접근</title>
+<style>
+body, input, button{font-size:24px}
+</style>
+<script>
+    function printText(){
+        // 기존 폼 요소 선택
+        // document.forms[0].elements[0].value = "글자 출력하기 1";
+        // document.form1.txt_nm.value = "글자 출력하기 2";
+
+        // getElement
+        // document.getElementById("txt_id").value = "글자 출력하기 3";
+        // console.log(document.getElementsByClassName("txt_cls"))
+        // document.getElementsByClassName("txt_cls").value = "글자 출력하기 3"; // 출력 안 됨
+        // document.getElementsByClassName("txt_cls")[0].value = "글자 출력하기 3";
+        // document.getElementsByName("txt_nm")[0].value = "글자 출력하기 3";
+        // document.getElementsByTagName("input")[0].value = "글자 출력하기 3";
+        // document.getElementsByTagNameNS("URL", "element").value = "글자 출력하기 3";
+
+        /* let cnt = document.getElementsByClassName("txt_cls").length;
+        for( i = 0 ;  i < cnt ; i++ ){
+            document.getElementsByClassName("txt_cls")[i].value = "글자 출력하기 " + (i+1);
+        } */
+        
+
+        // querySelector(" CSS Selector ")
+        // document.querySelector("input").value = "글자 출력하기 4";
+        // document.querySelector(".txt_cls").value = "글자 출력하기 5";
+        // document.querySelector("#txt_id").value = "글자 출력하기 6";
+
+        document.querySelectorAll(".txt_cls").value = "글자 출력하기 5";
+        
+        let cnt = document.querySelectorAll(".txt_cls").length;
+        for( i = 0 ;  i < cnt ; i++ ){
+            document.querySelectorAll(".txt_cls")[i].value = "글자 출력하기 " + (i+1);
+        }
+    }
+</script>
+</head>
+<body>
+<form name="form1" action="" method="">
+<p>* 버튼을 클릭하면 텍스트 필드에 글자가 나타납니다.</p>
+<p class="txt_box">
+<input type="text" name="txt_nm" id="txt_id" class="txt_cls">
+<input type="text" name="txt_nm" class="txt_cls">
+<input type="text" name="txt_nm" class="txt_cls">
+<button type="button" onclick="printText()">글자 출력</button>
+</p>
+</form>
+</body>
+</html>

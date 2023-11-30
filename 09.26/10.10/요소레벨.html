@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소레벨</title>
+    <style>
+.box1{
+    border: 1px dashed red;
+    margin-bottom : 10px;
+    padding:5px;
+}
+.box2{
+   height: 150px;
+   overflow: scroll;
+   width: 50%;
+}
+.tbod{
+    background-color:azure;
+    height: 150px;
+    border : 5px dashed blue;
+    height: 50px;
+}
+.box3{
+    margin: 20px;
+    width: 540px;
+    padding: 50px;
+    border: 5px solid tomato;
+    
+}
+.box4{
+    width: 500px;
+    height: 160px;
+    border : 2px dashed blueviolet;
+
+}
+span{
+    display : inline-block;
+    height: 150px;
+    width: 60px;
+
+}
+.marginbox{
+    width: 200px;
+    height: 100px;
+    border: 5px dashed teal;
+
+}
+        </style>
+</head>
+<body>
+    <div class="box1">
+        문장의 중간에 사용시
+    <div>
+        줄이 바뀌는 태그
+    </div>
+    블럭요소라고 부릅니다.
+    </div>
+    <div class="box2">
+        문장의 중간에 사용시
+    <strong>
+        줄이 안 바뀌는 태그
+    </strong>
+    인라인요소라고 부릅니다.
+    <div class="tbod">
+        오타는 그나ㅑㅇ
+
+   
+    </div>
+</div>
+    <div class="box3">
+    <nav>
+        <div class="box4">
+            <ul>
+                <li><a href="" style="display=inline">위치</a></li>
+                <li><a href="">크기</a></li>
+                <li><a href="">등등</a></li>
+                <li><a href="">나타</a></li>
+                <li><a href="">냅시다.</a></li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+   <div>
+    인라인 요소는
+    <span>
+        위치랑 크기를 
+    </span>
+    수정할 수 없다
+   </div>
+
+    <div class="marginbox">
+    마진박스
+    
+
+    </div>
+</body>
+</html>

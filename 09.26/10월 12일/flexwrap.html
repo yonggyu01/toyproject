@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .item{
+        background: #000;
+        padding: 5px 45px;
+        margin: 5px;
+    }
+    p{
+        color: #fff;
+        text-align: center;
+    }
+    .container{
+        background: #aaa;
+        display: flex;
+
+    }
+    .fw-nowrap{
+        flex-wrap:nowrap;
+    }
+    .fw-wrap{
+        flex-wrap:wrap;
+        
+    }
+    .fw-wrap-reverse{
+        flex-wrap:wrap-reverse;
+    }
+    
+    </style>
+</head>
+<body>
+    <h2>*flex-wrap : 아이템 줄바꿈</h2>
+<h3>flex-wrap:nowrap</h3>
+ <div class="container fw-nowrap">
+    <div class="item">
+        <p>1</p>
+    </div>
+    <div class="item">
+        <p>2</p>
+    </div>
+    <div class="item">
+        <p>3</p>
+    </div>
+    <div class="item">
+        <p>4</p>
+    </div>
+    <div class="item">
+        <p>5</p>
+    </div>
+    <div class="item">
+        <p>6</p>
+    </div>
+</div>
+<h3>flex-wrap:wrap</h3>
+ <div class="container fw-wrap">
+    <div class="item">
+        <p>1</p>
+    </div>
+    <div class="item">
+        <p>2</p>
+    </div>
+    <div class="item">
+        <p>3</p>
+    </div>
+    <div class="item">
+        <p>4</p>
+    </div>
+    <div class="item">
+        <p>5</p>
+    </div>
+    <div class="item">
+        <p>6</p>
+    </div>
+</div>
+<h3>flex-wrap:wrap-reverse</h3>
+ <div class="container fw-wrap-reverse">
+    <div class="item">
+        <p>1</p>
+    </div>
+    <div class="item">
+        <p>2</p>
+    </div>
+    <div class="item">
+        <p>3</p>
+    </div>
+    <div class="item">
+        <p>4</p>
+    </div>
+    <div class="item">
+        <p>5</p>
+    </div>
+    <div class="item">
+        <p>6</p>
+    </div>
+</div>
+
+   
+</body>
+</html>

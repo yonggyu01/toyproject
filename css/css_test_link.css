@@ -1,0 +1,25 @@
+body{
+        font-family : monospace;
+}
+
+
+h2{
+     font-family: sans-serif; 
+    color : blue
+}
+h3{ font-size : 5em}
+p{
+   /* font-family:monospace; */ 
+   color : gray; 
+}
+.k1{
+    color : yellow
+}
+p#k2{color:red;  }
+p.mark_two{
+    color : green; font-size : 3em;
+}
+em{
+    /* font-family:monospace; */
+    color : red; font-size: 2em 
+}

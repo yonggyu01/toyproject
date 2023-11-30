@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>웹 폰트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap');
+@font-face{ /* 적용할 폰트 준비하기 */
+	font-family:"hybdam"; /* 적용할 때 사용할 이름 지정 */
+	src:url("fonts/HYBDAM.eot"); /* 적용할 폰트 경로 */
+	src:local('※'), url("fonts/HYBDAM.woff") format("woff");
+}
+body{font-size:30px}
+#textBox p{margin-bottom:10px}
+#textBox .ex01{
+	font-family: arial, "궁서";
+	border:1px solid #ccc;
+	padding:10px
+}
+#textBox .ex02{
+	font-family: "hybdam";
+	border:1px solid #ccc;
+	padding:10px;
+}
+#textBox .ex03{
+	font-family: 'Young Serif', 'Noto Serif KR';
+	border:1px solid #ccc;
+	padding:10px;
+}
+.material-symbols-outlined{
+	color:red;
+	font-size:50px
+}
+</style>
+</head>
+
+<body>
+<h1>
+	<span class="material-symbols-outlined">home</span>
+	웹 폰트
+</h1>
+  <h2>서버측 폰트를 사용할 수 있는 font-family를 생성</h2>
+  <div id="textBox">
+    <p class="ex01">돋움, dotum</p>
+    <p class="ex02">굴림, gulim</p>
+    <p class="ex03">휴먼 가는샘체, human sam</p>
+  </div>
+</body>
+</html>

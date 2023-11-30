@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html</title>
+    <script>
+        // var input1 = document.getElementById('uid')
+        function printText(){
+                 var input1 = document.getElementById('uid')
+           input1.value = '아이디는 무엇일까요'
+        }
+
+        document.addEventListener('DOMContentLoaded',function(){
+            var form1 = document.getElementById('form1')
+            // var input1 = document.getElementById('uid')
+            var button = document.getElementsByTagName('button')
+            var texta = document.createElement('h1')
+            
+        })
+    </script>
+</head>
+<body>
+    <form action="" method="get" name="form1" id="form1">
+        <p>*버튼을 클릭하면 텍스트필드에 글자가 나타납니다</p>
+        <p>
+            <input type="text" name="txt" id="uid" placeholder="아이디">
+            <button type="button" onclick="printText()">글자 출력</button>
+        </p>
+    </form>
+    
+</body>
+</html>

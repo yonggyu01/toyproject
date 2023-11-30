@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>justify-content</title>
+    <style>
+        .item{
+            background:#333;
+            padding:5px 45px;
+            margin:5px
+        }
+        p{
+            color:#fff;
+            text-align:center
+        }
+        
+        .container{
+            background:#aaa;
+            display: flex
+        }
+        .jc-flex-start{
+            justify-content: flex-start
+        }
+        .jc-flex-end{
+            justify-content: flex-end
+        }
+        .jc-center{
+            justify-content: center
+        }
+        .jc-space-between{
+            justify-content: space-between
+        }
+        .jc-space-around{
+            justify-content: space-around
+        }
+        .jc-space-evenly{
+            justify-content: space-evenly
+        }
+    </style>
+</head>
+<body>
+    <h2>* justify-content : 아이템의 수평축 정렬 *</h2>
+    <h3>justify-content : flex-start</h3>
+    <div class="container jc-flex-start">
+        <div class="item"><p>1</p></div>
+        <div class="item"><p>2</p></div>
+        <div class="item"><p>3</p></div>
+        <div class="item"><p>4</p></div>
+    </div>
+
+    <h3>justify-content : flex-end</h3>
+    <div class="container jc-flex-end">
+        <div class="item"><p>1</p></div>
+        <div class="item"><p>2</p></div>
+        <div class="item"><p>3</p></div>
+        <div class="item"><p>4</p></div>
+    </div>
+
+    <h3>justify-content : center</h3>
+    <div class="container jc-center">
+        <div class="item"><p>1</p></div>
+        <div class="item"><p>2</p></div>
+        <div class="item"><p>3</p></div>
+        <div class="item"><p>4</p></div>
+    </div>
+
+    <h3>justify-content : space-between</h3>
+    <div class="container jc-space-between">
+        <div class="item"><p>1</p></div>
+        <div class="item"><p>2</p></div>
+        <div class="item"><p>3</p></div>
+        <div class="item"><p>4</p></div>
+    </div>
+
+    <h3>justify-content : space-around</h3>
+    <div class="container jc-space-around">
+        <div class="item"><p>1</p></div>
+        <div class="item"><p>2</p></div>
+        <div class="item"><p>3</p></div>
+        <div class="item"><p>4</p></div>
+    </div>
+
+    <h3>justify-content : space-evenly</h3>
+    <div class="container jc-space-evenly">
+        <div class="item"><p>1</p></div>
+        <div class="item"><p>2</p></div>
+        <div class="item"><p>3</p></div>
+        <div class="item"><p>4</p></div>
+    </div>
+</body>
+</html>

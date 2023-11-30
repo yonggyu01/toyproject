@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>for ~ in</title>
+<style>
+body{font-size:24px}
+</style>
+<script>
+    let person = [
+        {fname: 'Hong', lname: 'Gildong', age: 23},
+        {fname: 'Kim', lname: 'Chulsu', age: 21},
+        {fname: 'Choi', lname: 'Younghee', age: 22}
+    ];
+
+    // document.write(person);
+    // document.write(person[0]);
+    // document.write(person[0].fname); // Hong
+
+    /* for( i = 0; i < person.length; i++ ){
+        document.write(person[i].fname + "<br>");
+    } */
+
+    /* for( items of person ){
+        document.write(items.fname + "<br>");
+    } */
+
+    /* for( item in person[0] ){
+        // document.write(item + "<br>");
+        document.write(person[0][item] + "<br>");
+    } */
+
+    for( items of person ){
+        // document.write(items.fname + "<br>");
+        for( item in items ){
+            document.write(items[item] + "<br>");
+        }
+        document.write("<hr>");
+    }
+
+    
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

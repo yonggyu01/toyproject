@@ -1,0 +1,77 @@
+자바스크립트의 오류
+
+1. javascript는 오류가 발생하면 일반적으로 중지되고 오류 메시지 생성
+2. 기술 용어 : javascript will throw an exception (throw an error)
+3. name & message 속성을 가진 error 객체 생성
+ - 이름 : 오류 이름을 설정하거나 반환
+  - 메시지 : 오류 메시지(문자열)를 설정하거나 반환
+
+오류 유형
+1. referenceError (잘못된 참조) : 선언되지 않은 변수를 사용(참조) 하는 경우 발생
+let x =5;
+x = y + 1;
+
+y가 선언되지 않아서 발생함
+
+2. syntaxError (구문오류) : 구문오류가 있는 코드를 평가하려고 할 때 발생
+eval('allert('Hello')')
+
+3.TypeError (유형오류) : 예상 유형 범위를 벗어난 값을 사용하면 발생
+let num =1 ;
+num.toUpperCase();
+이대로 실행시 TypeError 발생하는데
+이걸 
+try{ 
+    let num1 = 1
+} catch(err){
+    document.write('Error Name' + err.name + '  ' + err.message)
+// 콘솔창에는 에러가 안나지만 catch구분에 작성해둔 내용이 나타남
+}
+
+
+
+**  오류처리기술 ** 
+
+1.try : 실행할 코드 블록 정의
+2. catch : 오류를 처리할 코드 블록 정의 , try문과 사용
+
+try{  -> if else문하고 비슷함  try는 if고
+    실행할 문장
+}
+
+catch(err){     -> if else에서 catch는 else하고 비슷함
+    오류시 실행할 문장  (파라메터로 err를 자동으로 받아오게 되어있음)
+}
+
+이대로 실행시 TypeError 발생하는데
+이걸 
+try{ 
+    let num1 = 1
+} catch(err){
+    document.write('Error Name' + err.name + '  ' + err.message)
+// 콘솔창에는 에러가 안나지만 catch구분에 작성해둔 내용이 나타남
+}
+
+3. throw : 사용자 정의 오류 정의
+
+try{
+    실행할 문장
+    if(condition) throw "Error Message"; -> throw에 넣은 내용은 catch에 err인자로 전달되어서 사용됨
+}
+catch(err){
+    오류시 실행할 문장
+}
+
+
+4. finally 결과에 관계없이 실행할 코드 블록 정의
+
+try {
+    실행 할 문장
+}
+catch(err){
+    오류시 실행할 문장
+}
+finally{
+    결과에 관계없이 실행할 문장
+}
+

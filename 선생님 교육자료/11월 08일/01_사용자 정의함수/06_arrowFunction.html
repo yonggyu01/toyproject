@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 함수</title>
+    <script>
+        // 함수 생성
+        /* function testFunc(){
+            alert("함수를 실행하였습니다.");
+        }
+        // testFunc();
+        let i = testFunc(); */
+
+        // 화살표 함수
+        /* let saveFunc = function (){
+            alert("함수를 실행하였습니다.");
+        } */
+        /* let saveFunc = () => {
+            alert("함수를 실행하였습니다.");
+        }
+        saveFunc(); */
+
+        // 매개변수가 1개인 경우 : ( ) 생략 가능
+        /* let saveFunc = msg => {
+            alert(msg);
+        }
+        saveFunc('FIRST'); */
+        // saveFunc('SECOND');
+
+        // 매개변수가 여러 개 : ( ) 반드시 사용
+        /* let saveFunc = (msg1, msg2) => {
+            alert(msg1+" / "+msg2);
+        }
+        saveFunc('FIRST', 'SECOND'); */
+
+        // 실행할 문장이 1개 : { } 생략 가능
+        let saveFunc = msg => alert(msg);
+        saveFunc('FIRST');
+    </script>
+</head>
+    <body>
+
+    </body>
+</html>

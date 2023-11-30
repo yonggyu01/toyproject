@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+    <div id="dsp"></div>
+    <script>
+     function dspFunc(a){
+     dsp.innerHTML = a;
+     } 
+     async function sample (){
+        let prom = new Promise(function(suc,fail){
+            suc('성공이당');
+
+            fail('실패이당');
+
+        })
+
+        dsp.innerHTML = await prom;
+        // await 는 return과 같은 기능이라 봐야함 이 뒤에 뭘 쓰던  출력이 안되니 await 쓰려면
+        // 맨 마지막에 적던  반환값을 나타낼때맨 적어라.
+     }  
+        sample();
+//ajex? 
+
+    </script>
+</body>
+</html>

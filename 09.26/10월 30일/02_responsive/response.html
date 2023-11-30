@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹</title>
+    <style>
+        /* reset */
+        body, div, p, header, main, footer, section, h1, h2, ul, li{
+            margin: 0;
+            padding: 0
+        }
+        ul, li{
+            list-style: none
+        }
+        a{
+            text-decoration: none;
+            color: inherit
+        }
+
+        /* layout */
+        .wrap{
+            max-width: 1200px;
+            min-width: 300px;
+            margin: auto;
+        }
+
+        .header{
+            height: 100px;
+            position: relative;
+            background: #aaa
+        }
+        .logo{
+            width: 120px;
+            height: 80px;
+            background: #666;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            left: 10px;
+            top: 10px
+        }
+
+        .gnb{
+            width: 430px;
+            height: 50px;
+            background: #999;
+            position: absolute;
+            left: 200px;
+            top:40px
+        }
+        .gnb h2{
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            position: absolute;
+            margin: -1px
+        }
+        .gnb ul{
+            display: flex;
+            justify-content: space-between
+        }
+        .gnb li a{
+            width: 100px;
+            height: 50px;
+            background: #666;
+            color: #fff;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu_open{
+            width: 80px;
+            height: 30px;
+            background: #333;
+            color: #fff;
+            line-height: 30px;
+            text-align: center;
+            position:absolute;
+            left: 10px;
+            top: 10px;
+            display: none
+        }
+
+        .main{
+            padding: 10px;
+            box-sizing: border-box;
+            background: #666;
+            display: flex;
+            /* justify-content: space-between */
+        }
+        .content1{
+            width: 32%;
+            height: 400px;
+            background: #aaa;
+            margin-right: 2%
+        }
+        .content2{
+            width: 32%;
+            height: 400px;
+            background: #aaa;
+            margin-right: 2%
+        }
+        .content3{
+            width: 32%;
+            height: 400px;
+            background: #aaa
+        }
+        
+        .footer{
+            padding: 10px;
+            box-sizing: border-box;
+            background: #aaa;
+            display: flex;
+            gap: 30px
+        }
+        
+        @media screen and (max-width: 1023px){
+            .main{
+                flex-wrap: wrap
+            }
+            .content1{
+                width: 49%;
+                height: 200px;
+                margin-right: 2%
+            }
+            .content2{
+                width: 49%;
+                height: 200px;
+                margin-right: 0
+            }
+            .content3{
+                width: 100%;
+                height: 200px;
+                margin-top: 2%
+            }
+
+            @media screen and (max-width: 767px){
+                .header{
+                    height: 50px
+                }
+                .logo{
+                    font-size: 20px;
+                    width: 80px;
+                    height: 50px;
+                    position: static;
+                    margin: auto
+                }
+
+                .gnb{
+                    width: 300px;
+                    height: 400px;
+                    background: #999;
+                    position: absolute;
+                    left: 0px;
+                    top:50px;
+                    
+                }
+                .gnb ul{
+                    display: block
+                }
+                .gnb li a{
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    line-height: 50px;
+                    padding-left: 10px;
+                    box-sizing: border-box
+                }
+                /* .gnb a:hover{
+                    background: #333
+                } */
+
+                .menu_open{
+                    display: block
+                }
+
+                .main{
+                    display: block
+                }
+                .content1{
+                    width: auto;
+                    margin-right: 0
+                }
+                .content2{
+                    width: auto;
+                    margin-top: 2%
+                }
+
+                .footer{
+                    display: block;
+                    text-align: center
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <h1 class="logo">LOGO</h1>
+            <nav class="gnb">
+                <h2>TITLE</h2>
+                <ul>
+                    <li><a href="#none">MENU</a></li>
+                    <li><a href="#none">MENU</a></li>
+                    <li><a href="#none">MENU</a></li>
+                    <li><a href="#none">MENU</a></li>
+                </ul>
+            </nav>
+            <a href="#none" class="menu_open">MENU</a>
+        </header>
+        <main class="main">
+            <section class="content1">CONTENT 1</section>
+            <section class="content2">CONTENT 2</section>
+            <section class="content3">CONTENT 3</section>
+        </main>
+        <footer class="footer">
+            <h2>FOOTER</h2>
+            <p>copyright &copy; text text text text text</p>
+        </footer>
+    </div>
+</body>
+</html>
